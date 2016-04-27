@@ -1,13 +1,7 @@
-public class GameMob 
-{
+public class GameMob {
 
-int maxHealth;
-int health;
-GameObject[] dropinventory;
-
-
-
-
-
+	int maxHealth;
+	int health;
+	GameObject[] dropinventory;
 
 }
