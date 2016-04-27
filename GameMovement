@@ -80,7 +80,7 @@ public class GameMovement extends JFrame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        GuiTest3 application = new GuiTest3();
+        GameMovement application = new GameMovement();
     }
     /******** PRIVATE INNER CLASSES FOR EVENT HANDLING ***************/
     /*
