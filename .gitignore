@@ -47,3 +47,11 @@ Temporary Items
 .apdisk
 /bin/
 /bin/
+
+#Vim
+*~
+*.swp
+
+#CopyRighted Stuff
+EasyOgg/*
+Box2D/*
