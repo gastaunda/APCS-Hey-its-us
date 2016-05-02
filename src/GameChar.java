@@ -1,6 +1,7 @@
 import Items.GameObject;
 
-public class GameChar {
+public class GameChar 
+{
 	private int maxHealth;
 	private GameObject[] inventory;
 
