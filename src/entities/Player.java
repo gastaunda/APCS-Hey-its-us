@@ -1,4 +1,4 @@
-package Mobs;
+package entities;
 import Items.GameObject;
 
 public class Player extends Mob {

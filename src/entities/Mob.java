@@ -1,17 +1,15 @@
-package Mobs;
+package entities;
 import Items.GameObject;
 
-public class Mob {
+public class Mob extends Entity {
 
-	protected int hp;
-	protected int maxHp;
 	protected GameObject[] inv;
 	protected int held;
 
 	public Mob(int maxHealth, int health, GameObject[] inventory) {
-		maxHp = maxHealth;
-		hp = health;
+		super(maxHealth, health);
 		inv = inventory;
+		held = 0;
 	}
 
 	public void takedamage(int damage) {
