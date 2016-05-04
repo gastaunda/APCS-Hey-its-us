@@ -45,4 +45,9 @@ public class Physics {
 	public void setAccelerationY(double acceleration) {
 		aY = acceleration;
 	}
+	
+	public void accelerate() {
+		vX = aX;
+		vY = aY;
+	}
 }
