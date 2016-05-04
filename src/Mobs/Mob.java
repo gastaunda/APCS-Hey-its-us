@@ -1,7 +1,8 @@
 package Mobs;
+import Items.GameEntity;
 import Items.GameObject;
 
-public class Mob {
+public class Mob implements GameEntity{
 
 	protected int hp;
 	protected int maxHp;
@@ -33,5 +34,11 @@ public class Mob {
 	
 	public void magDamage(int damage) {
 		takedamage(damage);
+	}
+
+	@Override
+	public void collide(GameEntity other) {
+		// TODO Auto-generated method stub
+		
 	}
 }

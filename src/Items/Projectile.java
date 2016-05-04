@@ -1,6 +1,6 @@
 package Items;
 
-public class Projectile 
+public class Projectile implements GameEntity
 {
 	//private double gravity;
 	//private int speed;
@@ -10,9 +10,15 @@ public class Projectile
 	
 	public Projectile(double grav, int spd,boolean bounces, int bnce, int life, GameObject objt)
 	{
-		Physics(grav, spd)
+		Physics(grav, spd);
 		bounce = bounces;
 		durration = life;
 		obj = objt;
+	}
+
+	@Override
+	public void collide(GameEntity other) {
+		// TODO Auto-generated method stub
+		
 	}
 }
