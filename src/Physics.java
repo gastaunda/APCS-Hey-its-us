@@ -50,4 +50,5 @@ public class Physics {
 		vX = aX;
 		vY = aY;
 	}
+	
 }
