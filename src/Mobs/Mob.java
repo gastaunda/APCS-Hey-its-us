@@ -38,16 +38,6 @@ public class Mob implements GameEntity
 		return true;
 	}
 
-	public void magHeal(int amount) // I think we should remove these methods- no purpose
-	{
-		heal(amount);
-	}
-
-	public void magDamage(int damage) 
-	{
-		takedamage(damage);
-	}
-
 	@Override
 	public void collide(GameEntity other) 
 	{
