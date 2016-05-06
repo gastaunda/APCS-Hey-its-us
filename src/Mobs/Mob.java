@@ -9,12 +9,14 @@ public class Mob implements GameEntity
 	protected int maxHp;
 	protected GameObject[] inv;
 	protected int held;
+	protected int atk;
 
-	public Mob(int maxHealth, int health, GameObject[] inventory) 
+	public Mob(int maxHealth, int health, int attack, GameObject[] inventory) 
 	{
 		maxHp = maxHealth;
 		hp = health;
 		inv = inventory;
+		atk = attack;
 	}
 
 	public void takedamage(int damage) 
@@ -36,7 +38,7 @@ public class Mob implements GameEntity
 		return true;
 	}
 
-	public void magHeal(int amount) 
+	public void magHeal(int amount) // I think we should remove these methods- no purpose
 	{
 		heal(amount);
 	}
@@ -49,7 +51,7 @@ public class Mob implements GameEntity
 	@Override
 	public void collide(GameEntity other) 
 	{
-		// TODO Auto-generated method stub
+		other.takedamage(atk);
 
 	}
 	
