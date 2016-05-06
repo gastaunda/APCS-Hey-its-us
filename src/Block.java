@@ -7,9 +7,9 @@ import javax.imageio.ImageIO;
 public class Block {
 	private boolean solid;
 	private BufferedImage img;
-	private boolean jumpThrough;
 	
-	public Block(boolean solidB, boolean jumpThroughB, String img) throws IOException {
+	public Block(boolean solid, String img) throws IOException {
+		this.solid = solid;
 		ImageIO.read(new File(img));
 	}
 }
