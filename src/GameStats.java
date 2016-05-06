@@ -13,11 +13,11 @@ public class GameStats {
 		health -= lost;
 	}
 
-	public void AddHealth(int add) {
+	public void addHealth(int add) {
 		health += add;
 	}
 
-	public void AddScore(int add) {
+	public void addScore(int add) {
 		score += add;
 	}
 
