@@ -7,7 +7,7 @@ public class Mob implements GameEntity
 {
 	protected int hp;
 	protected int maxHp;
-	protected GameObject[] inv;
+	protected GameObject[] inv;//shouldn't this be a 2D array for multiple rows?
 	protected int held;
 	protected int atk;
 
