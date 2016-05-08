@@ -8,9 +8,9 @@ public class GameOptions
 	public GameOptions(String image)
 	{
 		img = image;
-		Button1 = "Menu"
-		Button2 = "How To Play"
-		Button3 = "Pause"
+		Button1 = "Menu";
+		Button2 = "How To Play";
+		Button3 = "Pause";
 	}
 	
 	public void Menu()
