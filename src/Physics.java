@@ -4,12 +4,17 @@
 public class Physics {
 	private double vX;
 	private double vY;
+	private double maxvX;
+	private double maxvY;
 	private double aX;
 	private double aY;
 	
-	public Physics (double velocityX, double velocityY, double accelerationX, double accelerationY) {
+	
+	public Physics (double velocityX, double velocityY, double maxvelX, double maxvelY, double accelerationX, double accelerationY) {
 		vX = velocityX;
 		vY = velocityY;
+		maxvX = maxvelX;
+		maxvY = maxvelY;
 		aX = accelerationX;
 		aY = accelerationY;
 	}
