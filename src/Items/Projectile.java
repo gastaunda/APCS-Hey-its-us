@@ -1,5 +1,4 @@
 package Items;
-
 public class Projectile implements GameEntity
 {
 	//private double gravity;
@@ -9,9 +8,8 @@ public class Projectile implements GameEntity
 	private GameObject obj;
 	private int damage;
 	
-	public Projectile(double grav, int spd, boolean bounces, int bnce, int life,int fite, GameObject objt)
+	public Projectile(double grav, double spd, boolean bounces, int bnce, int life,int fite, GameObject objt)
 	{
-		Physics(grav, spd);
 		bounce = bounces;
 		durration = life;
 		obj = objt;
@@ -26,6 +24,60 @@ public class Projectile implements GameEntity
 
 	@Override
 	public void takedamage(int x) {
+		
+	}
+
+	@Override
+	public double getVelocityX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getVelocityY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getAccelerationX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double getAccelerationY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setVelocityX(double velocity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setVelocityY(double velocity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAccelerationX(double acceleration) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setAccelerationY(double acceleration) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void accelerate() {
+		// TODO Auto-generated method stub
 		
 	}
 }
