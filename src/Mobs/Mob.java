@@ -1,7 +1,7 @@
-package Mobs;
+package mobs;
 
-import Items.GameEntity;
-import Items.GameObject;
+import items.GameEntity;
+import items.GameObject;
 
 public class Mob implements GameEntity 
 {

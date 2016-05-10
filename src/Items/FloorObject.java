@@ -1,6 +1,6 @@
-package Items;
+package items;
 
-import Mobs.Player;
+import mobs.Player;
 
 public class FloorObject implements GameEntity{
 	private GameObject pickup;

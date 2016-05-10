@@ -1,4 +1,4 @@
-package Items;
+package items;
 
 public class Wall implements GameEntity{
 	private int walEnth;

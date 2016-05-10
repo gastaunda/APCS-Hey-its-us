@@ -1,5 +1,5 @@
-package Mobs;
-import Items.GameObject;
+package mobs;
+import items.GameObject;
 
 public class Undead extends Mob {
 

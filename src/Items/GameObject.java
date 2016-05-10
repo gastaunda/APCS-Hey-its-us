@@ -1,4 +1,4 @@
-package Items;
+package items;
 public class GameObject{
 	private boolean drops;
 	private String name;

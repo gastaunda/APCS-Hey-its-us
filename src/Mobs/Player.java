@@ -1,5 +1,5 @@
-package Mobs;
-import Items.GameObject;
+package mobs;
+import items.GameObject;
 
 //don't we need protected GameObject[] hotbar;?  Or will the hotbar work off the inv?
 //i.e. hotbar is first row of inventory? 
