@@ -19,4 +19,9 @@ public class GameMenu
 		Button5 = "Exit";
 		
 	}
+	
+	public void displayMenu()
+	{
+
+	}
 }
