@@ -1,6 +1,7 @@
 
 import java.awt.image.BufferedImage;
-import Items.GameEntity;
+
+import items.GameEntity;
 
 public class Level {
 	private Block[][] map;
