@@ -7,6 +7,9 @@ public class Projectile implements GameEntity
 	private int durration;
 	private GameObject obj;
 	private int damage;
+	private double velX;
+	private double gravity;
+	private double velY;
 	
 	public Projectile(double grav, double spd, boolean bounces, int bnce, int life,int fite, GameObject objt)
 	{
@@ -14,12 +17,23 @@ public class Projectile implements GameEntity
 		durration = life;
 		obj = objt;
 		damage = fite;
+		velX = spd;
+		gravity = grav;
+		velY = 0;
 	}
 
 	@Override
 	public void collide(GameEntity other) {
 		other.takedamage(damage);
 		
+	}
+	
+	public void collide(Wall other){
+		
+	}
+	
+	public void collide(Floor other){
+		setVelocityY(-velY);
 	}
 
 	@Override
@@ -30,25 +44,24 @@ public class Projectile implements GameEntity
 	@Override
 	public double getVelocityX() {
 		// TODO Auto-generated method stub
-		return 0;
+		return velX;
 	}
 
 	@Override
 	public double getVelocityY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return velY;
 	}
 
 	@Override
 	public double getAccelerationX() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public double getAccelerationY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return gravity;
 	}
 
 	@Override
@@ -64,20 +77,22 @@ public class Projectile implements GameEntity
 	}
 
 	@Override
-	public void setAccelerationX(double acceleration) {
-		// TODO Auto-generated method stub
-		
+	public void setAccelerationX(double acceleration) {		
 	}
 
 	@Override
 	public void setAccelerationY(double acceleration) {
-		// TODO Auto-generated method stub
-		
+		gravity = acceleration;
 	}
 
 	@Override
 	public void accelerate() {
+		velY -= gravity;
+	}
+
+	@Override
+	public boolean bounce() {
 		// TODO Auto-generated method stub
-		
+		return bounce;
 	}
 }
