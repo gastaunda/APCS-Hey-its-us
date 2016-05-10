@@ -32,10 +32,29 @@ public class GameOptions
 	public void pause(boolean a)
 	{
 		while (a == true)
-			//Thread.sleep(999999999); //will last for 1M seconds (should be long enough :))
-			Thread.sleep(1000);  //1 sec
+		{
+			sleep(500);
+		}
+		//0.5 seconds. Might need to make it shorter to reduce lag time.
 		//try to trigger sleep in main (Thread.sleep pauses the entire method it is acting on-thus, it will pause the entire game (hopefully)
 		if (a != true)
+		{
+			
+		}
 			//Timer with 3 second life (if possible, SOS 3,2,1: GO)
+	}
+	
+	public void sleep(int x)
+	{
+		long y = (long)x;
+		try
+		{
+			Thread.sleep(y); 
+
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
