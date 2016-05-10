@@ -3,15 +3,12 @@ import Items.GameObject;
 
 public class Undead extends Mob {
 
-	public Undead(int maxHealth, int health, GameObject[] inventory) {
-		super(maxHealth, health, inventory);
+	public Undead(int maxHealth, int health, int atk, GameObject[] inventory) {
+		super(maxHealth, health, atk, inventory);
 	}
 	
-	public void magHeal(int amount) {
-		takedamage(amount);
-	}
-	
-	public void magDamage(int damage) {
-		heal(damage);
+	public boolean heal(int amount) {
+		super.takedamage(amount);
+		return false;
 	}
 }

@@ -21,4 +21,9 @@ public class Projectile implements GameEntity
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void takedamage(int x) {
+		
+	}
 }
