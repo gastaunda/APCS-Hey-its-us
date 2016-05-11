@@ -1,5 +1,6 @@
-Download http://www.jcraft.com/jorbis/jorbis-0.0.17.zip
+Download the following
+http://www.paulscode.com/source/SoundSystem/07JAN2012/SoundSystem.zip
+http://www.paulscode.com/source/SoundSystem/07JAN2012/LibraryJavaSound.zip
+http://www.paulscode.com/source/SoundSystem/23NOV2010/CodecJOrbis.zip
 
-Place jorbis-0.0.17 in the same folder as APCS-Hey-its-us
-
-Create a new java project as jorbis-0.0.17
+Extract them into APCS-Hey-its-us\..\SoundSystem\
