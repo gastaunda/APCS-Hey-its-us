@@ -5,5 +5,9 @@
 	<classpathentry kind="lib" path="/SoundSystem/CodecJOrbis.jar"/>
 	<classpathentry kind="lib" path="/SoundSystem/LibraryJavaSound.jar"/>
 	<classpathentry kind="lib" path="/SoundSystem/SoundSystem.jar"/>
+	<classpathentry kind="lib" path="/EasyOgg/easyogg.jar"/>
+	<classpathentry kind="lib" path="/EasyOgg/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="/EasyOgg/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="Assets.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
