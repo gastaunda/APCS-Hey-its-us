@@ -1,54 +1,27 @@
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import javax.swing.JDesktopPane;
-
-public class GameMenu {
-
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GameMenu window = new GameMenu();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
-	public GameMenu() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+public class GameMenu 
+{
+	
+	String image;
+	private String Button1;
+	private String Button2;
+	private String Button3;
+	private String Button4;
+	private String Button5;
+	
+	public GameMenu(String img)
+	{
+		image = img;
+		Button1 = "Play";
+		Button2 = "How To Play";
+		Button3 = "Options";
+		Button4 = "Achievements";
+		Button5 = "Exit";
 		
-		JDesktopPane desktopPane = new JDesktopPane();
-		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(173, 10, 88, 23);
-		desktopPane.add(btnNewButton);
+	}
+	
+	public void displayMenu()
+	{
+
 	}
 }
