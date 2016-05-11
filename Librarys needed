@@ -4,3 +4,5 @@ http://www.paulscode.com/source/SoundSystem/07JAN2012/LibraryJavaSound.zip
 http://www.paulscode.com/source/SoundSystem/23NOV2010/CodecJOrbis.zip
 
 Extract them into APCS-Hey-its-us\..\SoundSystem\
+
+Create new Java Project with the name SoundSystem
