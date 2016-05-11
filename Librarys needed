@@ -6,3 +6,12 @@ http://www.paulscode.com/source/SoundSystem/23NOV2010/CodecJOrbis.zip
 Extract them into APCS-Hey-its-us\..\SoundSystem\
 
 Create new Java Project with the name SoundSystem
+
+
+
+Download the following
+http://www.cokeandcode.com/downloads/EasyOgg-0.6.zip
+
+Extract it into the same folder as APCS-Hey-its-us
+
+Create new Java project with the name EasyOgg
