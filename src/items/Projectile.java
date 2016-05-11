@@ -1,4 +1,7 @@
 package items;
+
+import items.Wall;
+
 public class Projectile implements GameEntity
 {
 	//private double gravity;
