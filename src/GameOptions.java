@@ -33,7 +33,7 @@ public class GameOptions
 	{
 		while (a == true)
 		{
-			sleep(500);
+			//sleep(1);
 		}
 		//0.5 seconds. Might need to make it shorter to reduce lag time.
 		//try to trigger sleep in main (Thread.sleep pauses the entire method it is acting on-thus, it will pause the entire game (hopefully)
