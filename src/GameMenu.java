@@ -75,10 +75,16 @@ public class GameMenu {
 		desktopPane.add(btnExit);
 
 		JLabel label = new JLabel("");
+<<<<<<< HEAD
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frmMainMenu);
 		label.setBounds(0, 0, 442, 273);
+=======
+		label.setBounds(0, 0, 434, 261);
+>>>>>>> origin/master
 		desktopPane.add(label);
+		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setLabelFor(frmMainMenu);
 	}
 
 	private class SwingAction extends AbstractAction {
