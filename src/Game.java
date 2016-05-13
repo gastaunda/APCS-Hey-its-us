@@ -9,7 +9,7 @@ public class Game
 	}
 
 	public Game() {
-		GameMenu gm = new GameMenu();
+		GameMenu.main(null); 
 		Music m = new Music("");
 	}
 

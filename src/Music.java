@@ -12,7 +12,6 @@ public class Music {
 			this.start = new OggClip(start);
 			this.loop = new OggClip(loop);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -21,7 +20,6 @@ public class Music {
 		try {
 			this.loop = new OggClip(loop);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
