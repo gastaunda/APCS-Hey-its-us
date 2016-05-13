@@ -55,23 +55,23 @@ public class GameMenu {
 
 		JButton btnNewButton = new JButton("Levels");
 		btnNewButton.setFont(UIManager.getFont("Button.font"));
-		btnNewButton.setBounds(172, 10, 90, 23);
+		btnNewButton.setBounds(166, 10, 104, 23);
 		desktopPane.add(btnNewButton);
 
 		JButton btnLevelPacks = new JButton("Level Packs");
 		btnLevelPacks.setFont(UIManager.getFont("Button.font"));
-		btnLevelPacks.setBounds(172, 44, 90, 23);
+		btnLevelPacks.setBounds(166, 44, 104, 23);
 		desktopPane.add(btnLevelPacks);
 
 		JButton btnOptions = new JButton("Options");
 		btnOptions.setFont(UIManager.getFont("Button.font"));
-		btnOptions.setBounds(172, 78, 90, 23);
+		btnOptions.setBounds(166, 78, 104, 23);
 		desktopPane.add(btnOptions);
 
 		JButton btnExit = new JButton("Exit");
 		btnExit.setAction(action);
 		btnExit.setFont(UIManager.getFont("Button.font"));
-		btnExit.setBounds(172, 227, 90, 23);
+		btnExit.setBounds(166, 227, 104, 23);
 		desktopPane.add(btnExit);
 
 		JLabel label = new JLabel("");
