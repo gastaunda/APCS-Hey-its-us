@@ -77,7 +77,7 @@ public class GameMenu {
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frmMainMenu);
-		label.setBounds(0, 0, 434, 261);
+		label.setBounds(0, 0, 442, 273);
 		desktopPane.add(label);
 	}
 
