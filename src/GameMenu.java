@@ -91,6 +91,7 @@ public class GameMenu {
 		}
 
 		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
 		}
 	}
 }
