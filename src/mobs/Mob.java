@@ -8,7 +8,7 @@ public class Mob extends GameEntity {
 	protected int maxHp;
 	protected GameObject[] inv;// shouldn't this be a 2D array for multiple
 								// rows?
-	protected int held;
+	protected int held;			// no.
 	protected int atk;
 
 	public Mob(int maxHealth, int health, int attack, GameObject[] inventory) {
@@ -16,6 +16,12 @@ public class Mob extends GameEntity {
 		hp = health;
 		inv = inventory;
 		atk = attack;
+		setPosX(0);
+		setPosY(0);
+		setVelX(0);
+		setVelY(0);
+		setAccX(0);
+		setAccY(0);
 	}
 
 	public void takedamage(int damage) {
