@@ -1,62 +1,71 @@
 package items;
 
 public abstract class GameEntity {
-	private double x;
-	private double y;
-	private double vX;
-	private double vY;
-	private double aX;
-	private double aY;
+	private double posX;
+	private double posY;
+	private double velX;
+	private double velY;
+	private double accX;
+	private double accY;
 	private double vXMax;
 	private double vYMax;
 	private int health;
-
+	private float bounce;
 	public abstract void collide(GameEntity other);
 	
 	public void takedamage(int x) {
 		health -= x;
 	}
 	
+	public int getHealth(){
+		return health;
+	}
+	
 	public double getVelocityX() {
-		return vX;
+		return velX;
 	}
 	
 	public double getVelocityY() {
-		return vY;
+		return velY;
 	}
 	
 	public double getAccelerationX() {
-		return aX;
+		return accX;
 	}
 	
 	public double getAccelerationY() {
-		return aY;
+		return accY;
 	}
 	
 	public void setVelocityX(double velocity) {
-		vX = velocity;
+		velX = velocity;
 	}
 	
 	public void setVelocityY(double velocity) {
-		aX = velocity;
+		velY = velocity;
 	}
 	
 	public void setAccelerationX(double acceleration) {
-		aX = acceleration;
+		accX = acceleration;
 	}
 	
 	public void setAccelerationY(double acceleration) {
-		aY = acceleration;
+		accY = acceleration;
+	}
+	
+	private float bounce(){
+		return bounce;
 	}
 	
 	public void move() {
-		vX += aX;
-		vY += aY;
-		if (vX > vXMax)
-			vX = vXMax;
-		if (vY > vYMax)
-			vY = vYMax;
-		x += vX;
-		y += vY;
+		posX += velX;
+		posY += velY;
+		velX += accX;
+		velY += accY;
+		if (velX > vXMax)
+			velX = vXMax;
+		if (velY > vYMax)
+			velY = vYMax;
+		
 	}
 }
