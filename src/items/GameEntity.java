@@ -11,7 +11,7 @@ public abstract class GameEntity {
 	private double vYMax;
 	private int health;
 	private float bounce;
-	public abstract void collide(GameEntity other);
+	private HitBox hitBox;
 	
 	public void takedamage(int x) {
 		health -= x;
@@ -21,40 +21,59 @@ public abstract class GameEntity {
 		return health;
 	}
 	
-	public double getVelocityX() {
+	public double getPosX(){
+		return posX;
+	}
+	
+	public double getPosY(){
+		return posY;
+	}
+	
+	public double getVelX() {
 		return velX;
 	}
 	
-	public double getVelocityY() {
+	public double getVelY() {
 		return velY;
 	}
 	
-	public double getAccelerationX() {
+	public double getAccX() {
 		return accX;
 	}
 	
-	public double getAccelerationY() {
+	public double getAccY() {
 		return accY;
 	}
 	
-	public void setVelocityX(double velocity) {
+	public void setPosX(double pos){
+		posX = pos;
+	}
+	public void setPosY(double pos){
+		posY = pos;
+	}
+	
+	public void setVelX(double velocity) {
 		velX = velocity;
 	}
 	
-	public void setVelocityY(double velocity) {
+	public void setVelY(double velocity) {
 		velY = velocity;
 	}
 	
-	public void setAccelerationX(double acceleration) {
+	public void setAccX(double acceleration) {
 		accX = acceleration;
 	}
 	
-	public void setAccelerationY(double acceleration) {
+	public void setAccY(double acceleration) {
 		accY = acceleration;
 	}
 	
-	private float bounce(){
+	public float bounce(){
 		return bounce;
+	}
+	
+	public HitBox HitBox(){
+		return hitBox;
 	}
 	
 	public void move() {
@@ -65,7 +84,10 @@ public abstract class GameEntity {
 		if (velX > vXMax)
 			velX = vXMax;
 		if (velY > vYMax)
-			velY = vYMax;
+			velY = vYMax;	
+	}
+	
+	public void collide(GameEntity other){
 		
 	}
 }
