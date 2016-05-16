@@ -11,11 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import java.awt.event.ActionListener;
 
 public class GameMenu {
 
 	private JFrame frmMainMenu;
 	private final Action action = new SwingAction();
+	private final Action action_1 = new SwingAction_1();
 
 	/**
 	 * Launch the application.
@@ -64,6 +66,11 @@ public class GameMenu {
 		desktopPane.add(btnLevelPacks);
 
 		JButton btnOptions = new JButton("Options");
+		btnOptions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnOptions.setAction(action_1);
 		btnOptions.setFont(UIManager.getFont("Button.font"));
 		btnOptions.setBounds(166, 78, 104, 23);
 		desktopPane.add(btnOptions);
@@ -91,6 +98,16 @@ public class GameMenu {
 
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "Options");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			GameOptions.main(null);
+			frmMainMenu.dispose();
 		}
 	}
 }

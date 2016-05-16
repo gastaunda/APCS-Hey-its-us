@@ -29,6 +29,6 @@ public class Projectile extends GameEntity
 	}
 	
 	public void collide(Floor other){
-		setVelocityY(-velY);
+		setVelY(0 - getVelY());
 	}
 }
