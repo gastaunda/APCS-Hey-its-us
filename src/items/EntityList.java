@@ -13,4 +13,12 @@ public class EntityList {
 		projectiles = new LinkedList<Projectile>();
 		mobs = new ArrayList<Mob>();
 	}
+	
+	public LinkedList<Projectile> getProjectiles(){
+		return projectiles;
+	}
+	
+	public ArrayList<Mob> getMobs(){
+		return mobs;
+	}
 }
