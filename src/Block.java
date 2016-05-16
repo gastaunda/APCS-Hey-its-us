@@ -5,11 +5,20 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Block {
-	private boolean solid;
+	private byte mode;
 	private BufferedImage img;
 	
-	public Block(boolean solid, String img) throws IOException {
-		this.solid = solid;
-		ImageIO.read(new File(img));
+	/**
+	 * 
+	 * @param img
+	 * @param mode
+	 */
+	public Block(String img, byte mode) {
+		this.mode = mode;
+		try {
+			this.img = ImageIO.read(new File(img));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
