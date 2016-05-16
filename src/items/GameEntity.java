@@ -72,6 +72,10 @@ public abstract class GameEntity {
 		return bounce;
 	}
 	
+	public void setHitBox(double x, double y, double h, double w){
+		hitBox = new HitBox(x, y, h, w);
+	}
+	
 	public HitBox HitBox(){
 		return hitBox;
 	}
@@ -85,6 +89,8 @@ public abstract class GameEntity {
 			velX = vXMax;
 		if (velY > vYMax)
 			velY = vYMax;	
+		hitBox.setPosX(posX);
+		hitBox.setPosY(posY);
 	}
 	
 	public void collide(GameEntity other){

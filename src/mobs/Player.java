@@ -6,8 +6,8 @@ import items.GameObject;
 
 public class Player extends Mob {
 
-	public Player(int maxHealth, int health, GameObject[] inventory) {
-		super(maxHealth, health, inventory);
+	public Player(int maxHealth, int health, GameObject[] inventory, double posX, double posY, double height, double width) {
+		super(maxHealth, health, 0, inventory, posX, posY, height, width);
 		
 	}
 	

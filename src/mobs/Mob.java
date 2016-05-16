@@ -11,17 +11,18 @@ public class Mob extends GameEntity {
 	protected int held;			// no.
 	protected int atk;
 
-	public Mob(int maxHealth, int health, int attack, GameObject[] inventory) {
+	public Mob(int maxHealth, int health, int attack, GameObject[] inventory, double posX, double posY, double height, double width) {
 		maxHp = maxHealth;
 		hp = health;
 		inv = inventory;
 		atk = attack;
-		setPosX(0);
-		setPosY(0);
+		setPosX(posX);
+		setPosY(posY);
 		setVelX(0);
 		setVelY(0);
 		setAccX(0);
 		setAccY(0);
+		setHitBox(posX, posY, height, width);
 	}
 
 	public void takedamage(int damage) {

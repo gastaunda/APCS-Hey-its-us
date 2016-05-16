@@ -9,14 +9,14 @@ public class Projectile extends GameEntity
 	private int durration;
 	private GameObject obj;
 	private int damage;
-	Projectile(double grav, double spd, float bounces, int bnce, int life,int fite, GameObject objt)
+	Projectile(double grav, double spd, float bounces, int bnce, int life,int fite, GameObject objt, double posX, double posY, double radius)
 	{
 		durration = life;
 		obj = objt;
 		damage = fite;
-		super.setVelX(spd);
-		super.setVelY(0);
-		super
+		setVelX(spd);
+		setVelY(0);
+		setHitBox(posX, posY, radius, radius);
 	}
 
 	public void collide(GameEntity other) {
