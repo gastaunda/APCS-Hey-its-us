@@ -8,10 +8,12 @@ import mobs.Mob;
 public class EntityList {
 	LinkedList<Projectile> projectiles;
 	ArrayList<Mob> mobs;
+	LinkedList<FloorObject> floorDrops;
 	
 	public EntityList(){
 		projectiles = new LinkedList<Projectile>();
 		mobs = new ArrayList<Mob>();
+		floorDrops = new LinkedList<FloorObject>();
 	}
 	
 	public LinkedList<Projectile> getProjectiles(){
@@ -20,5 +22,9 @@ public class EntityList {
 	
 	public ArrayList<Mob> getMobs(){
 		return mobs;
+	}
+	
+	public LinkedList<FloorObject> getFloor(){
+		return floorDrops;
 	}
 }
