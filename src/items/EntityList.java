@@ -27,4 +27,13 @@ public class EntityList {
 	public LinkedList<FloorObject> getFloor(){
 		return floorDrops;
 	}
+	
+	public void frameAdvance(){
+		for(Projectile a: projectiles){
+			for(Mob x: mobs){
+				if(a.HitBox().collisionCheck(x.HitBox()))
+					a.collide(x);				
+			}
+		}
+	}
 }

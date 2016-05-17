@@ -23,12 +23,14 @@ public class Projectile extends GameEntity
 		other.takedamage(damage);
 		
 	}
-	
-	public void collide(Wall other){
-		
-	}
-	
 	public void collide(Floor other){
 		setVelY(0 - getVelY());
+	}
+	public void move(){
+		super.move();
+		durration--;
+	}
+	public int remainingLife(){
+		return durration;
 	}
 }
