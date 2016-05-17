@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import mobs.Mob;
+import mobs.Player;
 
 public class EntityList {
 	LinkedList<Projectile> projectiles;
 	ArrayList<Mob> mobs;
 	LinkedList<FloorObject> floorDrops;
+	Player player;
 	
 	public EntityList(){
 		projectiles = new LinkedList<Projectile>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
+		player = new Player(10, 10, new GameObject[4], 0, 0, 5, 2); // feel free to mess with these values
 	}
 	
 	public LinkedList<Projectile> getProjectiles(){
@@ -34,6 +37,17 @@ public class EntityList {
 				if(a.HitBox().collisionCheck(x.HitBox()))
 					a.collide(x);				
 			}
+			if(a.HitBox().collisionCheck(player.HitBox()))
+				a.collide(player);
 		}
+		for(Mob x: mobs){
+			if(x.HitBox().collisionCheck(player.HitBox()))
+				x.collide(player);
+		}
+		for()
+	}
+	
+	public void kill(){ // ends game (player is dead)
+		
 	}
 }
