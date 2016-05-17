@@ -1,5 +1,7 @@
 package mobs;
 
+import javax.swing.ImageIcon;
+
 import items.GameEntity;
 import items.GameObject;
 
@@ -10,8 +12,16 @@ public class Mob extends GameEntity {
 								// rows?
 	protected int held;			// no.
 	protected int atk;
-
-	public Mob(int maxHealth, int health, int attack, GameObject[] inventory, double posX, double posY, double height, double width) {
+	
+	protected ImageIcon myImage;
+	protected double myHeight;
+	protected double myWidth;
+	
+	public Mob(int maxHealth, int health, int attack, GameObject[] inventory, double posX, double posY, double height, double width, ImageIcon image) 
+	{
+		myHeight = height;
+		myWidth = width;
+		myImage = image;
 		maxHp = maxHealth;
 		hp = health;
 		inv = inventory;
@@ -46,9 +56,24 @@ public class Mob extends GameEntity {
 		other.takedamage(atk);
 
 	}
+	
+	public ImageIcon getImage()
+	{
+		return myImage;
+	}
 
 	public void kill() {
 
+	}
+	
+	public double getHeight()
+	{
+		return myHeight;
+	}
+	
+	public double getWidth()
+	{
+		return myWidth;
 	}
 
 	public void addObj(GameObject obj) {
@@ -57,5 +82,29 @@ public class Mob extends GameEntity {
 
 	public void setDropInv(GameObject[] inventory) {
 		inv = inventory;
+	}
+	
+	public void MoveLeft()
+	{
+		setVelX(-1);
+		move();
+	}
+
+	public void MoveRight()
+	{
+		setVelX(1);
+		move();
+	}
+	
+	public void jump()
+	{
+		setVelY(1);
+		move();
+	}
+	
+	public void MoveDown()
+	{
+		setVelY(-1);
+		move();
 	}
 }
