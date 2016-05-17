@@ -2,12 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/SoundSystem/CodecJOrbis.jar"/>
-	<classpathentry kind="lib" path="/SoundSystem/LibraryJavaSound.jar"/>
-	<classpathentry kind="lib" path="/SoundSystem/SoundSystem.jar"/>
 	<classpathentry kind="lib" path="/EasyOgg/easyogg.jar"/>
 	<classpathentry kind="lib" path="/EasyOgg/jogg-0.0.7.jar"/>
 	<classpathentry kind="lib" path="/EasyOgg/jorbis-0.0.15.jar"/>
 	<classpathentry kind="lib" path="Assets.jar"/>
+	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
