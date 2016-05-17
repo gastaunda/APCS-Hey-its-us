@@ -53,6 +53,7 @@ public class Music {
 					;
 			}
 		};
+		player.start();
 	}
 	
 	public void stop() {
