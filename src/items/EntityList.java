@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import mobs.Mob;
 import mobs.Player;
-
+// this class may not be needed
 public class EntityList {
 	LinkedList<Projectile> projectiles;
 	ArrayList<Mob> mobs;
@@ -44,7 +44,6 @@ public class EntityList {
 			if(x.HitBox().collisionCheck(player.HitBox()))
 				x.collide(player);
 		}
-		for()
 	}
 	
 	public void kill(){ // ends game (player is dead)
