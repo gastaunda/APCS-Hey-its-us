@@ -8,7 +8,7 @@ public class Game
 
 	public Game() {
 		GameMenu.main(null);
-		Music m = new Music("There is no game.ogg");
+		Music m = new Music("assets\\audio\\music\\There is no game.ogg");
 		m.loop();
 	}
 
