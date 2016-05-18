@@ -113,15 +113,7 @@ public class Credits {
 		gbc_lblGnuLesserGeneral.gridy = 7;
 		frame.getContentPane().add(lblGnuLesserGeneral, gbc_lblGnuLesserGeneral);
 		
-		JLabel lblGarrisonAustanda = DefaultComponentFactory.getInstance().createLabel("Garrison Austanda");
-		lblGarrisonAustanda.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblGarrisonAustanda = new GridBagConstraints();
-		gbc_lblGarrisonAustanda.insets = new Insets(0, 0, 5, 5);
-		gbc_lblGarrisonAustanda.gridx = 4;
-		gbc_lblGarrisonAustanda.gridy = 8;
-		frame.getContentPane().add(lblGarrisonAustanda, gbc_lblGarrisonAustanda);
-		
-		JLabel lblAnubhavGarg = DefaultComponentFactory.getInstance().createLabel("Anubhav Garg");
+		JLabel lblAnubhavGarg = DefaultComponentFactory.getInstance().createLabel("Group Members:");
 		lblAnubhavGarg.setForeground(new Color(255, 204, 153));
 		GridBagConstraints gbc_lblAnubhavGarg = new GridBagConstraints();
 		gbc_lblAnubhavGarg.insets = new Insets(0, 0, 5, 5);
@@ -129,7 +121,7 @@ public class Credits {
 		gbc_lblAnubhavGarg.gridy = 9;
 		frame.getContentPane().add(lblAnubhavGarg, gbc_lblAnubhavGarg);
 		
-		JLabel lblWillLum = DefaultComponentFactory.getInstance().createLabel("Will Lum");
+		JLabel lblWillLum = DefaultComponentFactory.getInstance().createLabel("Garrison Austanda / Anubhav Garg");
 		lblWillLum.setForeground(new Color(255, 204, 153));
 		GridBagConstraints gbc_lblWillLum = new GridBagConstraints();
 		gbc_lblWillLum.insets = new Insets(0, 0, 5, 5);
@@ -137,7 +129,7 @@ public class Credits {
 		gbc_lblWillLum.gridy = 10;
 		frame.getContentPane().add(lblWillLum, gbc_lblWillLum);
 		
-		JLabel lblJoshuaSamuel = DefaultComponentFactory.getInstance().createLabel("Joshua Samuel");
+		JLabel lblJoshuaSamuel = DefaultComponentFactory.getInstance().createLabel(" Will Lum  / Joshua Samuel");
 		lblJoshuaSamuel.setForeground(new Color(255, 204, 153));
 		GridBagConstraints gbc_lblJoshuaSamuel = new GridBagConstraints();
 		gbc_lblJoshuaSamuel.insets = new Insets(0, 0, 5, 5);

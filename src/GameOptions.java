@@ -73,8 +73,7 @@ public class GameOptions {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Credits.main(null);
-			frmGameOptions.dispose();
+			//Display Credits page
 		}
 	}
 }
