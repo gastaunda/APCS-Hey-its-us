@@ -97,12 +97,28 @@ public class Credits {
 		gbc_lblHttpcreativecommonsorglicensesby.gridy = 5;
 		frame.getContentPane().add(lblHttpcreativecommonsorglicensesby, gbc_lblHttpcreativecommonsorglicensesby);
 		
+		JLabel lblEasyoggByCoke = DefaultComponentFactory.getInstance().createLabel("easyogg by Coke and Code/Kevin Glass Which uses jorbis under the");
+		lblEasyoggByCoke.setForeground(new Color(255, 204, 153));
+		GridBagConstraints gbc_lblEasyoggByCoke = new GridBagConstraints();
+		gbc_lblEasyoggByCoke.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEasyoggByCoke.gridx = 4;
+		gbc_lblEasyoggByCoke.gridy = 6;
+		frame.getContentPane().add(lblEasyoggByCoke, gbc_lblEasyoggByCoke);
+		
+		JLabel lblGnuLesserGeneral = DefaultComponentFactory.getInstance().createLabel(" GNU LESSER GENERAL PUBLIC LICENSE v2.1 (refer to jorbis COPYING.LIB)");
+		lblGnuLesserGeneral.setForeground(new Color(255, 204, 153));
+		GridBagConstraints gbc_lblGnuLesserGeneral = new GridBagConstraints();
+		gbc_lblGnuLesserGeneral.insets = new Insets(0, 0, 5, 5);
+		gbc_lblGnuLesserGeneral.gridx = 4;
+		gbc_lblGnuLesserGeneral.gridy = 7;
+		frame.getContentPane().add(lblGnuLesserGeneral, gbc_lblGnuLesserGeneral);
+		
 		JLabel lblGarrisonAustanda = DefaultComponentFactory.getInstance().createLabel("Garrison Austanda");
 		lblGarrisonAustanda.setForeground(new Color(255, 204, 153));
 		GridBagConstraints gbc_lblGarrisonAustanda = new GridBagConstraints();
 		gbc_lblGarrisonAustanda.insets = new Insets(0, 0, 5, 5);
 		gbc_lblGarrisonAustanda.gridx = 4;
-		gbc_lblGarrisonAustanda.gridy = 7;
+		gbc_lblGarrisonAustanda.gridy = 8;
 		frame.getContentPane().add(lblGarrisonAustanda, gbc_lblGarrisonAustanda);
 		
 		JLabel lblAnubhavGarg = DefaultComponentFactory.getInstance().createLabel("Anubhav Garg");
@@ -110,7 +126,7 @@ public class Credits {
 		GridBagConstraints gbc_lblAnubhavGarg = new GridBagConstraints();
 		gbc_lblAnubhavGarg.insets = new Insets(0, 0, 5, 5);
 		gbc_lblAnubhavGarg.gridx = 4;
-		gbc_lblAnubhavGarg.gridy = 8;
+		gbc_lblAnubhavGarg.gridy = 9;
 		frame.getContentPane().add(lblAnubhavGarg, gbc_lblAnubhavGarg);
 		
 		JLabel lblWillLum = DefaultComponentFactory.getInstance().createLabel("Will Lum");
@@ -118,7 +134,7 @@ public class Credits {
 		GridBagConstraints gbc_lblWillLum = new GridBagConstraints();
 		gbc_lblWillLum.insets = new Insets(0, 0, 5, 5);
 		gbc_lblWillLum.gridx = 4;
-		gbc_lblWillLum.gridy = 9;
+		gbc_lblWillLum.gridy = 10;
 		frame.getContentPane().add(lblWillLum, gbc_lblWillLum);
 		
 		JLabel lblJoshuaSamuel = DefaultComponentFactory.getInstance().createLabel("Joshua Samuel");
@@ -126,7 +142,7 @@ public class Credits {
 		GridBagConstraints gbc_lblJoshuaSamuel = new GridBagConstraints();
 		gbc_lblJoshuaSamuel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblJoshuaSamuel.gridx = 4;
-		gbc_lblJoshuaSamuel.gridy = 10;
+		gbc_lblJoshuaSamuel.gridy = 11;
 		frame.getContentPane().add(lblJoshuaSamuel, gbc_lblJoshuaSamuel);
 		
 		JButton btnBackToMain = new JButton("Back To Main Menu");
