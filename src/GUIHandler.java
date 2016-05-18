@@ -57,11 +57,10 @@ public class GUIHandler extends JPanel implements ActionListener, KeyListener {
 		}
 		if (code == KeyEvent.VK_RIGHT) {
 			player.MoveRight();
+		} else if (code == KeyEvent.VK_LEFT) {
+			player.MoveLeft();
 		} else if (player.getVelX() > 0) {
 			player.setVelX(player.getVelX() - .1);
-		}
-		if (code == KeyEvent.VK_LEFT) {
-			player.MoveLeft();
 		} else if (player.getVelX() < 0) {
 			player.setVelX(player.getVelX() + .1);
 		}
