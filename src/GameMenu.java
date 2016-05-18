@@ -18,6 +18,7 @@ public class GameMenu {
 	private JFrame frmMainMenu;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
+	private final Action action_2 = new SwingAction_2();
 
 	/**
 	 * Launch the application.
@@ -56,6 +57,7 @@ public class GameMenu {
 		frmMainMenu.getContentPane().add(desktopPane, BorderLayout.CENTER);
 
 		JButton btnNewButton = new JButton("Levels");
+		btnNewButton.setAction(action_2);
 		btnNewButton.setFont(UIManager.getFont("Button.font"));
 		btnNewButton.setBounds(166, 10, 104, 23);
 		desktopPane.add(btnNewButton);
@@ -107,6 +109,16 @@ public class GameMenu {
 		}
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
+			frmMainMenu.dispose();
+		}
+	}
+	private class SwingAction_2 extends AbstractAction {
+		public SwingAction_2() {
+			putValue(NAME, "Levels");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Levels.main(null);
 			frmMainMenu.dispose();
 		}
 	}

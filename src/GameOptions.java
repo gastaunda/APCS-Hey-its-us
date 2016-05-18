@@ -55,15 +55,15 @@ public class GameOptions {
 		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
 		
 		JButton btnHowToPlay = new JButton("How To Play");
-		btnHowToPlay.setBounds(156, 25, 123, 23);
+		btnHowToPlay.setBounds(144, 25, 145, 23);
 		desktopPane.add(btnHowToPlay);
 		
-		JButton btnNewButton = new JButton("Credits");
-		btnNewButton.setBounds(156, 176, 123, 23);
-		desktopPane.add(btnNewButton);
+		JButton btnCredits = new JButton("Credits");
+		btnCredits.setBounds(144, 180, 145, 23);
+		desktopPane.add(btnCredits);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
-		btnBackToMain.setBounds(156, 226, 123, 23);
+		btnBackToMain.setBounds(144, 225, 145, 23);
 		desktopPane.add(btnBackToMain);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
