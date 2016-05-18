@@ -1,13 +1,12 @@
 package mobs;
-import items.GameObject;
+import javax.swing.ImageIcon;
 
-//don't we need protected GameObject[] hotbar;?  Or will the hotbar work off the inv?
-//i.e. hotbar is first row of inventory? 
+import items.GameObject; 
 
 public class Player extends Mob {
 
-	public Player(int maxHealth, int health, GameObject[] inventory, double posX, double posY, double height, double width) {
-		super(maxHealth, health, 0, inventory, posX, posY, height, width);
+	public Player(int maxHealth, int health, GameObject[] inventory, double posX, double posY, double height, double width, ImageIcon image) {
+		super(maxHealth, health, 0, inventory, posX, posY, height, width,image);
 		
 	}
 	
