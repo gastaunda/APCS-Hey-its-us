@@ -1,3 +1,6 @@
+easyogg by Coke and Code/Kevin Glass
+	Which uses jorbis under the GNU LESSER GENERAL PUBLIC LICENSE v2.1 (refer to jorbis COPYING.LIB)
+
 Local Forecast - Elevator Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
 http://creativecommons.org/licenses/by/3.0/
