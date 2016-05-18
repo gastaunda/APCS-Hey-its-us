@@ -15,7 +15,7 @@ public class Level {
 	private GameEntity[] entities;
 	
 	
-	ImageIcon playerimage = new ImageIcon("player.jpg");
+	ImageIcon playerimage = new ImageIcon("LH_95.jpg");
 	public BufferedImage[] getSprites() {
 		return sprites;
 	}
