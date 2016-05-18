@@ -50,7 +50,9 @@ public class GUIHandler extends JPanel implements ActionListener, KeyListener {
 		int code = e.getKeyCode();
 		if (code == KeyEvent.VK_UP) {
 			player.jump();
+		} else if (player.getVelY() > 0) {
 
+			player.setVelY(player.getVelY() - .1);
 		}
 		if (code == KeyEvent.VK_DOWN) {
 			player.MoveDown();
@@ -65,6 +67,7 @@ public class GUIHandler extends JPanel implements ActionListener, KeyListener {
 		} else if (player.getVelX() < 0) {
 			player.setVelX(player.getVelX() + .1);
 		}
+
 	}
 
 	public void keyTyped(KeyEvent e) {
