@@ -1,11 +1,17 @@
 package mobs;
 import javax.swing.ImageIcon;
 
+
+import items.GameObject;
+
+
 import items.GameObject; 
 
 public class Player extends Mob {
 
-	public Player(int maxHealth, int health, GameObject[] inventory, double posX, double posY, double height, double width, ImageIcon image) {
+	
+	public Player(int maxHealth, int health, GameObject[] inventory, double posX, double posY, double height, double width,ImageIcon image) {
+
 		super(maxHealth, health, 0, inventory, posX, posY, height, width,image);
 		
 	}
