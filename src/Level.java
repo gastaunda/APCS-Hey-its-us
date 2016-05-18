@@ -22,7 +22,7 @@ public class Level {
 	
 	public void loadlevel()
 	{
-		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5);
+		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5,playerimage);
 		GUIHandler gui = new GUIHandler(myPlayer);
 	}
 }
