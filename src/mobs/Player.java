@@ -19,14 +19,4 @@ public class Player extends Mob {
 	public GameObject[] invAccess(){
 		return super.inv;
 	}
-	
-	public void jump()
-	{
-		setVelY(10);
-		//jump method involving physics
-		//Set Vy = -10;
-		//As ticks get bigger, Vy changes with time (maybe +1 V value per tick for example)
-	}
-	
-
 }
