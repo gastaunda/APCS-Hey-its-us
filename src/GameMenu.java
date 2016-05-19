@@ -51,11 +51,13 @@ public class GameMenu {
 		frmMainMenu = new JFrame();
 		frmMainMenu.getContentPane().setForeground(Color.BLACK);
 		frmMainMenu.setTitle("Main Menu");
-		frmMainMenu.setBounds(100, 100, 450, 300);
+		frmMainMenu.setSize(1280, 720);
 		frmMainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmMainMenu.getContentPane().setLayout(null);
 
 		JDesktopPane desktopPane = new JDesktopPane();
-		frmMainMenu.getContentPane().add(desktopPane, BorderLayout.CENTER);
+		desktopPane.setBounds(0, 0, 1362, 703);
+		frmMainMenu.getContentPane().add(desktopPane);
 
 		JButton btnNewButton = new JButton("Levels");
 		btnNewButton.setAction(action_2);
@@ -86,10 +88,10 @@ public class GameMenu {
 		desktopPane.add(btnExit);
 
 		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 3622, 3877);
+		frmMainMenu.getContentPane().add(label);
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frmMainMenu);
-		label.setBounds(0, 0, 3622, 3877);
-		desktopPane.add(label);
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frmMainMenu);
 	}
@@ -104,21 +106,25 @@ public class GameMenu {
 			System.exit(0);
 		}
 	}
+
 	private class SwingAction_1 extends AbstractAction {
 		public SwingAction_1() {
 			putValue(NAME, "Options");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
 			frmMainMenu.dispose();
 		}
 	}
+
 	private class SwingAction_2 extends AbstractAction {
 		public SwingAction_2() {
 			putValue(NAME, "Levels");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Levels.main(null);
 			frmMainMenu.dispose();

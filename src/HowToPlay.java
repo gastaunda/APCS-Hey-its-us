@@ -76,11 +76,11 @@ public class HowToPlay {
 
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
-			putValue(NAME, "SwingAction");
+			putValue(NAME, "Back to Game Options");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			GameMenu.main(null);
+			GameOptions.main(null);
 			frame.dispose();
 		}
 	}
