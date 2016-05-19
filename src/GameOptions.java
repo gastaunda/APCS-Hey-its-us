@@ -20,6 +20,7 @@ public class GameOptions {
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
 	private final Action action_2 = new SwingAction_2();
+	private final Action action_3 = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -62,6 +63,7 @@ public class GameOptions {
 		desktopPane.add(btnHowToPlay);
 		
 		JButton btnCredits = new JButton("Credits");
+		btnCredits.setAction(action_3);
 		btnCredits.setBounds(144, 180, 145, 23);
 		desktopPane.add(btnCredits);
 		
@@ -73,17 +75,6 @@ public class GameOptions {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "Credits");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-			Credits.main(null);
-			frame.dispose();
-		}
-	}
 	private class SwingAction_1 extends AbstractAction {
 		public SwingAction_1() {
 			putValue(NAME, "Back to Main Menu");
@@ -100,6 +91,18 @@ public class GameOptions {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
+			HowToPlay.main(null);
+			frame.dispose();
+		}
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Credits");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Credits.main(null);
+			frame.dispose();
 		}
 	}
 }

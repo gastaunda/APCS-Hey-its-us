@@ -21,10 +21,14 @@ import java.awt.Insets;
 import java.awt.Label;
 import java.awt.Button;
 import javax.swing.JButton;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
 
 public class Credits {
 
 	private JFrame frame;
+	private final Action action = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -137,7 +141,8 @@ public class Credits {
 		gbc_lblJoshuaSamuel.gridy = 11;
 		frame.getContentPane().add(lblJoshuaSamuel, gbc_lblJoshuaSamuel);
 		
-		JButton btnBackToMain = new JButton("Back To Main Menu");
+		JButton btnBackToMain = new JButton("Back To Game Options");
+		btnBackToMain.setAction(action);
 		GridBagConstraints gbc_btnBackToMain = new GridBagConstraints();
 		gbc_btnBackToMain.insets = new Insets(0, 0, 5, 5);
 		gbc_btnBackToMain.gridx = 4;
@@ -147,4 +152,14 @@ public class Credits {
 	}
 	
 
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Back to Game Options");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			GameOptions.main(null);
+			frame.dispose();
+		}
+	}
 }
