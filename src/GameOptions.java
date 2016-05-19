@@ -18,6 +18,8 @@ public class GameOptions {
 
 	private JFrame frame;
 	private final Action action = new SwingAction();
+	private final Action action_1 = new SwingAction_1();
+	private final Action action_2 = new SwingAction_2();
 
 	/**
 	 * Launch the application.
@@ -55,6 +57,7 @@ public class GameOptions {
 		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
 		
 		JButton btnHowToPlay = new JButton("How To Play");
+		btnHowToPlay.setAction(action_2);
 		btnHowToPlay.setBounds(144, 25, 145, 23);
 		desktopPane.add(btnHowToPlay);
 		
@@ -63,6 +66,7 @@ public class GameOptions {
 		desktopPane.add(btnCredits);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
+		btnBackToMain.setAction(action_1);
 		btnBackToMain.setBounds(144, 225, 145, 23);
 		desktopPane.add(btnBackToMain);
 		frame.setBounds(100, 100, 450, 300);
@@ -76,7 +80,26 @@ public class GameOptions {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			//Display Credits page
+			Credits.main(null);
+			frame.dispose();
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "Back to Main Menu");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			GameMenu.main(null);
+			frame.dispose();
+		}
+	}
+	private class SwingAction_2 extends AbstractAction {
+		public SwingAction_2() {
+			putValue(NAME, "How to Play");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
 		}
 	}
 }

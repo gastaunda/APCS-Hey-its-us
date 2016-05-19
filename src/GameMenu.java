@@ -19,6 +19,7 @@ public class GameMenu {
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
 	private final Action action_2 = new SwingAction_2();
+	private final Action action_3 = new SwingAction_3();
 
 	/**
 	 * Launch the application.
@@ -63,6 +64,7 @@ public class GameMenu {
 		desktopPane.add(btnNewButton);
 
 		JButton btnLevelPacks = new JButton("Level Packs");
+		btnLevelPacks.setAction(action_3);
 		btnLevelPacks.setFont(UIManager.getFont("Button.font"));
 		btnLevelPacks.setBounds(166, 44, 104, 23);
 		desktopPane.add(btnLevelPacks);
@@ -119,6 +121,16 @@ public class GameMenu {
 		}
 		public void actionPerformed(ActionEvent e) {
 			Levels.main(null);
+			frmMainMenu.dispose();
+		}
+	}
+	private class SwingAction_3 extends AbstractAction {
+		public SwingAction_3() {
+			putValue(NAME, "Level Packs");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			LevelPacks.main(null);
 			frmMainMenu.dispose();
 		}
 	}
