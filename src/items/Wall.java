@@ -1,9 +1,13 @@
 package items;
 
+import javax.swing.ImageIcon;
+
 public class Wall extends GameEntity{
-	private int walEnth;
-	public Wall(int length){
-		walEnth = length;
+	public Wall(double length, double xLoc, double yLoc){
+		setHitBox(xLoc, yLoc, length, length);
+		myImage = new ImageIcon("Brick.png");
+		setPosX(xLoc);
+		setPosY(yLoc);
 	}
 	@Override
 	public void collide(GameEntity other) {

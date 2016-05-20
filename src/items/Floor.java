@@ -1,9 +1,9 @@
 package items;
 
 public class Floor extends Wall {
-
-	public Floor(int length) {
-		super(length);
+	public Floor(double length, double xLoc, double yLoc) {
+		super(xLoc, yLoc, length);
+		setHitBox(xLoc, yLoc, 5, length);
 	}
 
 }
