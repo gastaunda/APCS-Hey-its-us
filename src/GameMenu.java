@@ -21,6 +21,10 @@ public class GameMenu {
 	private final Action action_2 = new SwingAction_2();
 	private final Action action_3 = new SwingAction_3();
 
+	public final static short btnWidth = 400;
+	public final static byte btnHeight = 50;
+	public final static short btnSpace = 80;
+
 	/**
 	 * Launch the application.
 	 */
@@ -49,43 +53,39 @@ public class GameMenu {
 	 */
 	private void initialize() {
 		frmMainMenu = new JFrame();
-		frmMainMenu.getContentPane().setForeground(Color.BLACK);
+		frmMainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMainMenu.setTitle("Main Menu");
 		frmMainMenu.setSize(1280, 720);
-		frmMainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMainMenu.getContentPane().setLayout(null);
 
-		JDesktopPane desktopPane = new JDesktopPane();
-		desktopPane.setBounds(0, 0, 1362, 703);
-		frmMainMenu.getContentPane().add(desktopPane);
 
 		JButton btnNewButton = new JButton("Levels");
+		btnNewButton.setBounds((1280 - btnWidth) / 2, 30, btnWidth, btnHeight);
+		frmMainMenu.getContentPane().add(btnNewButton);
 		btnNewButton.setAction(action_2);
 		btnNewButton.setFont(UIManager.getFont("Button.font"));
-		btnNewButton.setBounds(166, 10, 104, 23);
-		desktopPane.add(btnNewButton);
 
 		JButton btnLevelPacks = new JButton("Level Packs");
+		btnLevelPacks.setBounds((1280 - btnWidth) / 2, btnHeight + btnNewButton.getY() + btnSpace, btnWidth, btnHeight);
+		frmMainMenu.getContentPane().add(btnLevelPacks);
 		btnLevelPacks.setAction(action_3);
 		btnLevelPacks.setFont(UIManager.getFont("Button.font"));
-		btnLevelPacks.setBounds(166, 44, 104, 23);
-		desktopPane.add(btnLevelPacks);
 
 		JButton btnOptions = new JButton("Options");
+		btnOptions.setBounds((1280 - btnWidth) / 2, btnHeight + btnLevelPacks.getY() + btnSpace, btnWidth, btnHeight);
+		frmMainMenu.getContentPane().add(btnOptions);
 		btnOptions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		btnOptions.setAction(action_1);
 		btnOptions.setFont(UIManager.getFont("Button.font"));
-		btnOptions.setBounds(166, 78, 104, 23);
-		desktopPane.add(btnOptions);
 
 		JButton btnExit = new JButton("Exit");
+		btnExit.setBounds((1280 - btnWidth) / 2, 720 - 100 - btnHeight, btnWidth, btnHeight);
+		frmMainMenu.getContentPane().add(btnExit);
 		btnExit.setAction(action);
 		btnExit.setFont(UIManager.getFont("Button.font"));
-		btnExit.setBounds(166, 227, 104, 23);
-		desktopPane.add(btnExit);
 
 		JLabel label = new JLabel("");
 		label.setBounds(0, 0, 3622, 3877);
@@ -130,11 +130,13 @@ public class GameMenu {
 			frmMainMenu.dispose();
 		}
 	}
+
 	private class SwingAction_3 extends AbstractAction {
 		public SwingAction_3() {
 			putValue(NAME, "Level Packs");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			LevelPacks.main(null);
 			frmMainMenu.dispose();

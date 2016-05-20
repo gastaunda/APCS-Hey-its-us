@@ -16,7 +16,7 @@ import javax.swing.Action;
 
 public class GameOptions {
 
-	private JFrame frame;
+	private JFrame frmOptions;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
 	private final Action action_2 = new SwingAction_2();
@@ -30,7 +30,7 @@ public class GameOptions {
 			public void run() {
 				try {
 					GameOptions window = new GameOptions();
-					window.frame.setVisible(true);
+					window.frmOptions.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,30 +49,28 @@ public class GameOptions {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.getContentPane().setForeground(Color.BLACK);
-		
-		JDesktopPane desktopPane = new JDesktopPane();
-		desktopPane.setBackground(Color.BLACK);
-		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
+		frmOptions = new JFrame();
+		frmOptions.setTitle("Options");
+		frmOptions.setSize(1280, 720);
+		frmOptions.getContentPane().setBackground(Color.BLACK);
+		frmOptions.getContentPane().setForeground(Color.BLACK);
+		frmOptions.getContentPane().setLayout(null);
 		
 		JButton btnHowToPlay = new JButton("How To Play");
+		btnHowToPlay.setBounds((1280 - GameMenu.btnWidth) / 2, 30, GameMenu.btnWidth, GameMenu.btnHeight);
+		frmOptions.getContentPane().add(btnHowToPlay);
 		btnHowToPlay.setAction(action_2);
-		btnHowToPlay.setBounds(144, 25, 145, 23);
-		desktopPane.add(btnHowToPlay);
-		
-		JButton btnCredits = new JButton("Credits");
-		btnCredits.setAction(action_3);
-		btnCredits.setBounds(144, 180, 145, 23);
-		desktopPane.add(btnCredits);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
+		btnBackToMain.setBounds((1280 - GameMenu.btnWidth) / 2, 720 - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+		frmOptions.getContentPane().add(btnBackToMain);
 		btnBackToMain.setAction(action_1);
-		btnBackToMain.setBounds(144, 225, 145, 23);
-		desktopPane.add(btnBackToMain);
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton btnCredits = new JButton("Credits");
+		btnCredits.setBounds((1280 - GameMenu.btnWidth) / 2, btnBackToMain.getY() - GameMenu.btnHeight - GameMenu.btnSpace, GameMenu.btnWidth, GameMenu.btnHeight);
+		frmOptions.getContentPane().add(btnCredits);
+		btnCredits.setAction(action_3);
+		frmOptions.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	private class SwingAction_1 extends AbstractAction {
@@ -82,7 +80,7 @@ public class GameOptions {
 		}
 		public void actionPerformed(ActionEvent e) {
 			GameMenu.main(null);
-			frame.dispose();
+			frmOptions.dispose();
 		}
 	}
 	private class SwingAction_2 extends AbstractAction {
@@ -92,7 +90,7 @@ public class GameOptions {
 		}
 		public void actionPerformed(ActionEvent e) {
 			HowToPlay.main(null);
-			frame.dispose();
+			frmOptions.dispose();
 		}
 	}
 	private class SwingAction extends AbstractAction {
@@ -102,7 +100,7 @@ public class GameOptions {
 		}
 		public void actionPerformed(ActionEvent e) {
 			Credits.main(null);
-			frame.dispose();
+			frmOptions.dispose();
 		}
 	}
 }
