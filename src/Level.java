@@ -14,15 +14,19 @@ public class Level {
 	private BufferedImage[] sprites;
 	private GameEntity[] entities;
 	
+	public static void main(String[] args)
+	{
+		ImageIcon playerimage = new ImageIcon("LH_95.jpg");
+		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5,playerimage);
+		
+		GUIHandler gui = new GUIHandler(myPlayer);
+	}
 	
-	ImageIcon playerimage = new ImageIcon("LH_95.jpg");
+	
+	
 	public BufferedImage[] getSprites() {
 		return sprites;
 	}
 	
-	public void loadlevel()
-	{
-		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5,playerimage);
-		GUIHandler gui = new GUIHandler(myPlayer);
-	}
+	
 }
