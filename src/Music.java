@@ -62,6 +62,12 @@ public class Music {
 		loop.stop();
 	}
 	
+	public void close() {
+		if (start != null)
+			start.close();
+		loop.close();
+	}
+	
 	public void pause() {
 		if (start != null && !start.stopped())
 			start.pause();

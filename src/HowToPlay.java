@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
-
+import java.awt.Font;
 
 public class HowToPlay {
 
@@ -47,31 +47,22 @@ public class HowToPlay {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setSize(1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
-		
-		JLabel lblSorryWeDont = DefaultComponentFactory.getInstance().createLabel("Sorry, We don't have anything here at the moment");
+		frame.getContentPane().setLayout(null);
+
+		JLabel lblSorryWeDont = DefaultComponentFactory.getInstance()
+				.createLabel("Sorry, We don't have anything here at the moment");
+		lblSorryWeDont.setFont(new Font("Papyrus", Font.PLAIN, 50));
+		lblSorryWeDont.setBounds(120, 290, 1078, 80);
 		lblSorryWeDont.setForeground(Color.RED);
 		lblSorryWeDont.setBackground(Color.BLACK);
-		GridBagConstraints gbc_lblSorryWeDont = new GridBagConstraints();
-		gbc_lblSorryWeDont.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSorryWeDont.gridx = 4;
-		gbc_lblSorryWeDont.gridy = 4;
-		frame.getContentPane().add(lblSorryWeDont, gbc_lblSorryWeDont);
-		
+		frame.getContentPane().add(lblSorryWeDont);
+
 		JButton btnBackToMain = new JButton("Back to Main Menu");
+		btnBackToMain.setBounds((1280 - GameMenu.btnWidth) / 2, 720 - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		btnBackToMain.setAction(action);
-		GridBagConstraints gbc_btnBackToMain = new GridBagConstraints();
-		gbc_btnBackToMain.insets = new Insets(0, 0, 0, 5);
-		gbc_btnBackToMain.gridx = 4;
-		gbc_btnBackToMain.gridy = 7;
-		frame.getContentPane().add(btnBackToMain, gbc_btnBackToMain);
+		frame.getContentPane().add(btnBackToMain);
 	}
 
 	private class SwingAction extends AbstractAction {
@@ -79,6 +70,7 @@ public class HowToPlay {
 			putValue(NAME, "Back to Game Options");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
 			frame.dispose();
