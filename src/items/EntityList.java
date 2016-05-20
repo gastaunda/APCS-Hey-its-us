@@ -3,50 +3,75 @@ package items;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import javax.swing.ImageIcon;
+
 import mobs.Mob;
 import mobs.Player;
+
 // this class may not be needed
 public class EntityList {
 	LinkedList<Projectile> projectiles;
 	ArrayList<Mob> mobs;
 	LinkedList<FloorObject> floorDrops;
 	Player player;
-	
-	public EntityList(){
+
+	public EntityList() {
 		projectiles = new LinkedList<Projectile>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double)5, (double)2, null); // feel free to mess with these values
+		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
+				new ImageIcon("image.png")); // feel free to mess with these
+												// values
 	}
-	
-	public LinkedList<Projectile> getProjectiles(){
+
+	public void add(Projectile projfoj) {
+		projectiles.add(projfoj);
+	}
+
+	public void add(Mob mobfob) {
+		mobs.add(mobfob);
+	}
+
+	public void add(FloorObject floorboor) {
+		floorDrops.add(floorboor);
+	}
+
+	public LinkedList<Projectile> getProjectiles() {
 		return projectiles;
 	}
-	
-	public ArrayList<Mob> getMobs(){
+
+	public ArrayList<Mob> getMobs() {
 		return mobs;
 	}
-	
-	public LinkedList<FloorObject> getFloor(){
+
+	public LinkedList<FloorObject> getFloor() {
 		return floorDrops;
 	}
-	
-	public void frameAdvance(){
-		for(Projectile a: projectiles){
-			for(Mob x: mobs){
-				if(a.HitBox().collisionCheck(x.HitBox()))
-					a.collide(x);				
+
+	public void frameAdvance() {
+		for (Projectile a : projectiles) {
+			for (Mob x : mobs) {
+				if (a.HitBox().collisionCheck(x.HitBox()))
+					a.collide(x);
 			}
-			if(a.HitBox().collisionCheck(player.HitBox()))
+			if (a.HitBox().collisionCheck(player.HitBox()))
 				a.collide(player);
+			a.move();
 		}
-		for(Mob x: mobs){
-			if(x.HitBox().collisionCheck(player.HitBox()))
+		for (Mob x : mobs) {
+			if (x.HitBox().collisionCheck(player.HitBox()))
 				x.collide(player);
+			x.move();
 		}
+		player.move();
+
 	}
-	
-	public void kill(){ // ends game (player is dead)
-		
+
+	public Player player() {
+		return player;
+	}
+
+	public void kill() { // ends game (player is dead)
+
 	}
 }

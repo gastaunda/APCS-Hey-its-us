@@ -13,7 +13,7 @@ public class Tester
     public static void main (String args[])
     {
         JFrame f = new JFrame();
-        Graphic s = new Graphic();
+        GraphicExperiment s = new GraphicExperiment();
         f.add(s);
         
         f.setVisible(true);

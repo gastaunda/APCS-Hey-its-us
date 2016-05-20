@@ -26,8 +26,8 @@ public class Mob extends GameEntity {
 		atk = attack;
 		setPosX(posX);
 		setPosY(posY);
-		setVelX(0);
-		setVelY(0);
+		setVelX(10);
+		setVelY(10);
 		setAccX(0);
 		setAccY(0);
 		setHitBox(posX, posY, height, width);
