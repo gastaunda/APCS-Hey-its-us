@@ -1,3 +1,4 @@
+package GUIPractice;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -9,6 +10,7 @@ import javax.swing.*;       // access to JFrame and JComponents
 import javax.swing.event.*;     // access 
 
 import java.util.ArrayList;
+
 /**
  * Write a description of class Graphics here.
  * 
