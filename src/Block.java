@@ -22,3 +22,5 @@ public class Block {
 		}
 	}
 }
+
+//This needs a defined boundaries so when player enters that boundary, they have a velY of 0 (they stand up on the block)

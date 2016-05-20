@@ -1,17 +1,27 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
 import java.awt.GridBagLayout;
 import java.awt.Color;
+
 import javax.swing.JButton;
+
 import java.awt.GridBagConstraints;
+
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import java.awt.Insets;
+
 import javax.swing.AbstractAction;
+
 import java.awt.event.ActionEvent;
+
 import javax.swing.Action;
 
+import GUIPractice.Tester;
 
 public class Levels {
 
