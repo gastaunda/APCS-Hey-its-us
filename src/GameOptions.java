@@ -51,23 +51,23 @@ public class GameOptions {
 	private void initialize() {
 		frmOptions = new JFrame();
 		frmOptions.setTitle("Options");
-		frmOptions.setSize(1280, 720);
+		frmOptions.setSize(GameMenu.winWidth, GameMenu.winHeight);
 		frmOptions.getContentPane().setBackground(Color.BLACK);
 		frmOptions.getContentPane().setForeground(Color.BLACK);
 		frmOptions.getContentPane().setLayout(null);
 		
 		JButton btnHowToPlay = new JButton("How To Play");
-		btnHowToPlay.setBounds((1280 - GameMenu.btnWidth) / 2, 30, GameMenu.btnWidth, GameMenu.btnHeight);
+		btnHowToPlay.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, 30, GameMenu.btnWidth, GameMenu.btnHeight);
 		frmOptions.getContentPane().add(btnHowToPlay);
 		btnHowToPlay.setAction(action_2);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
-		btnBackToMain.setBounds((1280 - GameMenu.btnWidth) / 2, 720 - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		frmOptions.getContentPane().add(btnBackToMain);
 		btnBackToMain.setAction(action_1);
 		
 		JButton btnCredits = new JButton("Credits");
-		btnCredits.setBounds((1280 - GameMenu.btnWidth) / 2, btnBackToMain.getY() - GameMenu.btnHeight - GameMenu.btnSpace, GameMenu.btnWidth, GameMenu.btnHeight);
+		btnCredits.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, btnBackToMain.getY() - GameMenu.btnHeight - GameMenu.btnSpace, GameMenu.btnWidth, GameMenu.btnHeight);
 		frmOptions.getContentPane().add(btnCredits);
 		btnCredits.setAction(action_3);
 		frmOptions.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
