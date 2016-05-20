@@ -12,8 +12,6 @@ public class Mob extends GameEntity {
 								// rows?
 	protected int held;			// no.
 	protected int atk;
-	
-	protected ImageIcon myImage;
 	protected double myHeight;
 	protected double myWidth;
 	

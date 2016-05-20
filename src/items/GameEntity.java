@@ -1,5 +1,7 @@
 package items;
 
+import javax.swing.ImageIcon;
+
 public abstract class GameEntity {
 	private double posX;
 	private double posY;
@@ -12,7 +14,7 @@ public abstract class GameEntity {
 	private int health;
 	private float bounce;
 	private HitBox hitBox;
-	
+	protected ImageIcon myImage;
 	public void takedamage(int x) {
 		health -= x;
 	}
@@ -92,7 +94,9 @@ public abstract class GameEntity {
 		hitBox.setPosX(posX);
 		hitBox.setPosY(posY);
 	}
-	
+	public ImageIcon imageIcon(){
+		return myImage;
+	}
 	public void collide(GameEntity other){
 		
 	}
