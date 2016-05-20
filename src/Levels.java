@@ -17,6 +17,7 @@ public class Levels {
 
 	private JFrame frame;
 	private final Action action = new SwingAction();
+	private final Action action_1 = new SwingAction_1();
 
 	/**
 	 * Launch the application.
@@ -69,6 +70,7 @@ public class Levels {
 		frame.getContentPane().add(lblLevelSelect, gbc_lblLevelSelect);
 		
 		JButton button = new JButton("1");
+		button.setAction(action_1);
 		GridBagConstraints gbc_button = new GridBagConstraints();
 		gbc_button.insets = new Insets(0, 0, 5, 5);
 		gbc_button.gridx = 3;
@@ -105,6 +107,16 @@ public class Levels {
 		}
 		public void actionPerformed(ActionEvent e) {
 			GameMenu.main(null);
+			frame.dispose();
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "1");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Level.main(null);
 			frame.dispose();
 		}
 	}
