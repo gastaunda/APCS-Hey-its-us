@@ -116,7 +116,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Level.main(null);
+			Tester.main(null);
 			frame.dispose();
 		}
 	}
