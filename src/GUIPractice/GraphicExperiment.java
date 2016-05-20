@@ -9,6 +9,8 @@ import java.awt.event.*;    // access to WindowAdapter, WindowEvent
 import javax.swing.*;       // access to JFrame and JComponents
 import javax.swing.event.*;     // access 
 
+import items.EntityList;
+
 import java.util.ArrayList;
 
 /**
@@ -19,6 +21,7 @@ import java.util.ArrayList;
  */
 public class GraphicExperiment extends JPanel implements ActionListener,KeyListener
 {
+	private EntityList lischt = new EntityList();
     Timer t = new Timer(5,this);
     private ArrayList<Double> moveX = new ArrayList<Double>();
     private ArrayList<Double> moveY = new ArrayList<Double>();
@@ -36,9 +39,9 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        ImageIcon image = new ImageIcon("image.png");
+        ImageIcon image = lischt.player().getImage();
         
-        image.paintIcon(this,g,(int)x,(int)y);
+        image.paintIcon(this,g,(int)lischt.player().getPosX(),(int)lischt.player().getPosY());
         for (double i = 0; i < 200; i= i + 100)
         {
             ImageIcon brick = new ImageIcon("Brick.png");
@@ -58,49 +61,11 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
     public void actionPerformed(ActionEvent e)
     {
         repaint();
-
-        if (x >= 0)
-        {
-            x += velx;
-            if (!canMove(x,y))
-            {
-                x -= velx;
-                velx = 0;
-            }
-        }
-        else
-        {
-            x = 0;
-        }
-
-        if (y <= 400)
-        {
-            accel = 0.1;
-            vely += accel;
-            y += vely;
-            if (!canMove(x,y))
-            {
-                y -= vely;
-                vely = 0;
-            }
-        }
-        else
-        {
-            y = 400;
-            accel = 0;
-            y += vely;
-        }
+        lischt.frameAdvance();
     }
 
     public boolean canMove(double x,double y)
     {
-        for (int i = 0; i < moveX.size(); i++)
-        {
-            if (moveX.get(i) == x || moveY.get(i) == y)
-            {
-                return false;
-            }
-        }
         return true;
     }
 
@@ -129,29 +94,29 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_UP)
         {
-            up();
+            lischt.player().setVelY(-5);
         }
 
         if (code == KeyEvent.VK_DOWN)
         {
-            down();
+            lischt.player().setVelY(5);
         }
 
         if (code == KeyEvent.VK_RIGHT)
         {
-            right();
+            lischt.player().setVelX(3);
         }
 
         if (code == KeyEvent.VK_LEFT)
         {
-            left();
+            lischt.player().setVelX(-3);
         }
 
     }
 
     public void keyReleased(KeyEvent e)
     {
-        velx = 0;
+        lischt.player().setVelX(0);
     }
 
     public void keyTyped(KeyEvent e)

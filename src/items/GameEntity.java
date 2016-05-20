@@ -9,8 +9,8 @@ public abstract class GameEntity {
 	private double velY;
 	private double accX;
 	private double accY;
-	private double vXMax;
-	private double vYMax;
+	private double vXMax = 5;
+	private double vYMax = 5;
 	private int health;
 	private float bounce;
 	private HitBox hitBox;
@@ -89,8 +89,12 @@ public abstract class GameEntity {
 		velY += accY;
 		if (velX > vXMax)
 			velX = vXMax;
+		else if(velX < -vXMax)
+			velX = -vXMax;
 		if (velY > vYMax)
-			velY = vYMax;	
+			velY = vYMax;
+		else if(velY < -vYMax)
+			velY = -vYMax;
 		hitBox.setPosX(posX);
 		hitBox.setPosY(posY);
 	}
