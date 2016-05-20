@@ -1,3 +1,5 @@
+package GUIPractice;
+
 
 import javax.swing.JFrame;
 /**
