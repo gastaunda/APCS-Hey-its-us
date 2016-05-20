@@ -10,7 +10,7 @@ public class Game
 
 	public Game() {
 		GameMenu.main(null);
-		m = new Music("assets\\audio\\music\\There is no game.ogg");
+		m = new Music("assets\\audio\\music\\Local Forecast - Elevator.ogg");
 		m.loop();
 	}
 
