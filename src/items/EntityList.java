@@ -16,7 +16,7 @@ public class EntityList {
 		projectiles = new LinkedList<Projectile>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(10, 10, new GameObject[4], 0, 0, 5, 2); // feel free to mess with these values
+		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double)5, (double)2, null); // feel free to mess with these values
 	}
 	
 	public LinkedList<Projectile> getProjectiles(){
