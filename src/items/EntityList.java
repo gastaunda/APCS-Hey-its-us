@@ -72,6 +72,19 @@ public class EntityList {
 			if(a.HitBox().collisionCheck(player.HitBox()))
 					a.collide(player);
 		}
+		for (Wall a : walls) {
+			for (Mob x : mobs) {
+				if (a.HitBox().collisionCheck(x.HitBox()))
+					a.collide(x);
+
+			}
+			for(Projectile p: projectiles){
+				if(a.HitBox().collisionCheck(p.HitBox()))
+					a.collide(p);
+			}
+			if(a.HitBox().collisionCheck(player.HitBox()))
+					a.collide(player);
+		}
 		for (Projectile a : projectiles) {
 			for (Mob x : mobs) {
 				if (a.HitBox().collisionCheck(x.HitBox()))

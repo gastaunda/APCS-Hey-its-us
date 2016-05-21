@@ -24,10 +24,6 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 {
 	private EntityList lischt = new EntityList();
     Timer t = new Timer(5,this);
-    private ArrayList<Double> moveX = new ArrayList<Double>();
-    private ArrayList<Double> moveY = new ArrayList<Double>();
-    double x = 0, y = 0, velx = 0, vely = 0;
-    double accel = 0.3;
 
     public GraphicExperiment()
     {
@@ -60,26 +56,6 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
     public boolean canMove(double x,double y)
     {
         return true;
-    }
-
-    public void up()
-    {
-        vely = -5;
-    }
-
-    public void down()
-    {
-        vely = 5;
-    }
-
-    public void left()
-    {
-        velx = -3;
-    }
-
-    public void right()
-    {
-        velx = 3;
     }
 
     public void keyPressed(KeyEvent e)
