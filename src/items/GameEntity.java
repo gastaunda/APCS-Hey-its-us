@@ -15,8 +15,17 @@ public abstract class GameEntity {
 	private float bounce;
 	private HitBox hitBox;
 	protected ImageIcon myImage;
+	private boolean grounded;
 	public void takedamage(int x) {
 		health -= x;
+	}
+	
+	public void setGround(boolean turing){
+		grounded = turing;
+	}
+	
+	public boolean getGround(){
+		return grounded;
 	}
 	
 	public int getHealth(){

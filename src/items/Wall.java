@@ -11,6 +11,6 @@ public class Wall extends GameEntity{
 	}
 	@Override
 	public void collide(GameEntity other) {
-		other.setVelX(-other.getVelX());		
+		other.setVelX(-other.getVelX());
 	}
 }

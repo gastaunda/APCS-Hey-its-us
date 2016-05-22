@@ -11,19 +11,19 @@ import mobs.Player;
 // this class may not be needed
 public class EntityList {
 	LinkedList<Projectile> projectiles;
-	LinkedList<Wall> walls;
+	ArrayList<Wall> walls;
 	ArrayList<Mob> mobs;
 	LinkedList<FloorObject> floorDrops;
 	Player player;
 
 	public EntityList() {
 		projectiles = new LinkedList<Projectile>();
-		walls = new LinkedList<Wall>();
+		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
 		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
 				new ImageIcon("image.png")); // feel free to mess with these
-												// values
+		player.setAccY(1);									// values
 	}
 
 	public void add(Projectile projfoj) {
@@ -36,6 +36,7 @@ public class EntityList {
 
 	public void add(Mob mobfob) {
 		mobs.add(mobfob);
+		mobfob.setAccY(3.62134);
 	}
 
 	public void add(FloorObject floorboor) {
@@ -46,7 +47,7 @@ public class EntityList {
 		return projectiles;
 	}
 	
-	public LinkedList<Wall> getWalls(){
+	public ArrayList<Wall> getWalls(){
 		return walls;
 	}
 
@@ -59,31 +60,18 @@ public class EntityList {
 	}
 
 	public void frameAdvance() {
-		for (Wall a : walls) {
+		for (int a = 0; a < walls.size(); a++) {
 			for (Mob x : mobs) {
-				if (a.HitBox().collisionCheck(x.HitBox()))
-					a.collide(x);
+				if (walls.get(a).HitBox().collisionCheck(x.HitBox()))
+					walls.get(a).collide(x);
 
 			}
 			for(Projectile p: projectiles){
-				if(a.HitBox().collisionCheck(p.HitBox()))
-					a.collide(p);
+				if((walls.get(a)).HitBox().collisionCheck(p.HitBox()))
+					walls.get(a).collide(p);
 			}
-			if(a.HitBox().collisionCheck(player.HitBox()))
-					a.collide(player);
-		}
-		for (Wall a : walls) {
-			for (Mob x : mobs) {
-				if (a.HitBox().collisionCheck(x.HitBox()))
-					a.collide(x);
-
-			}
-			for(Projectile p: projectiles){
-				if(a.HitBox().collisionCheck(p.HitBox()))
-					a.collide(p);
-			}
-			if(a.HitBox().collisionCheck(player.HitBox()))
-					a.collide(player);
+			if(walls.get(a).HitBox().collisionCheck(player.HitBox()))
+					walls.get(a).collide(player);
 		}
 		for (Projectile a : projectiles) {
 			for (Mob x : mobs) {

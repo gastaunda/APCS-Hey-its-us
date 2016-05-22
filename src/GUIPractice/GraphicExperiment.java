@@ -10,6 +10,7 @@ import javax.swing.*;       // access to JFrame and JComponents
 import javax.swing.event.*;     // access 
 
 import items.EntityList;
+import items.Floor;
 import items.Wall;
 
 import java.util.ArrayList;
@@ -35,9 +36,9 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void paintComponent(Graphics g)
     {
-    	for (double i = 100; i <= 200; i= i + 100)
+    	for (double i = 0; i <= 200; i += 25)
         {
-            lischt.add(new Wall(25, i, i));
+            lischt.add(new Floor(25, i, 200));
         }
         super.paintComponent(g);
         lischt.player().getImage().paintIcon(this,g,(int)lischt.player().getPosX(),(int)lischt.player().getPosY());
@@ -49,8 +50,8 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void actionPerformed(ActionEvent e)
     {
+    	lischt.frameAdvance();
         repaint();
-        lischt.frameAdvance();
     }
 
     public boolean canMove(double x,double y)
@@ -61,9 +62,10 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
     public void keyPressed(KeyEvent e)
     {
         int code = e.getKeyCode();
-        if (code == KeyEvent.VK_UP)
+        if (code == KeyEvent.VK_UP && lischt.player().getGround())
         {
-            lischt.player().setVelY(-5);
+            lischt.player().setVelY(-200);
+            lischt.player().move();
         }
 
         if (code == KeyEvent.VK_DOWN)
@@ -85,8 +87,7 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void keyReleased(KeyEvent e)
     {
-    	lischt.player().setVelY(0);
-        lischt.player().setVelX(0);
+
     }
 
     public void keyTyped(KeyEvent e)
