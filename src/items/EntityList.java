@@ -23,7 +23,7 @@ public class EntityList {
 		floorDrops = new LinkedList<FloorObject>();
 		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
 				new ImageIcon("image.png")); // feel free to mess with these
-		player.setAccY(1);									// values
+		player.setAccY(.25);									// values
 	}
 
 	public void add(Projectile projfoj) {

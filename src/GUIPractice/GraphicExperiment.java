@@ -64,7 +64,7 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_UP && lischt.player().getGround())
         {
-            lischt.player().setVelY(-200);
+            lischt.player().setVelY(-5);
             lischt.player().move();
         }
 
