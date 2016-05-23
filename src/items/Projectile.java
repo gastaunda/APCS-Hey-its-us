@@ -1,5 +1,7 @@
 package items;
 
+import javax.swing.ImageIcon;
+
 import items.Wall;
 
 public class Projectile extends GameEntity
@@ -7,16 +9,17 @@ public class Projectile extends GameEntity
 	//private double gravity;
 	//private int speed;
 	private int durration;
-	private GameObject obj;
 	private int damage;
-	Projectile(double grav, double spd, float bounces, int bnce, int life,int fite, GameObject objt, double posX, double posY, double radius)
+	public Projectile(double grav, double spd, int life,int fite, double posX, double posY)
 	{
 		durration = life;
-		obj = objt;
 		damage = fite;
+		setPosX(posX);
+		setPosX(posY);
 		setVelX(spd);
 		setVelY(0);
-		setHitBox(posX, posY, radius, radius);
+		setHitBox(posX, posY, 10,10);
+		super.myImage = new ImageIcon("boolet.png");
 	}
 
 	public void collide(GameEntity other) {

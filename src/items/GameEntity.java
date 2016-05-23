@@ -23,7 +23,10 @@ public abstract class GameEntity {
 	public void setGround(boolean turing){
 		grounded = turing;
 	}
-	
+	public void setMaxVel(double max){
+		vXMax = max;
+		vYMax = max;
+	}
 	public boolean getGround(){
 		return grounded;
 	}

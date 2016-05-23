@@ -11,7 +11,9 @@ import javax.swing.event.*;     // access
 
 import items.EntityList;
 import items.Floor;
+import items.Projectile;
 import items.Wall;
+import mobs.Mob;
 
 import java.util.ArrayList;
 
@@ -48,6 +50,12 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         for(Wall x: lischt.getWalls()){
         	x.imageIcon().paintIcon(this, g, (int)x.getPosX(), (int)x.getPosY());
         }
+        for(Projectile a: lischt.getProjectiles()){
+        	a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
+        }
+        for(Mob a: lischt.getMobs()){
+        	a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
+        }
     }
 
 
@@ -76,7 +84,7 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
             
         }
 
-        if (code == KeyEvent.VK_DOWN)
+        if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do this, but ok
         {
             lischt.player().setVelY(5);
         }
@@ -90,6 +98,11 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         {
             lischt.player().setVelX(-3);
         }
+        if (code == KeyEvent.VK_Z)
+        	lischt.add(new Projectile(0,-1, 100, 1,lischt.player().getPosX() - 25, lischt.player().getPosY()));
+        
+        if (code == KeyEvent.VK_X)
+        	lischt.add(new Projectile(0, 1, 100, 1,lischt.player().getPosX() + 25, lischt.player().getPosY()));
 
     }
 
