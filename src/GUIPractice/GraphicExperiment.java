@@ -50,6 +50,9 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void actionPerformed(ActionEvent e)
     {
+    	if(lischt.kill()){
+    		
+    	}
     	lischt.frameAdvance();
         repaint();
     }
