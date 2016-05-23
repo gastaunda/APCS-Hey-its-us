@@ -34,7 +34,8 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         {
             lischt.add(new Floor(25, i, 200));
         }
-    	for (double i = 0; i <= 300; i += 100){
+    		lischt.add(new Floor(25, 300, 295));
+    	for (double i = 300; i <= 600; i += 100){
     		lischt.add(new Wall(25, 300, i));
     	}
         t.start();
@@ -99,10 +100,10 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
             lischt.player().setVelX(-3);
         }
         if (code == KeyEvent.VK_Z)
-        	lischt.add(new Projectile(-3, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
+        	lischt.add(new Projectile(-3, 100, 1,lischt.player().getPosX() - 45, lischt.player().getPosY()));
         
         if (code == KeyEvent.VK_X)
-        	lischt.add(new Projectile( 3, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
+        	lischt.add(new Projectile( 3, 100, 1,lischt.player().getPosX() + 45, lischt.player().getPosY()));
     }
 
     public void keyReleased(KeyEvent e)
