@@ -20,4 +20,8 @@ public class Player extends Mob {
 	public int kushCode(){
 		return 1;
 	}
+	
+	public void move(){
+		super.move();
+	}
 }

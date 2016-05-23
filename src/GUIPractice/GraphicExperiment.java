@@ -108,7 +108,7 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void keyReleased(KeyEvent e)
     {
-    	
+  
     }
 
     public void keyTyped(KeyEvent e)
