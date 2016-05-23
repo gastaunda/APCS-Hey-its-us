@@ -99,10 +99,10 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
             lischt.player().setVelX(-3);
         }
         if (code == KeyEvent.VK_Z)
-        	lischt.add(new Projectile(0,-4, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
+        	lischt.add(new Projectile(-3, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
         
         if (code == KeyEvent.VK_X)
-        	lischt.add(new Projectile(0, 4, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
+        	lischt.add(new Projectile( 3, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
     }
 
     public void keyReleased(KeyEvent e)

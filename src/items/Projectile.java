@@ -10,12 +10,12 @@ public class Projectile extends GameEntity
 	//private int speed;
 	private int durration;
 	private int damage;
-	public Projectile(double grav, double spd, int life,int fite, double posX, double posY)
+	public Projectile(double spd, int life,int fite, double posX, double posY)
 	{
 		durration = life;
 		damage = fite;
 		setPosX(posX);
-		setPosX(posY);
+		setPosY(posY);
 		setVelX(spd);
 		setVelY(0);
 		setHitBox(posX, posY, 10,10);
@@ -25,9 +25,6 @@ public class Projectile extends GameEntity
 	public void collide(GameEntity other) {
 		other.takedamage(damage);
 		
-	}
-	public void collide(Floor other){
-		setVelY(0 - getVelY());
 	}
 	public void move(){
 		super.move();
