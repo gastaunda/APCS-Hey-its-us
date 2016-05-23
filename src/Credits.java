@@ -58,96 +58,61 @@ public class Credits {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setSize(GameMenu.winWidth, GameMenu.winHeight);
 		frame.getContentPane().setForeground(Color.RED);
 		frame.getContentPane().setBackground(Color.BLACK);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCredits = DefaultComponentFactory.getInstance().createTitle("Credits");
+		lblCredits.setBounds(198, 16, 34, 14);
 		lblCredits.setForeground(Color.GREEN);
 		lblCredits.setBackground(Color.BLACK);
-		GridBagConstraints gbc_lblCredits = new GridBagConstraints();
-		gbc_lblCredits.gridheight = 2;
-		gbc_lblCredits.insets = new Insets(0, 0, 5, 5);
-		gbc_lblCredits.gridx = 4;
-		gbc_lblCredits.gridy = 1;
-		frame.getContentPane().add(lblCredits, gbc_lblCredits);
+		frame.getContentPane().add(lblCredits);
 		
 		JLabel lblLocalForecast = DefaultComponentFactory.getInstance().createLabel("Local Forecast - Elevator Kevin MacLeod (incompetech.com)");
+		lblLocalForecast.setBounds(71, 56, 287, 14);
 		lblLocalForecast.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblLocalForecast = new GridBagConstraints();
-		gbc_lblLocalForecast.insets = new Insets(0, 0, 5, 5);
-		gbc_lblLocalForecast.gridx = 4;
-		gbc_lblLocalForecast.gridy = 3;
-		frame.getContentPane().add(lblLocalForecast, gbc_lblLocalForecast);
+		frame.getContentPane().add(lblLocalForecast);
 		
 		JLabel lblLicensedUnderCreative_1 = DefaultComponentFactory.getInstance().createLabel("Licensed under Creative Commons: By Attribution 3.0 License");
+		lblLicensedUnderCreative_1.setBounds(67, 75, 295, 14);
 		lblLicensedUnderCreative_1.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblLicensedUnderCreative_1 = new GridBagConstraints();
-		gbc_lblLicensedUnderCreative_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lblLicensedUnderCreative_1.gridx = 4;
-		gbc_lblLicensedUnderCreative_1.gridy = 4;
-		frame.getContentPane().add(lblLicensedUnderCreative_1, gbc_lblLicensedUnderCreative_1);
+		frame.getContentPane().add(lblLicensedUnderCreative_1);
 		
 		JLabel lblHttpcreativecommonsorglicensesby = DefaultComponentFactory.getInstance().createLabel("http://creativecommons.org/licenses/by/3.0/");
+		lblHttpcreativecommonsorglicensesby.setBounds(107, 94, 216, 14);
 		lblHttpcreativecommonsorglicensesby.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblHttpcreativecommonsorglicensesby = new GridBagConstraints();
-		gbc_lblHttpcreativecommonsorglicensesby.insets = new Insets(0, 0, 5, 5);
-		gbc_lblHttpcreativecommonsorglicensesby.gridx = 4;
-		gbc_lblHttpcreativecommonsorglicensesby.gridy = 5;
-		frame.getContentPane().add(lblHttpcreativecommonsorglicensesby, gbc_lblHttpcreativecommonsorglicensesby);
+		frame.getContentPane().add(lblHttpcreativecommonsorglicensesby);
 		
 		JLabel lblEasyoggByCoke = DefaultComponentFactory.getInstance().createLabel("easyogg by Coke and Code/Kevin Glass Which uses jorbis under the");
+		lblEasyoggByCoke.setBounds(52, 113, 326, 14);
 		lblEasyoggByCoke.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblEasyoggByCoke = new GridBagConstraints();
-		gbc_lblEasyoggByCoke.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEasyoggByCoke.gridx = 4;
-		gbc_lblEasyoggByCoke.gridy = 6;
-		frame.getContentPane().add(lblEasyoggByCoke, gbc_lblEasyoggByCoke);
+		frame.getContentPane().add(lblEasyoggByCoke);
 		
 		JLabel lblGnuLesserGeneral = DefaultComponentFactory.getInstance().createLabel(" GNU LESSER GENERAL PUBLIC LICENSE v2.1 (refer to jorbis COPYING.LIB)");
+		lblGnuLesserGeneral.setBounds(34, 132, 362, 14);
 		lblGnuLesserGeneral.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblGnuLesserGeneral = new GridBagConstraints();
-		gbc_lblGnuLesserGeneral.insets = new Insets(0, 0, 5, 5);
-		gbc_lblGnuLesserGeneral.gridx = 4;
-		gbc_lblGnuLesserGeneral.gridy = 7;
-		frame.getContentPane().add(lblGnuLesserGeneral, gbc_lblGnuLesserGeneral);
+		frame.getContentPane().add(lblGnuLesserGeneral);
 		
 		JLabel lblAnubhavGarg = DefaultComponentFactory.getInstance().createLabel("Group Members:");
+		lblAnubhavGarg.setBounds(175, 181, 79, 14);
 		lblAnubhavGarg.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblAnubhavGarg = new GridBagConstraints();
-		gbc_lblAnubhavGarg.insets = new Insets(0, 0, 5, 5);
-		gbc_lblAnubhavGarg.gridx = 4;
-		gbc_lblAnubhavGarg.gridy = 9;
-		frame.getContentPane().add(lblAnubhavGarg, gbc_lblAnubhavGarg);
+		frame.getContentPane().add(lblAnubhavGarg);
 		
 		JLabel lblWillLum = DefaultComponentFactory.getInstance().createLabel("Garrison Austanda / Anubhav Garg");
+		lblWillLum.setBounds(131, 200, 168, 14);
 		lblWillLum.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblWillLum = new GridBagConstraints();
-		gbc_lblWillLum.insets = new Insets(0, 0, 5, 5);
-		gbc_lblWillLum.gridx = 4;
-		gbc_lblWillLum.gridy = 10;
-		frame.getContentPane().add(lblWillLum, gbc_lblWillLum);
+		frame.getContentPane().add(lblWillLum);
 		
 		JLabel lblJoshuaSamuel = DefaultComponentFactory.getInstance().createLabel(" Will Lum  / Joshua Samuel");
+		lblJoshuaSamuel.setBounds(152, 219, 125, 14);
 		lblJoshuaSamuel.setForeground(new Color(255, 204, 153));
-		GridBagConstraints gbc_lblJoshuaSamuel = new GridBagConstraints();
-		gbc_lblJoshuaSamuel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblJoshuaSamuel.gridx = 4;
-		gbc_lblJoshuaSamuel.gridy = 11;
-		frame.getContentPane().add(lblJoshuaSamuel, gbc_lblJoshuaSamuel);
+		frame.getContentPane().add(lblJoshuaSamuel);
 		
 		JButton btnBackToMain = new JButton("Back To Game Options");
+		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		btnBackToMain.setAction(action);
-		GridBagConstraints gbc_btnBackToMain = new GridBagConstraints();
-		gbc_btnBackToMain.insets = new Insets(0, 0, 5, 5);
-		gbc_btnBackToMain.gridx = 4;
-		gbc_btnBackToMain.gridy = 12;
-		frame.getContentPane().add(btnBackToMain, gbc_btnBackToMain);
+		frame.getContentPane().add(btnBackToMain);
 		
 	}
 	
