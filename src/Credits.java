@@ -65,6 +65,7 @@ public class Credits {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(GameMenu.winWidth, GameMenu.winHeight);
 		frame.getContentPane().setForeground(Color.RED);
 		frame.getContentPane().setBackground(Color.BLACK);
