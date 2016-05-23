@@ -28,6 +28,10 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public GraphicExperiment()
     {
+    	for (double i = 0; i <= 100; i += 25)
+        {
+            lischt.add(new Floor(25, i, 200));
+        }
         t.start();
         addKeyListener(this);
         setFocusable(true);
@@ -36,10 +40,6 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
 
     public void paintComponent(Graphics g)
     {
-    	for (double i = 0; i <= 200; i += 25)
-        {
-            lischt.add(new Floor(25, i, 200));
-        }
         super.paintComponent(g);
         lischt.player().getImage().paintIcon(this,g,(int)lischt.player().getPosX(),(int)lischt.player().getPosY());
         for(Wall x: lischt.getWalls()){
