@@ -16,4 +16,8 @@ public class Player extends Mob {
 	public GameObject[] invAccess(){
 		return super.inv;
 	}
+	
+	public int kushCode(){
+		return 1;
+	}
 }
