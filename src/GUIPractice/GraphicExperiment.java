@@ -53,8 +53,8 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         for(Projectile a: lischt.getProjectiles()){
         	a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
         }
-        for(Mob a: lischt.getMobs()){
-        	a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
+        for(Mob i: lischt.getMobs()){
+        	i.imageIcon().paintIcon(this, g, (int)i.getPosX(), (int)i.getPosY());
         }
     }
 
@@ -79,7 +79,7 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
         if (code == KeyEvent.VK_UP && lischt.player().getGround())
         {
         	lischt.player().setGround(false);
-            lischt.player().setVelY(-5);
+            lischt.player().setVelY(-10);
             lischt.player().move();
             
         }
@@ -99,16 +99,15 @@ public class GraphicExperiment extends JPanel implements ActionListener,KeyListe
             lischt.player().setVelX(-3);
         }
         if (code == KeyEvent.VK_Z)
-        	lischt.add(new Projectile(0,-1, 100, 1,lischt.player().getPosX() - 25, lischt.player().getPosY()));
+        	lischt.add(new Projectile(0,-4, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
         
         if (code == KeyEvent.VK_X)
-        	lischt.add(new Projectile(0, 1, 100, 1,lischt.player().getPosX() + 25, lischt.player().getPosY()));
-
+        	lischt.add(new Projectile(0, 4, 100, 1,lischt.player().getPosX(), lischt.player().getPosY()));
     }
 
     public void keyReleased(KeyEvent e)
     {
-
+    	
     }
 
     public void keyTyped(KeyEvent e)
