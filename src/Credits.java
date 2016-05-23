@@ -1,5 +1,4 @@
 
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -23,7 +22,13 @@ import java.awt.Button;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import javax.swing.Action;
+import javax.swing.SwingConstants;
 
 public class Credits {
 
@@ -55,6 +60,8 @@ public class Credits {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * 
+	 * @throws IOException
 	 */
 	private void initialize() {
 		frame = new JFrame();
@@ -62,66 +69,36 @@ public class Credits {
 		frame.getContentPane().setForeground(Color.RED);
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.getContentPane().setLayout(null);
-		
-		JLabel lblCredits = DefaultComponentFactory.getInstance().createTitle("Credits");
-		lblCredits.setBounds(198, 16, 34, 14);
-		lblCredits.setForeground(Color.GREEN);
-		lblCredits.setBackground(Color.BLACK);
-		frame.getContentPane().add(lblCredits);
-		
-		JLabel lblLocalForecast = DefaultComponentFactory.getInstance().createLabel("Local Forecast - Elevator Kevin MacLeod (incompetech.com)");
-		lblLocalForecast.setBounds(71, 56, 287, 14);
-		lblLocalForecast.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblLocalForecast);
-		
-		JLabel lblLicensedUnderCreative_1 = DefaultComponentFactory.getInstance().createLabel("Licensed under Creative Commons: By Attribution 3.0 License");
-		lblLicensedUnderCreative_1.setBounds(67, 75, 295, 14);
-		lblLicensedUnderCreative_1.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblLicensedUnderCreative_1);
-		
-		JLabel lblHttpcreativecommonsorglicensesby = DefaultComponentFactory.getInstance().createLabel("http://creativecommons.org/licenses/by/3.0/");
-		lblHttpcreativecommonsorglicensesby.setBounds(107, 94, 216, 14);
-		lblHttpcreativecommonsorglicensesby.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblHttpcreativecommonsorglicensesby);
-		
-		JLabel lblEasyoggByCoke = DefaultComponentFactory.getInstance().createLabel("easyogg by Coke and Code/Kevin Glass Which uses jorbis under the");
-		lblEasyoggByCoke.setBounds(52, 113, 326, 14);
-		lblEasyoggByCoke.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblEasyoggByCoke);
-		
-		JLabel lblGnuLesserGeneral = DefaultComponentFactory.getInstance().createLabel(" GNU LESSER GENERAL PUBLIC LICENSE v2.1 (refer to jorbis COPYING.LIB)");
-		lblGnuLesserGeneral.setBounds(34, 132, 362, 14);
-		lblGnuLesserGeneral.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblGnuLesserGeneral);
-		
-		JLabel lblAnubhavGarg = DefaultComponentFactory.getInstance().createLabel("Group Members:");
-		lblAnubhavGarg.setBounds(175, 181, 79, 14);
-		lblAnubhavGarg.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblAnubhavGarg);
-		
-		JLabel lblWillLum = DefaultComponentFactory.getInstance().createLabel("Garrison Austanda / Anubhav Garg");
-		lblWillLum.setBounds(131, 200, 168, 14);
-		lblWillLum.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblWillLum);
-		
-		JLabel lblJoshuaSamuel = DefaultComponentFactory.getInstance().createLabel(" Will Lum  / Joshua Samuel");
-		lblJoshuaSamuel.setBounds(152, 219, 125, 14);
-		lblJoshuaSamuel.setForeground(new Color(255, 204, 153));
-		frame.getContentPane().add(lblJoshuaSamuel);
-		
+
 		JButton btnBackToMain = new JButton("Back To Game Options");
-		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2,
+				GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
-		
+
+		try {
+			int val = 0;
+			final int h = 14;
+			for (String line : Files.readAllLines(Paths.get("credits.txt"))) {
+				JLabel lblTemp = new JLabel(line);
+				lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
+				lblTemp.setForeground(Color.WHITE);
+				lblTemp.setBounds(0, val, GameMenu.winWidth, h);
+				val += h;
+				frame.getContentPane().add(lblTemp);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
 
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "Back to Game Options");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
 			frame.dispose();
