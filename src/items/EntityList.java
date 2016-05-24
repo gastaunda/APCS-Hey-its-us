@@ -22,10 +22,10 @@ public class EntityList {
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(1000, 1000, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to mess with these
-		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 100, (double) 100, (double) 20, (double) 20));// move these to GraphicExperiment
-		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 400, (double) 450, (double) 20, (double) 20));
-		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 550, (double) 475, (double) 20, (double) 20));
+		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to mess with these
+		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 100, (double) 100, (double) 20, (double) 20));// move these to GraphicExperiment
+		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 400, (double) 450, (double) 20, (double) 20));
+		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 550, (double) 475, (double) 20, (double) 20));
 		player.setAccY(.075);				// values
 	}
 
