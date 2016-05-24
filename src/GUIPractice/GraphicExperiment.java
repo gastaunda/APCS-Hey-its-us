@@ -85,26 +85,23 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.player().move();
 
 		}
-		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do
-										// this, but ok
+		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do// this, but ok
 		{
 			lischt.player().setVelY(5);
 		}
 
 		if (code == KeyEvent.VK_RIGHT) {
-			lischt.player().setAccX(0);
 			lischt.player().setVelX(3);
 		}
 
 		if (code == KeyEvent.VK_LEFT) {
-			lischt.player().setAccX(0);
 			lischt.player().setVelX(-3);
 		}
 		if (code == KeyEvent.VK_Z)
-			lischt.add(new Projectile(-3, 100, 1, lischt.player().getPosX() - 45, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(-6, 50, 1, lischt.player().getPosX() - 40, lischt.player().getPosY() + 15));
 
 		if (code == KeyEvent.VK_X)
-			lischt.add(new Projectile(3, 100, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(6, 50, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
 	}
 
 	public void keyReleased(KeyEvent e) {
