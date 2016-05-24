@@ -12,7 +12,6 @@ import javax.swing.event.*; // access
 
 import items.EntityList;
 import items.Floor;
-import items.KillBlock;
 import items.Projectile;
 import items.Wall;
 import mobs.Mob;
@@ -30,18 +29,18 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	Timer t = new Timer(5, this);
 
 	public GraphicExperiment() {
-		
+
 		for (double i = 0; i <= 100; i += 50) {
-			lischt.add(new Floor(25, i, 200));
+			lischt.add(new Floor(16, i, 200));
 		}
-		lischt.add(new Floor(25, 300, 295));
-		
-		//lischt.add(new Wall(25,100, 150));
-		for (double i = 350; i <= 600; i += 50){
-			lischt.add(new Floor(25, i, 500));
+		lischt.add(new Floor(16, 300, 295));
+
+		// lischt.add(new Wall(25,100, 150));
+		for (double i = 350; i <= 600; i += 50) {
+			lischt.add(new Floor(16, i, 500));
 		}
-		for (double i = 625; i < 1500; i += 50){
-			lischt.add(new Floor(25, i, 500));
+		for (double i = 625; i < 1500; i += 50) {
+			lischt.add(new Floor(16, i, 500));
 		}
 		t.start();
 		addKeyListener(this);
@@ -79,34 +78,38 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		if (code == KeyEvent.VK_UP && lischt.player().getGround()) {
-			lischt.player().setVelY(-5);
+			lischt.player().setVelY(-4);
 			lischt.player().setGround(false);
 			lischt.player().setPosY(lischt.player().getPosY() - 5);
 			lischt.player().move();
 
 		}
-		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do// this, but ok
+		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do//
+										// this, but ok
 		{
-			lischt.player().setVelY(5);
+			lischt.player().setVelY(4);
 		}
 
 		if (code == KeyEvent.VK_RIGHT) {
-			lischt.player().setVelX(3);
+			lischt.player().setVelX(2);
 		}
 
 		if (code == KeyEvent.VK_LEFT) {
-			lischt.player().setVelX(-3);
+			lischt.player().setVelX(-2);
 		}
-		if (code == KeyEvent.VK_Z)
-			lischt.add(new Projectile(-6, 50, 1, lischt.player().getPosX() - 21, lischt.player().getPosY() + 15));
-
-		if (code == KeyEvent.VK_X)
-			lischt.add(new Projectile(6, 50, 1, lischt.player().getPosX() + 49, lischt.player().getPosY() + 15));
+		if (code == KeyEvent.VK_Z && lischt.player().canFire()) {
+			lischt.add(new Projectile(-6, 50, 1, lischt.player().getPosX() - 17, lischt.player().getPosY() + 8));
+			lischt.player().fire();
+		}
+		if (code == KeyEvent.VK_X && lischt.player().canFire()) {
+			lischt.add(new Projectile(6, 50, 1, lischt.player().getPosX() + 33, lischt.player().getPosY() + 8));
+			lischt.player().fire();
+		}
 	}
 
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
-		if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_LEFT){
+		if (code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_LEFT) {
 			lischt.player().setVelX(0);
 		}
 	}

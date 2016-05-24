@@ -9,8 +9,8 @@ public abstract class GameEntity {
 	private double velY;
 	private double accX;
 	private double accY;
-	private double vXMax = 5;
-	private double vYMax = 5;
+	private double vXMax = 4;
+	private double vYMax = 4;
 	private int health;
 	private float bounce;
 	private HitBox hitBox;
