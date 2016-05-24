@@ -15,6 +15,7 @@ public class EntityList {
 	ArrayList<Mob> mobs;
 	LinkedList<FloorObject> floorDrops;
 	Player player;
+	Mob mob;
 
 	public EntityList() {
 		projectiles = new LinkedList<Projectile>();
@@ -23,6 +24,8 @@ public class EntityList {
 		floorDrops = new LinkedList<FloorObject>();
 		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
 				new ImageIcon("image.png")); // feel free to mess with these
+		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 100, (double) 100, (double) 20, (double) 20, 
+				new ImageIcon("Boolet.png")));
 		player.setAccY(.25);									// values
 	}
 
