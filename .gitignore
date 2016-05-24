@@ -51,3 +51,6 @@ Temporary Items
 #Vim
 *~
 *.swp
+
+#Testing
+*Hey its us.jar
