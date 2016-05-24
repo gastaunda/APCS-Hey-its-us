@@ -107,7 +107,10 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void keyReleased(KeyEvent e) {
-
+		int code = e.getKeyCode();
+		if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_LEFT){
+			lischt.player().setVelX(0);
+		}
 	}
 
 	public void keyTyped(KeyEvent e) {
