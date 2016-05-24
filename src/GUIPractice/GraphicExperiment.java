@@ -63,8 +63,8 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (lischt.kill()) {
-			System.out.println("dig is kill");
+		if (lischt.kill()) { // add game over screen, return to main menu
+			
 		}
 		lischt.frameAdvance();
 		repaint();
