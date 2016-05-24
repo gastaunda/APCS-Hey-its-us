@@ -34,10 +34,16 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.add(new Floor(25, i, 200));
 		}
 		lischt.add(new Floor(25, 300, 295));
-		for (double i = 300; i <= 600; i += 100) {
+		for (double i = 100; i <= 600; i += 100) {
 			lischt.add(new Wall(25, 300, i));
 		}
-		lischt.add(new Wall(25,100, 150));
+		//lischt.add(new Wall(25,100, 150));
+		for (double i = 350; i <= 600; i += 50){
+			lischt.add(new Floor(25, i, 500));
+		}
+		for (double i = 625; i < 1500; i += 50){
+			lischt.add(new Floor(25, i, 500));
+		}
 		t.start();
 		addKeyListener(this);
 		setFocusable(true);

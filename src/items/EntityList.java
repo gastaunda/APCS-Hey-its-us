@@ -22,9 +22,13 @@ public class EntityList {
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
+		player = new Player(1000, 1000, new GameObject[4], (double) 0, (double) 0, (double) 24, (double) 24,
 				new ImageIcon("image.png")); // feel free to mess with these
 		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 100, (double) 100, (double) 20, (double) 20, 
+				new ImageIcon("Boolet.png")));
+		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 400, (double) 450, (double) 20, (double) 20, 
+				new ImageIcon("Boolet.png")));
+		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 550, (double) 475, (double) 20, (double) 20, 
 				new ImageIcon("Boolet.png")));
 		player.setAccY(.25);									// values
 	}
