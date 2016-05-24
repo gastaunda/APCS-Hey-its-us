@@ -30,7 +30,7 @@ public class EntityList {
 				new ImageIcon("Boolet.png")));
 		mobs.add(new Mob(100, 100, 20, new GameObject[2], (double) 550, (double) 475, (double) 20, (double) 20, 
 				new ImageIcon("Boolet.png")));
-		player.setAccY(.25);									// values
+		player.setAccY(.2);				// values
 	}
 
 	public void add(Projectile projfoj) {
