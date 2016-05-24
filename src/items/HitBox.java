@@ -23,18 +23,18 @@ public class HitBox {
 	}
 	
 	private boolean tLeft(HitBox other){
-		return other.posX + other.width <= posX + width && other.posX + other.width >= posX - width && other.posY + other.height <= posY + height && other.posY + other.height >= posY - height;
+		return other.posX >= posX && other.posX <= posX + 2*width && other.posY >= posY && other.posY <= posY + 2*height;
 	}
 	
 	private boolean tRight(HitBox other){
-		return other.posX - other.width <= posX + width && other.posX - other.width >= posX - width && other.posY + other.height <= posY + height && other.posY + other.height >= posY - height;
+		return other.posX + 2*other.width >= posX && other.posX + 2*other.width <= posX + 2*width && other.posY >= posY && other.posY <= posY + 2*height;
 	}
 	
 	private boolean bLeft(HitBox other){
-		return other.posX + other.width <= posX + width && other.posX + other.width >= posX - width && other.posY - other.height <= posY + height && other.posY - other.height >= posY - height;
+		return other.posX >= posX && other.posX <= posX + 2*width && other.posY + 2*other.height >= posY && other.posY + 2*other.height <= posY + 2*height;
 	}
 	
 	private boolean bRight(HitBox other){
-		return other.posX - other.width <= posX + width && other.posX - other.width >= posX - width && other.posY - other.height <= posY + height && other.posY - other.height >= posY - height;
+		return other.posX + 2*other.width >= posX && other.posX + 2*other.width <= posX + 2*width && other.posY + 2*other.height >= posY && other.posY + 2*other.height <= posY + 2*height;
 	}
 }
