@@ -22,10 +22,12 @@ import java.awt.Button;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 import javax.swing.Action;
 import javax.swing.SwingConstants;
@@ -80,7 +82,10 @@ public class Credits {
 		try {
 			int val = 0;
 			final int h = 14;
-			for (String line : Files.readAllLines(Paths.get("credits.txt"))) {
+			Scanner scanner = new Scanner(
+					new File(getClass().getClassLoader().getResource("assets/text/credits.txt").getFile()));
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
 				JLabel lblTemp = new JLabel(line);
 				lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
 				lblTemp.setForeground(Color.WHITE);
@@ -88,10 +93,11 @@ public class Credits {
 				val += h;
 				frame.getContentPane().add(lblTemp);
 			}
+			scanner.close();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	private class SwingAction extends AbstractAction {
