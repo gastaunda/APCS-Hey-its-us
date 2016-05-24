@@ -30,6 +30,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	Timer t = new Timer(5, this);
 
 	public GraphicExperiment() {
+		
 		for (double i = 0; i <= 100; i += 50) {
 			lischt.add(new Floor(25, i, 200));
 		}
@@ -63,8 +64,10 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		System.out.println(lischt.player().getHealth());
 		if (lischt.kill()) {
 			System.out.println("dig is kill"); // bugtesting
+			
 		}
 		lischt.frameAdvance();
 		repaint();
@@ -96,10 +99,10 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.player().setVelX(-3);
 		}
 		if (code == KeyEvent.VK_Z)
-			lischt.add(new Projectile(-6, 50, 1, lischt.player().getPosX() - 40, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(-6, 50, 1, lischt.player().getPosX() - 21, lischt.player().getPosY() + 15));
 
 		if (code == KeyEvent.VK_X)
-			lischt.add(new Projectile(6, 50, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(6, 50, 1, lischt.player().getPosX() + 49, lischt.player().getPosY() + 15));
 	}
 
 	public void keyReleased(KeyEvent e) {
