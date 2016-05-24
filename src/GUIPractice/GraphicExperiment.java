@@ -64,7 +64,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 
 	public void actionPerformed(ActionEvent e) {
 		if (lischt.kill()) {
-			System.out.println("dig is kill"); // bugtesting
+		//	System.out.println("dig is kill"); // bugtesting
 		}
 		lischt.frameAdvance();
 		repaint();

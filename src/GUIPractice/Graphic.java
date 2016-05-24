@@ -36,19 +36,19 @@ public class Graphic extends JPanel implements ActionListener,KeyListener
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        ImageIcon image = new ImageIcon("image.png");
+        ImageIcon image = new ImageIcon(Graphic.class.getResource("/assets/images/image.png"));
         
         image.paintIcon(this,g,(int)x,(int)y);
         for (double i = 0; i < 200; i= i + 100)
         {
-            ImageIcon brick = new ImageIcon("Brick.png");
+            ImageIcon brick = new ImageIcon(Graphic.class.getResource("/assets/images/Brick.png"));
             brick.paintIcon(this,g,(int)i,451);
             moveX.add(i);
             moveY.add((double)451);
         }
         
        
-        ImageIcon brick = new ImageIcon("Brick.png");
+        ImageIcon brick = new ImageIcon(Graphic.class.getResource("/assets/images/Brick.png"));
         brick.paintIcon(this,g,50,100);
         moveX.add((double)50);
         moveY.add((double)100);
