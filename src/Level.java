@@ -16,8 +16,7 @@ public class Level {
 	
 	public static void main(String[] args)
 	{
-		ImageIcon playerimage = new ImageIcon("LH_95.jpg");
-		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5,playerimage);
+		Player myPlayer = new Player(100,100,new GameObject[10],0,0,10,5);
 		
 		GUIHandler gui = new GUIHandler(myPlayer);
 	}
