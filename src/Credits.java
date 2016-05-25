@@ -80,13 +80,21 @@ public class Credits {
 		try {
 			int val = 0;
 			final int h = 14;
-			for (String line : Files.readAllLines(Paths.get("credits.txt"))) {
-				JLabel lblTemp = new JLabel(line);
-				lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
-				lblTemp.setForeground(Color.WHITE);
-				lblTemp.setBounds(0, val, GameMenu.winWidth, h);
-				val += h;
-				frame.getContentPane().add(lblTemp);
+			Scanner scanner = new Scanner(
+					new File(getClass().getClassLoader().getResource("assets/text/credits.txt").getFile()));
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				if (line.charAt(0) != '#') {
+					JLabel lblTemp = new JLabel(line.substring(1));
+					if (line.charAt(0) == 'c')
+						lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
+					else if (line.charAt(0) == 'r')
+						lblTemp.setHorizontalAlignment(SwingConstants.RIGHT);
+					lblTemp.setForeground(Color.WHITE);
+					lblTemp.setBounds(0, val, GameMenu.winWidth, h);
+					val += h;
+					frame.getContentPane().add(lblTemp);
+				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -1,13 +1,24 @@
-easyogg by Coke and Code/Kevin Glass
-	Which uses jorbis under the GNU LESSER GENERAL PUBLIC LICENSE v2.1 (refer to jorbis COPYING.LIB)
-
-Local Forecast - Elevator Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/
-
-Contributers
-
-Garrison Astaunda
-Anubhav Garg
-Will Lum
-Joshua Samuel
+c
+cContributers
+c
+cGarrison Astaunda
+cAnubhav Garg
+cWill Lum
+cJoshua Samuel
+l
+lEasyOgg by Coke and Code/Kevin Glass and Jorbis
+lLicensed under GNU LESSER GENERAL PUBLIC LICENSE v2.1
+l
+lKevin MacLeod (incompetech.com)
+lLicensed under Creative Commons: By Attribution 3.0 License
+lhttp://creativecommons.org/licenses/by/3.0/
+l    Local Forecast - Elevator
+l     Link goes here
+l
+lC418
+lLicensed under Creative Commons: By Attribution-NonCommercial-NoDerivs 3.0 License
+lhttp://creativecommons.org/licenses/by-nc-nd/3.0/
+l    Sometimes I make video game music
+l     http://c418.bandcamp.com/track/sometimes-i-make-video-game-music 
+l    If you don't know what to do just steal the amen break
+l     http://c418.bandcamp.com/track/if-you-dont-know-what-to-do-just-steal-the-amen-break

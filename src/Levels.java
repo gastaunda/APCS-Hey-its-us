@@ -64,28 +64,29 @@ public class Levels {
 		frame.setSize(GameMenu.winWidth, GameMenu.winHeight);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel lblLevelSelect = DefaultComponentFactory.getInstance().createTitle("Level Select");
-		lblLevelSelect.setBounds((GameMenu.winWidth - 57)/2, 20, 57, 14);
+		lblLevelSelect.setBounds((GameMenu.winWidth - 57) / 2, 20, 57, 14);
 		lblLevelSelect.setForeground(new Color(255, 0, 51));
 		lblLevelSelect.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(lblLevelSelect);
-		
+
 		JButton button = new JButton("1");
 		button.setBounds(20, 60, btnSize, btnSize);
 		button.setAction(action_1);
 		frame.getContentPane().add(button);
-		
+
 		JButton button_1 = new JButton("2");
 		button_1.setBounds(195, 60, btnSize, btnSize);
 		frame.getContentPane().add(button_1);
-		
+
 		JButton button_2 = new JButton("3");
 		button_2.setBounds(370, 60, btnSize, btnSize);
 		frame.getContentPane().add(button_2);
-		
+
 		JButton btnBackToMain = new JButton("Back to Main Meu");
-		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2, GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2,
+				GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
 	}
@@ -95,19 +96,27 @@ public class Levels {
 			putValue(NAME, "Back to Main Menu");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			GameMenu.main(null);
 			frame.dispose();
 		}
 	}
+
 	private class SwingAction_1 extends AbstractAction {
 		public SwingAction_1() {
 			putValue(NAME, "1");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.main(null);
 			frame.dispose();
+			if (Game.m != null)
+				Game.m.close();
+			Game.m = new Music("assets/audio/music/If you don't know what to do just steal the amen break.ogg");
+			//Game.m = new Music("assets/audio/music/Sometimes I make video game music.ogg");
+			Game.m.loop();
 		}
 	}
 }
