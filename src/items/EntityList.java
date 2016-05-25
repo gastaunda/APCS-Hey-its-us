@@ -22,8 +22,13 @@ public class EntityList {
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to mess with these
-		player.setAccY(.075);				// values
+		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel
+																											// free
+																											// to
+																											// mess
+																											// with
+																											// these
+		player.setAccY(.075); // values
 	}
 
 	public void add(Projectile projfoj) {
@@ -46,8 +51,8 @@ public class EntityList {
 	public LinkedList<Projectile> getProjectiles() {
 		return projectiles;
 	}
-	
-	public ArrayList<Wall> getWalls(){
+
+	public ArrayList<Wall> getWalls() {
 		return walls;
 	}
 
@@ -66,12 +71,12 @@ public class EntityList {
 					walls.get(a).collide(x);
 
 			}
-			for(Projectile p: projectiles){
-				if((walls.get(a)).HitBox().collisionCheck(p.HitBox()))
+			for (Projectile p : projectiles) {
+				if ((walls.get(a)).HitBox().collisionCheck(p.HitBox()))
 					walls.get(a).collide(p);
 			}
-			if(walls.get(a).HitBox().collisionCheck(player.HitBox()))
-					walls.get(a).collide(player);
+			if (walls.get(a).HitBox().collisionCheck(player.HitBox()))
+				walls.get(a).collide(player);
 		}
 		for (int a = 0; a < projectiles.size(); a++) {
 			for (int x = 0; x < mobs.size(); x++) {
@@ -81,15 +86,20 @@ public class EntityList {
 			if (projectiles.get(a).HitBox().collisionCheck(player.HitBox()))
 				projectiles.get(a).collide(player);
 			projectiles.get(a).move();
-			if(projectiles.get(a).remainingLife() <= 0){
+			if (projectiles.get(a).remainingLife() <= 0) {
 				projectiles.remove(a);
 				a--;
 			}
 		}
-		for (Mob x : mobs) {
-			if (x.HitBox().collisionCheck(player.HitBox()))
-				x.collide(player);
-			x.move();
+		for (int x = 0; x < mobs.size(); x++) {
+
+			if (mobs.get(x).HitBox().collisionCheck(player.HitBox()))
+				mobs.get(x).collide(player);
+			mobs.get(x).move();
+			if (mobs.get(x).getHealth() <= 0) {
+				mobs.remove(x);
+				x--;
+			}
 		}
 		player.move();
 

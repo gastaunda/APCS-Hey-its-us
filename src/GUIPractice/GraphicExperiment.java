@@ -34,10 +34,11 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (double i = 0; i <= 100; i += 32) {
 			lischt.add(new Floor(16, i, 200));
 		}
+		lischt.add(new Floor(12, 350, 245));
 		for (double i = 350; i <= 1500; i += 32){
 			lischt.add(new Floor(16, i, 500));
 		}
-		for (double i = 250; i <= 500; i++){
+		for (double i = 250; i <= 500; i += 64){
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50){
@@ -107,8 +108,9 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void keyReleased(KeyEvent e) {
-		lischt.player().setVelX(0);	
-		lischt.player().setVelX(0);
+		int code = e.getKeyCode();
+		if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_RIGHT)
+			lischt.player().setVelX(0);
 		}
 
 	public void keyTyped(KeyEvent e) {
