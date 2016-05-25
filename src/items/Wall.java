@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class Wall extends GameEntity{
 	public Wall(double length, double xLoc, double yLoc){
 		setHitBox(xLoc, yLoc, length, length);
-		myImage = new ImageIcon("Brick.png");
+		myImage = new ImageIcon(Wall.class.getResource("/assets/images/Brick.png"));
 		setPosX(xLoc);
 		setPosY(yLoc);
 	}

@@ -9,9 +9,9 @@ public abstract class GameEntity {
 	private double velY;
 	private double accX;
 	private double accY;
-	private double vXMax = 5;
-	private double vYMax = 5;
-	private int health;
+	private double vXMax = 4;
+	private double vYMax = 4;
+	protected int health;
 	private float bounce;
 	private HitBox hitBox;
 	protected ImageIcon myImage;
@@ -31,7 +31,7 @@ public abstract class GameEntity {
 		return grounded;
 	}
 	
-	public int getHealth(){
+	public int getHealth(){ // why the hell did anyone add this shit- this is what fucked up all of our code yo
 		return health;
 	}
 	

@@ -2,6 +2,7 @@ package mobs;
 
 import javax.swing.ImageIcon;
 
+import items.EntityList;
 import items.GameEntity;
 import items.GameObject;
 
@@ -15,11 +16,11 @@ public class Mob extends GameEntity {
 	protected double myHeight;
 	protected double myWidth;
 	
-	public Mob(int maxHealth, int health, int attack, GameObject[] inventory, double posX, double posY, double height, double width, ImageIcon image) 
+	public Mob(int maxHealth, int health, int attack, GameObject[] inventory, double posX, double posY, double height, double width) 
 	{
 		myHeight = height;
 		myWidth = width;
-		myImage = image;
+		myImage = new ImageIcon(EntityList.class.getResource("/assets/images/image.png"));
 		maxHp = maxHealth;
 		hp = health;
 		inv = inventory;
@@ -35,9 +36,6 @@ public class Mob extends GameEntity {
 
 	public void takedamage(int damage) {
 		hp -= damage;
-		if (hp <= 0) {
-			kill();
-		}
 	}
 
 	public boolean heal(int amount) {
@@ -52,7 +50,8 @@ public class Mob extends GameEntity {
 	@Override
 	public void collide(GameEntity other) {
 		other.takedamage(atk);
-
+		other.setVelX(-other.getVelX());
+		other.setVelY(-other.getVelY());
 	}
 	
 	public ImageIcon getImage()
@@ -60,10 +59,6 @@ public class Mob extends GameEntity {
 		return myImage;
 	}
 
-	public void kill() {
-
-	}
-	
 	public double getHeight()
 	{
 		return myHeight;
@@ -98,6 +93,10 @@ public class Mob extends GameEntity {
 	{
 		setVelY(1);
 		move();
+	}
+	
+	public int getHealth(){
+		return hp;
 	}
 	
 	public void MoveDown()
