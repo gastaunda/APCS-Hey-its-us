@@ -30,18 +30,10 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	Timer t = new Timer(5, this);
 
 	public GraphicExperiment() {
-		for (double i = 0; i <= 100; i += 50) {
+		for (double i = 0; i <= 100; i += 32) {
 			lischt.add(new Floor(16, i, 200));
 		}
-		lischt.add(new Floor(16, 300, 295));
-		//for (double i = 100; i <= 600; i += 100) {
-			//lischt.add(new Wall(16, 300, i));
-		//}
-		//lischt.add(new Wall(16,100, 150));
-		for (double i = 350; i <= 600; i += 50){
-			lischt.add(new Floor(16, i, 500));
-		}
-		for (double i = 625; i < 1500; i += 50){
+		for (double i = 350; i <= 1500; i += 32){
 			lischt.add(new Floor(16, i, 500));
 		}
 		t.start();
@@ -65,8 +57,8 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (lischt.kill()) {
-			System.out.println("dig is kill"); // bugtesting
+		if (lischt.kill()) { // get this to end game
+
 		}
 		lischt.frameAdvance();
 		repaint();
