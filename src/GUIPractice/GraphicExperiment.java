@@ -47,6 +47,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
+
 	}
 
 	public void paintComponent(Graphics g) {
@@ -114,11 +115,6 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 
 	}
 
-	public void sleep(long x) {
-		try {
-			Thread.sleep(x);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
+	
 }

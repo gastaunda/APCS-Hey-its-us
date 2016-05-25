@@ -28,7 +28,7 @@ public class Mob extends GameEntity {
 		setPosX(posX);
 		setPosY(posY);
 		setVelX(0);
-		setVelY(0);
+		setVelY(2);
 		setAccX(0);
 		setAccY(0);
 		setHitBox(posX, posY, height, width);
@@ -85,15 +85,10 @@ public class Mob extends GameEntity {
 
 	public void MoveRight()
 	{
-		setVelX(1);
+		setVelX(4);
 		move();
 	}
 	
-	public void jump()
-	{
-		setVelY(1);
-		move();
-	}
 	
 	public int getHealth(){
 		return hp;
@@ -104,4 +99,5 @@ public class Mob extends GameEntity {
 		setVelY(-1);
 		move();
 	}
+	
 }
