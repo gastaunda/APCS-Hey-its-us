@@ -22,10 +22,12 @@ import java.awt.Button;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 import javax.swing.Action;
 import javax.swing.SwingConstants;
@@ -96,6 +98,7 @@ public class Credits {
 					frame.getContentPane().add(lblTemp);
 				}
 			}
+			scanner.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
