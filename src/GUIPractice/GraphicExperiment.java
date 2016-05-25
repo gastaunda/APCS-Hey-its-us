@@ -37,7 +37,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (double i = 350; i <= 1500; i += 32){
 			lischt.add(new Floor(16, i, 500));
 		}
-		for (double i = 250; i <= 500; i++){
+		for (double i = 250; i <= 500; i += 64){
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50){
