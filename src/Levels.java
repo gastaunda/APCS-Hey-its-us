@@ -110,13 +110,12 @@ public class Levels {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Tester.main(null);
-			frame.dispose();
 			if (Game.m != null)
 				Game.m.close();
 			Game.m = new Music("assets/audio/music/If you don't know what to do just steal the amen break.ogg");
-			//Game.m = new Music("assets/audio/music/Sometimes I make video game music.ogg");
 			Game.m.loop();
+			Tester.main(null);
+			frame.dispose();
 		}
 	}
 }
