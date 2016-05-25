@@ -50,8 +50,8 @@ public class Mob extends GameEntity {
 	@Override
 	public void collide(GameEntity other) {
 		other.takedamage(atk);
-		other.setVelX(-other.getVelX() * .7);
-		other.setVelY(-other.getVelY() * .7);
+		other.setVelX(-other.getVelX() * 1);
+		other.setVelY(-other.getVelY() * 1);
 	}
 	
 	public ImageIcon getImage()

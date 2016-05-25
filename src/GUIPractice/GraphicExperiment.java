@@ -12,6 +12,7 @@ import javax.swing.event.*; // access
 
 import items.EntityList;
 import items.Floor;
+import items.GameObject;
 import items.KillBlock;
 import items.Projectile;
 import items.Wall;
@@ -35,6 +36,9 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}
 		for (double i = 350; i <= 1500; i += 32){
 			lischt.add(new Floor(16, i, 500));
+		}
+		for (double i = 100; i <= 400; i += 50){
+			lischt.add(new Mob(100, 100, 2, new GameObject[2], (double) i, (double) i, (double) 16, (double) 16));
 		}
 		t.start();
 		addKeyListener(this);

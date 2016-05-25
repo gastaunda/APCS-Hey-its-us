@@ -23,9 +23,6 @@ public class EntityList {
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<FloorObject>();
 		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to mess with these
-		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 100, (double) 100, (double) 16, (double) 16));// move these to GraphicExperiment
-		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 400, (double) 450, (double) 16, (double) 16));
-		mobs.add(new Mob(100, 100, 2, new GameObject[2], (double) 550, (double) 475, (double) 16, (double) 16));
 		player.setAccY(.075);				// values
 	}
 
@@ -39,7 +36,7 @@ public class EntityList {
 
 	public void add(Mob mobfob) {
 		mobs.add(mobfob);
-		mobfob.setAccY(3.62134);
+		mobfob.setAccY(.075);
 	}
 
 	public void add(FloorObject floorboor) {
