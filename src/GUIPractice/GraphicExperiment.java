@@ -37,8 +37,11 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (double i = 350; i <= 1500; i += 32){
 			lischt.add(new Floor(16, i, 500));
 		}
-		for (double i = 100; i <= 400; i += 50){
-			lischt.add(new Mob(100, 100, 2, new GameObject[2], (double) i, (double) i, (double) 16, (double) 16));
+		for (double i = 250; i <= 500; i++){
+			lischt.add(new Wall(16, 350, i));
+		}
+		for (double i = 400; i <= 800; i += 50){
+			lischt.add(new Mob(100, 100, 2, new GameObject[2], (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		t.start();
 		addKeyListener(this);
