@@ -63,6 +63,7 @@ public class Music {
 	}
 	
 	public void close() {
+		stop();
 		if (start != null)
 			start.close();
 		loop.close();
