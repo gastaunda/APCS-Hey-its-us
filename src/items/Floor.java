@@ -6,8 +6,8 @@ public class Floor extends Wall {
 		super(length, xLoc, yLoc);
 	}
 	public void collide(GameEntity other){
-		
-		other.setVelY(-4);
+		double x = Math.random() * -4;
+		other.setVelY(x);
 		other.setAccY(0.05);
 		other.setGround(true);
 	}
