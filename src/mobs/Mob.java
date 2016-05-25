@@ -20,7 +20,7 @@ public class Mob extends GameEntity {
 	{
 		myHeight = height;
 		myWidth = width;
-		myImage = new ImageIcon(EntityList.class.getResource("/assets/images/image.png"));
+		myImage = new ImageIcon(EntityList.class.getResource("/assets/images/mob.png"));
 		maxHp = maxHealth;
 		hp = health;
 		inv = inventory;
@@ -50,8 +50,8 @@ public class Mob extends GameEntity {
 	@Override
 	public void collide(GameEntity other) {
 		other.takedamage(atk);
-		other.setVelX(-other.getVelX() * .5);
-		other.setVelY(-other.getVelY() * .5);
+		other.setVelX(-other.getVelX() * .7);
+		other.setVelY(-other.getVelY() * .7);
 	}
 	
 	public ImageIcon getImage()
