@@ -95,7 +95,7 @@ public class GameMenu {
 							btnHeight + btnNewButton.getY() + btnSpace, btnWidth, btnHeight);
 					btnOptions.setBounds((frame.getWidth() - btnWidth) / 2,
 							btnHeight + btnLevelPacks.getY() + btnSpace, btnWidth, btnHeight);
-					btnExit.setBounds((frame.getWidth() - btnWidth) / 2, Game.winHeight - 100 - btnHeight,
+					btnExit.setBounds((frame.getWidth() - btnWidth) / 2, frame.getHeight() - 100 - btnHeight,
 							btnWidth, btnHeight);
 				}
 			}
