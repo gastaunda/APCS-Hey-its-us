@@ -30,8 +30,9 @@ import java.util.ArrayList;
 public class GraphicExperiment extends JPanel implements ActionListener, KeyListener {
 	private EntityList lischt = new EntityList();
 	Timer t = new Timer(5, this);
-
+	ImageIcon background;
 	public GraphicExperiment() {
+		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		for (double i = -64; i <= 800; i += 32){
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -64,6 +65,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		background.paintIcon(this, g, 0, 0);
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
 		for (Wall x : lischt.getWalls()) {
 			x.imageIcon().paintIcon(this, g, (int) x.getPosX(), (int) x.getPosY());
@@ -77,10 +79,10 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (lischt.kill()) { // get this to end game
+		if (lischt.kill()) { // get this to end game(game over)
 
 		}
-		if(lischt.player().victorious()){ // wins level
+		if(lischt.player().victorious()){ // wins level (move to next)
 			
 		}
 		lischt.frameAdvance();
