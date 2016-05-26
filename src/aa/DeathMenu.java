@@ -18,10 +18,11 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.Action;
 
-public class DeathMessage {
+public class DeathMenu {
 
 	private JFrame frame;
 	private final Action action = new SwingAction();
+	private boolean running = true;
 
 	/**
 	 * Launch the application.
@@ -30,7 +31,7 @@ public class DeathMessage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DeathMessage window = new DeathMessage();
+					DeathMenu window = new DeathMenu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +43,7 @@ public class DeathMessage {
 	/**
 	 * Create the application.
 	 */
-	public DeathMessage() {
+	public DeathMenu() {
 		initialize();
 	}
 
@@ -51,7 +52,8 @@ public class DeathMessage {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnBackToLevel = new JButton("Back to Level Select");
@@ -62,6 +64,17 @@ public class DeathMessage {
 		JLabel lblYouDedTry = new JLabel("YOU DEAD: TRY AGAIN");
 		lblYouDedTry.setFont(new Font("Stencil", Font.PLAIN, 40));
 		frame.getContentPane().add(lblYouDedTry, BorderLayout.CENTER);
+	}
+
+private void close() {
+		running = false;
+		Game.winState = frame.getExtendedState();
+		frame.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frame.getWidth();
+		Game.winHeight = frame.getHeight();
+		Game.winX = frame.getX();
+		Game.winY = frame.getY();
+		frame.dispose();
 	}
 
 	private class SwingAction extends AbstractAction {

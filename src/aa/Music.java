@@ -34,8 +34,6 @@ public class Music {
 						;
 				}
 				loop.play();
-				while (!loop.stopped())
-					;
 			}
 		};
 		player.start();
@@ -55,8 +53,6 @@ public class Music {
 					}
 				}
 				loop.loop();
-				while (!loop.stopped())
-					;
 			}
 		};
 		player.start();
