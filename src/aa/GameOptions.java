@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import java.awt.Color;
 
@@ -14,6 +15,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JDesktopPane;
 import javax.swing.Action;
+import javax.swing.ImageIcon;
 
 public class GameOptions {
 
@@ -71,6 +73,13 @@ public class GameOptions {
 		frmOptions.getContentPane().add(btnCredits);
 		btnCredits.setAction(action_3);
 		frmOptions.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 3622, 3877);
+		frmOptions.getContentPane().add(label);
+		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setLabelFor(frmOptions);
+		
 		new Thread() {
 			public void run() {
 				while (running) {

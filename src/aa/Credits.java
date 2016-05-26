@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.GridLayout;
@@ -106,6 +107,13 @@ public class Credits {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 3622, 3877);
+		frame.getContentPane().add(label);
+		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setLabelFor(frame);
+		
 		new Thread() {
 			public void run() {
 				while (running) {
