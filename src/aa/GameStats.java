@@ -1,3 +1,4 @@
+package aa;
 public class GameStats {
 
 	int health;

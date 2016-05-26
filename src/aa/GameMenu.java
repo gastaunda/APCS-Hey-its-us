@@ -1,3 +1,5 @@
+package aa;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -16,6 +18,7 @@ import java.awt.event.ActionListener;
 public class GameMenu {
 
 	private JFrame frmMainMenu;
+	private boolean running = true;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
 	private final Action action_2 = new SwingAction_2();
@@ -24,8 +27,6 @@ public class GameMenu {
 	public static final short btnWidth = 400;
 	public static final byte btnHeight = 50;
 	public static final short btnSpace = 80;
-	public static final short winWidth = 1280;
-	public static final short winHeight = 720;
 
 	/**
 	 * Launch the application.
@@ -57,34 +58,26 @@ public class GameMenu {
 		frmMainMenu = new JFrame();
 		frmMainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMainMenu.setTitle("Main Menu");
-		frmMainMenu.setSize(winWidth, winHeight);
+		frmMainMenu.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frmMainMenu.setExtendedState(Game.winState);
 		frmMainMenu.getContentPane().setLayout(null);
 
-
 		JButton btnNewButton = new JButton("Levels");
-		btnNewButton.setBounds((winWidth - btnWidth) / 2, 30, btnWidth, btnHeight);
 		frmMainMenu.getContentPane().add(btnNewButton);
 		btnNewButton.setAction(action_2);
 		btnNewButton.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnLevelPacks = new JButton("Level Packs");
-		btnLevelPacks.setBounds((winWidth - btnWidth) / 2, btnHeight + btnNewButton.getY() + btnSpace, btnWidth, btnHeight);
 		frmMainMenu.getContentPane().add(btnLevelPacks);
 		btnLevelPacks.setAction(action_3);
 		btnLevelPacks.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnOptions = new JButton("Options");
-		btnOptions.setBounds((winWidth - btnWidth) / 2, btnHeight + btnLevelPacks.getY() + btnSpace, btnWidth, btnHeight);
 		frmMainMenu.getContentPane().add(btnOptions);
-		btnOptions.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnOptions.setAction(action_1);
 		btnOptions.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBounds((winWidth - btnWidth) / 2, winHeight - 100 - btnHeight, btnWidth, btnHeight);
 		frmMainMenu.getContentPane().add(btnExit);
 		btnExit.setAction(action);
 		btnExit.setFont(UIManager.getFont("Button.font"));
@@ -94,8 +87,30 @@ public class GameMenu {
 		frmMainMenu.getContentPane().add(label);
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frmMainMenu);
-		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
-		label.setLabelFor(frmMainMenu);
+		new Thread() {
+			public void run() {
+				while (running) {
+					btnNewButton.setBounds((frmMainMenu.getWidth() - btnWidth) / 2, 30, btnWidth, btnHeight);
+					btnLevelPacks.setBounds((frmMainMenu.getWidth() - btnWidth) / 2,
+							btnHeight + btnNewButton.getY() + btnSpace, btnWidth, btnHeight);
+					btnOptions.setBounds((frmMainMenu.getWidth() - btnWidth) / 2,
+							btnHeight + btnLevelPacks.getY() + btnSpace, btnWidth, btnHeight);
+					btnExit.setBounds((frmMainMenu.getWidth() - btnWidth) / 2, Game.winHeight - 100 - btnHeight,
+							btnWidth, btnHeight);
+				}
+			}
+		}.start();
+	}
+
+	private void close() {
+		running = false;
+		Game.winState = frmMainMenu.getExtendedState();
+		frmMainMenu.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frmMainMenu.getWidth();
+		Game.winHeight = frmMainMenu.getHeight();
+		Game.winX = frmMainMenu.getX();
+		Game.winY = frmMainMenu.getY();
+		frmMainMenu.dispose();
 	}
 
 	private class SwingAction extends AbstractAction {
@@ -117,7 +132,7 @@ public class GameMenu {
 
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
-			frmMainMenu.dispose();
+			close();
 		}
 	}
 
@@ -129,7 +144,7 @@ public class GameMenu {
 
 		public void actionPerformed(ActionEvent e) {
 			Levels.main(null);
-			frmMainMenu.dispose();
+			close();
 		}
 	}
 
@@ -141,7 +156,7 @@ public class GameMenu {
 
 		public void actionPerformed(ActionEvent e) {
 			LevelPacks.main(null);
-			frmMainMenu.dispose();
+			close();
 		}
 	}
 }

@@ -1,3 +1,4 @@
+package aa;
 
 import java.awt.EventQueue;
 
@@ -27,6 +28,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 import javax.swing.Action;
@@ -36,6 +38,7 @@ public class Credits {
 
 	private JFrame frame;
 	private final Action action = new SwingAction();
+	private boolean running = true;
 
 	/**
 	 * Launch the application.
@@ -68,17 +71,17 @@ public class Credits {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(GameMenu.winWidth, GameMenu.winHeight);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setExtendedState(Game.winState);
 		frame.getContentPane().setForeground(Color.RED);
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.getContentPane().setLayout(null);
 
 		JButton btnBackToMain = new JButton("Back To Game Options");
-		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2,
-				GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
 
+		LinkedList<JLabel> text = new LinkedList<JLabel>();
 		try {
 			int val = 0;
 			final int h = 14;
@@ -93,16 +96,38 @@ public class Credits {
 					else if (line.charAt(0) == 'r')
 						lblTemp.setHorizontalAlignment(SwingConstants.RIGHT);
 					lblTemp.setForeground(Color.WHITE);
-					lblTemp.setBounds(0, val, GameMenu.winWidth, h);
+					lblTemp.setBounds(0, val, frame.getWidth(), h);
 					val += h;
 					frame.getContentPane().add(lblTemp);
+					text.add(lblTemp);
 				}
 			}
 			scanner.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		new Thread() {
+			public void run() {
+				while (running) {
+					btnBackToMain.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
+							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+					for (JLabel lblTemp : text)
+						lblTemp.setBounds(lblTemp.getX(), lblTemp.getY(), frame.getWidth(), lblTemp.getHeight());
+				}
+			};
+		}.start();
 
+	}
+
+	private void close() {
+		running = false;
+		Game.winState = frame.getExtendedState();
+		frame.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frame.getWidth();
+		Game.winHeight = frame.getHeight();
+		Game.winX = frame.getX();
+		Game.winY = frame.getY();
+		frame.dispose();
 	}
 
 	private class SwingAction extends AbstractAction {
@@ -113,7 +138,7 @@ public class Credits {
 
 		public void actionPerformed(ActionEvent e) {
 			GameOptions.main(null);
-			frame.dispose();
+			close();
 		}
 	}
 }

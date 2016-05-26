@@ -1,3 +1,5 @@
+package aa;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -22,12 +24,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 
 import GUIPractice.Tester;
+import javax.swing.SwingConstants;
 
 public class Levels {
 
 	private JFrame frame;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
+	private boolean running = true;
 
 	private static final byte btnSize = 48;
 
@@ -61,34 +65,56 @@ public class Levels {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(new Color(255, 0, 51));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
-		frame.setSize(GameMenu.winWidth, GameMenu.winHeight);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblLevelSelect = DefaultComponentFactory.getInstance().createTitle("Level Select");
-		lblLevelSelect.setBounds((GameMenu.winWidth - 57) / 2, 20, 57, 14);
+		lblLevelSelect.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLevelSelect.setForeground(new Color(255, 0, 51));
 		lblLevelSelect.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(lblLevelSelect);
 
 		JButton button = new JButton("1");
-		button.setBounds(20, 60, btnSize, btnSize);
 		button.setAction(action_1);
 		frame.getContentPane().add(button);
 
 		JButton button_1 = new JButton("2");
-		button_1.setBounds(195, 60, btnSize, btnSize);
 		frame.getContentPane().add(button_1);
 
 		JButton button_2 = new JButton("3");
-		button_2.setBounds(370, 60, btnSize, btnSize);
 		frame.getContentPane().add(button_2);
 
-		JButton btnBackToMain = new JButton("Back to Main Meu");
-		btnBackToMain.setBounds((GameMenu.winWidth - GameMenu.btnWidth) / 2,
-				GameMenu.winHeight - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+		JButton btnBackToMain = new JButton("Back to Main Menu");
 		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
+		new Thread() {
+			public void run() {
+				while (running) {
+					lblLevelSelect.setBounds(0, GameMenu.btnSpace, frame.getWidth(), 20);
+					button.setBounds(GameMenu.btnSpace,
+							lblLevelSelect.getY() + lblLevelSelect.getHeight() + GameMenu.btnSpace, btnSize, btnSize);
+					button_1.setBounds(button.getX() + GameMenu.btnSpace + btnSize,
+							lblLevelSelect.getY() + lblLevelSelect.getHeight() + GameMenu.btnSpace, btnSize, btnSize);
+					button_2.setBounds(button_1.getX() + GameMenu.btnSpace + btnSize,
+							lblLevelSelect.getY() + lblLevelSelect.getHeight() + GameMenu.btnSpace, btnSize, btnSize);
+					btnBackToMain.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
+							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+				}
+			}
+		}.start();
+	}
+
+	private void close() {
+		running = false;
+		Game.winState = frame.getExtendedState();
+		frame.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frame.getWidth();
+		Game.winHeight = frame.getHeight();
+		Game.winX = frame.getX();
+		Game.winY = frame.getY();
+		frame.dispose();
 	}
 
 	private class SwingAction extends AbstractAction {
@@ -99,7 +125,7 @@ public class Levels {
 
 		public void actionPerformed(ActionEvent e) {
 			GameMenu.main(null);
-			frame.dispose();
+			close();
 		}
 	}
 
@@ -110,12 +136,8 @@ public class Levels {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			if (Game.m != null)
-				Game.m.close();
-			Game.m = new Music("assets/audio/music/If you don't know what to do just steal the amen break.ogg");
-			Game.m.loop();
 			Tester.main(null);
-			frame.dispose();
+			close();
 		}
 	}
 }
