@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 
 public class GameMenu {
 
-	private JFrame frmMainMenu;
+	private JFrame frame;
 	private boolean running = true;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
@@ -36,7 +36,7 @@ public class GameMenu {
 			public void run() {
 				try {
 					GameMenu window = new GameMenu();
-					window.frmMainMenu.setVisible(true);
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,47 +55,47 @@ public class GameMenu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmMainMenu = new JFrame();
-		frmMainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmMainMenu.setTitle("Main Menu");
-		frmMainMenu.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
-		frmMainMenu.setExtendedState(Game.winState);
-		frmMainMenu.getContentPane().setLayout(null);
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle(Game.name);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setExtendedState(Game.winState);
+		frame.getContentPane().setLayout(null);
 
 		JButton btnNewButton = new JButton("Levels");
-		frmMainMenu.getContentPane().add(btnNewButton);
+		frame.getContentPane().add(btnNewButton);
 		btnNewButton.setAction(action_2);
 		btnNewButton.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnLevelPacks = new JButton("Level Packs");
-		frmMainMenu.getContentPane().add(btnLevelPacks);
+		frame.getContentPane().add(btnLevelPacks);
 		btnLevelPacks.setAction(action_3);
 		btnLevelPacks.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnOptions = new JButton("Options");
-		frmMainMenu.getContentPane().add(btnOptions);
+		frame.getContentPane().add(btnOptions);
 		btnOptions.setAction(action_1);
 		btnOptions.setFont(UIManager.getFont("Button.font"));
 
 		JButton btnExit = new JButton("Exit");
-		frmMainMenu.getContentPane().add(btnExit);
+		frame.getContentPane().add(btnExit);
 		btnExit.setAction(action);
 		btnExit.setFont(UIManager.getFont("Button.font"));
 
 		JLabel label = new JLabel("");
 		label.setBounds(0, 0, 3622, 3877);
-		frmMainMenu.getContentPane().add(label);
+		frame.getContentPane().add(label);
 		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
-		label.setLabelFor(frmMainMenu);
+		label.setLabelFor(frame);
 		new Thread() {
 			public void run() {
 				while (running) {
-					btnNewButton.setBounds((frmMainMenu.getWidth() - btnWidth) / 2, 30, btnWidth, btnHeight);
-					btnLevelPacks.setBounds((frmMainMenu.getWidth() - btnWidth) / 2,
+					btnNewButton.setBounds((frame.getWidth() - btnWidth) / 2, 30, btnWidth, btnHeight);
+					btnLevelPacks.setBounds((frame.getWidth() - btnWidth) / 2,
 							btnHeight + btnNewButton.getY() + btnSpace, btnWidth, btnHeight);
-					btnOptions.setBounds((frmMainMenu.getWidth() - btnWidth) / 2,
+					btnOptions.setBounds((frame.getWidth() - btnWidth) / 2,
 							btnHeight + btnLevelPacks.getY() + btnSpace, btnWidth, btnHeight);
-					btnExit.setBounds((frmMainMenu.getWidth() - btnWidth) / 2, Game.winHeight - 100 - btnHeight,
+					btnExit.setBounds((frame.getWidth() - btnWidth) / 2, Game.winHeight - 100 - btnHeight,
 							btnWidth, btnHeight);
 				}
 			}
@@ -104,13 +104,13 @@ public class GameMenu {
 
 	private void close() {
 		running = false;
-		Game.winState = frmMainMenu.getExtendedState();
-		frmMainMenu.setExtendedState(JFrame.NORMAL);
-		Game.winWidth = frmMainMenu.getWidth();
-		Game.winHeight = frmMainMenu.getHeight();
-		Game.winX = frmMainMenu.getX();
-		Game.winY = frmMainMenu.getY();
-		frmMainMenu.dispose();
+		Game.winState = frame.getExtendedState();
+		frame.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frame.getWidth();
+		Game.winHeight = frame.getHeight();
+		Game.winX = frame.getX();
+		Game.winY = frame.getY();
+		frame.dispose();
 	}
 
 	private class SwingAction extends AbstractAction {

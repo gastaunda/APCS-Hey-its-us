@@ -64,6 +64,7 @@ public class Levels {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle(Game.name);
 		frame.getContentPane().setForeground(new Color(255, 0, 51));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);

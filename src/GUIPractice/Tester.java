@@ -21,6 +21,7 @@ public class Tester {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		f.setExtendedState(Game.winState);
+		f.setTitle(Game.name);
 	}
 
 	private static void startmusic() {

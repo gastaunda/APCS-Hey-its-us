@@ -71,6 +71,7 @@ public class Credits {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle(Game.name);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		frame.setExtendedState(Game.winState);
