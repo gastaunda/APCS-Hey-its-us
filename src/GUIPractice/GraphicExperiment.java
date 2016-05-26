@@ -31,6 +31,15 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	Timer t = new Timer(5, this);
 
 	public GraphicExperiment() {
+		for (double i = -64; i <= 800; i += 32){
+			lischt.add(new KillBlock(16, -64, i));
+		}
+		for(double i = -64; i <= 1800; i += 32){
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32){
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 		for (double i = 0; i <= 100; i += 32) {
 			lischt.add(new Floor(16, i, 200));
 		}
