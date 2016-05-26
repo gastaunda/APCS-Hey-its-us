@@ -16,12 +16,18 @@ public abstract class GameEntity {
 	private HitBox hitBox;
 	protected ImageIcon myImage;
 	private boolean grounded;
+	private boolean victory;
 	public void takedamage(int x) {
 		health -= x;
 	}
-	
 	public void setGround(boolean turing){
 		grounded = turing;
+	}
+	public void setVictory(boolean dank){
+		victory = dank;
+	}
+	public boolean victorious(){
+		return victory;
 	}
 	public void setMaxVel(double max){
 		vXMax = max;

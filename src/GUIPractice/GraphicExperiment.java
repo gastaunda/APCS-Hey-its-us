@@ -10,6 +10,7 @@ import java.awt.event.*; // access to WindowAdapter, WindowEvent
 import javax.swing.*; // access to JFrame and JComponents
 import javax.swing.event.*; // access 
 
+import items.Door;
 import items.EntityList;
 import items.Floor;
 import items.GameObject;
@@ -53,6 +54,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (double i = 400; i <= 800; i += 50){
 			lischt.add(new Mob(100, 100, 2, new GameObject[2], (double) i, (double) 200, (double) 16, (double) 16));
 		}
+		lischt.add(new Door(16, 1400, 468));
 		t.start();
 		addKeyListener(this);
 		setFocusable(true);
@@ -77,6 +79,9 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void actionPerformed(ActionEvent e) {
 		if (lischt.kill()) { // get this to end game
 
+		}
+		if(lischt.player().victorious()){ // wins level
+			
 		}
 		lischt.frameAdvance();
 		repaint();
