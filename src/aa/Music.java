@@ -48,6 +48,11 @@ public class Music {
 					start.play();
 					while (!start.stopped())
 						;
+					try {
+						Thread.sleep(418);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 				loop.loop();
 				while (!loop.stopped())
