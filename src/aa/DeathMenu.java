@@ -70,6 +70,7 @@ public class DeathMenu {
 		frame.getContentPane().add(btnBackToLevel);
 
 		JLabel lblYouDedTry = new JLabel("YOU DEAD: TRY AGAIN");
+		lblYouDedTry.setForeground(Color.RED);
 		lblYouDedTry.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYouDedTry.setFont(new Font("Stencil", Font.PLAIN, 40));
 		frame.getContentPane().add(lblYouDedTry);
@@ -104,11 +105,14 @@ public class DeathMenu {
 
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
-			putValue(NAME, "YOU DEAD: TRY AGAIN");
+			putValue(NAME, "Back to Level Selection");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 
 		public void actionPerformed(ActionEvent e) {
+			Game.m.close();
+			Game.m = new Music();
+			Game.m.loop();
 			Levels.main(null);
 			close();
 		}

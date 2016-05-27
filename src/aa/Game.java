@@ -12,7 +12,7 @@ public class Game {
 	public static final String name = "BounceMan";
 
 	public static void main(String[] args) {
-		m = new Music("assets/audio/music/Local Forecast - Elevator.ogg");
+		m = new Music();
 		m.loop();
 		GameMenu.main(null);
 	}
