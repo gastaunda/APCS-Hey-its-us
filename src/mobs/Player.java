@@ -27,5 +27,12 @@ public class Player extends Mob {
 	public int maxHealth(){
 		return maxHp;
 	}
+	
+	public boolean alive(){
+		if(super.health <= 0)
+			return false;
+		else
+			return true;
+	}
 
 }

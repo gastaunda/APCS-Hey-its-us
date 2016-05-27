@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
 
+import GUIPractice.Tester;
 import mobs.Mob;
 import mobs.Player;
 
@@ -100,12 +101,15 @@ public class EntityList {
 		player.move();
 
 	}
-
-	public Player player() {
+	
+	public Player player(){
 		return player;
 	}
 
 	public boolean kill() { // ends game if troo(player is dead)
-		return player.getHealth() <= 0;
+		if( player.getHealth() <= 0)
+			return true;
+		else 
+			return false;
 	}
 }

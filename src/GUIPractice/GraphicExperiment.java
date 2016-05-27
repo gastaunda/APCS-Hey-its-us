@@ -3,13 +3,18 @@ package GUIPractice;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
 import java.awt.*; // access to Container
 import java.awt.event.*; // access to WindowAdapter, WindowEvent
+
 import javax.swing.*; // access to JFrame and JComponents
 import javax.swing.event.*; // access 
 
+import aa.DeathMenu;
+import aa.GameMenu;
 import items.Door;
 import items.EntityList;
 import items.Floor;
@@ -132,7 +137,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		if (code == KeyEvent.VK_X)
 			lischt.add(new Projectile(3, 100, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
 	}
-
+	
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
 		if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_RIGHT)
@@ -142,6 +147,8 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void keyTyped(KeyEvent e) {
 
 	}
+	
+
 
 	
 	
