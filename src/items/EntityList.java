@@ -78,8 +78,7 @@ public class EntityList {
 		for (int a = 0; a < projectiles.size(); a++) {
 			for (int x = 0; x < mobs.size(); x++) {
 				if (projectiles.get(a).HitBox().collisionCheck(mobs.get(x).HitBox())){
-					projectiles.remove(a).collide(mobs.get(x));					
-					a--;
+					projectiles.get(a).collide(mobs.get(x));
 				}
 			}
 			if (projectiles.get(a).HitBox().collisionCheck(player.HitBox()))

@@ -31,10 +31,12 @@ public class Player extends Mob {
 	public void atkPickup(){
 		atk++;
 	}
+	public void healPickup(){
+		super.heal(2);
+	}
 	public int atk(){
 		return super.atk;
 	}
-<<<<<<< HEAD
 	
 	public boolean alive(){
 		if(super.health <= 0)
@@ -42,7 +44,4 @@ public class Player extends Mob {
 		else
 			return true;
 	}
-
-=======
->>>>>>> origin/master
 }
