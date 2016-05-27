@@ -15,14 +15,14 @@ public class Mob extends GameEntity {
 	protected double myHeight;
 	protected double myWidth;
 	
-	public Mob(int maxHealth, int health, int attack, int[] inventory, double posX, double posY, double height, double width) 
+	public Mob(int maxHealth, int health, int attack, double posX, double posY, double height, double width) 
 	{
 		myHeight = height;
 		myWidth = width;
 		myImage = new ImageIcon(EntityList.class.getResource("/assets/images/mob.png"));
 		maxHp = maxHealth;
 		hp = health;
-		inv = inventory;
+		inv = new int[3];
 		atk = attack;
 		setPosX(posX);
 		setPosY(posY);
