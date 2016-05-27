@@ -3,6 +3,7 @@ package GUIPractice;
 import javax.swing.JFrame;
 
 import aa.Game;
+import items.EntityList;
 
 /**
  * Write a description of class Tester here.
@@ -14,7 +15,7 @@ public class Tester {
 	public static void main(String args[]) {
 		startmusic();
 		JFrame f = new JFrame();
-		GraphicExperiment s = new GraphicExperiment();
+		GraphicExperiment s = new GraphicExperiment(new EntityList());
 		f.add(s);
 
 		f.setVisible(true);

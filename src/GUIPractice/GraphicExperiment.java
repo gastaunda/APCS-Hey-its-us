@@ -13,7 +13,6 @@ import javax.swing.event.*; // access
 import items.Door;
 import items.EntityList;
 import items.Floor;
-import items.GameObject;
 import items.KillBlock;
 import items.Projectile;
 import items.Wall;
@@ -28,12 +27,13 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class GraphicExperiment extends JPanel implements ActionListener, KeyListener {
-	private EntityList lischt = new EntityList();
+	private EntityList lischt;
 	Timer t = new Timer(5, this);
 	ImageIcon background;
 	ImageIcon heart;
 	ImageIcon redHeart;
-	public GraphicExperiment() {
+	public GraphicExperiment(EntityList list) {
+		lischt = list;
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
@@ -57,7 +57,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50){
-			lischt.add(new Mob(100, 100, 1, new GameObject[2], (double) i, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(100, 100, 1, new int[2], (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		lischt.add(new Door(16, 1400, 468));
 		t.start();

@@ -13,7 +13,7 @@ public class EntityList {
 	LinkedList<Projectile> projectiles;
 	ArrayList<Wall> walls;
 	ArrayList<Mob> mobs;
-	LinkedList<FloorObject> floorDrops;
+	LinkedList<Pickup> floorDrops;
 	Player player;
 	Mob mob;
 
@@ -21,14 +21,10 @@ public class EntityList {
 		projectiles = new LinkedList<Projectile>();
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
-		floorDrops = new LinkedList<FloorObject>();
-		player = new Player(10, 10, new GameObject[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel
-																											// free
-																											// to
-																											// mess
-																											// with
-																											// these
-		player.setAccY(.075); // values
+		floorDrops = new LinkedList<Pickup>();
+		player = new Player(10, 10, new int[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to change these
+		
+		player.setAccY(.075);
 	}
 
 	public void add(Projectile projfoj) {
@@ -44,7 +40,7 @@ public class EntityList {
 		mobfob.setAccY(.075);
 	}
 
-	public void add(FloorObject floorboor) {
+	public void add(Pickup floorboor) {
 		floorDrops.add(floorboor);
 	}
 
@@ -60,7 +56,7 @@ public class EntityList {
 		return mobs;
 	}
 
-	public LinkedList<FloorObject> getFloor() {
+	public LinkedList<Pickup> getFloor() {
 		return floorDrops;
 	}
 
