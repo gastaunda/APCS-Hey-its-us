@@ -25,6 +25,10 @@ public class Music {
 			e.printStackTrace();
 		}
 	}
+	
+	public Music() {
+		this("assets/audio/music/Local Forecast - Elevator.ogg");
+	}
 
 	public void play() {
 		play = true;
