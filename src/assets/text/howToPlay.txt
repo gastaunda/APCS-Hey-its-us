@@ -1,5 +1,13 @@
 cHow To Play
+c
+cYou are Blue
+c
 cReach the Door
+c
+cYou bounce off Everything
+c
 cGreen Things kill you Very Fast
+c
 cUse arrow keys to move
+c
 cZ to shoot left, X to shoot right

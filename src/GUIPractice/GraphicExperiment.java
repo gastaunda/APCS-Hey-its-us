@@ -32,10 +32,12 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	ImageIcon background;
 	ImageIcon heart;
 	ImageIcon redHeart;
+	ImageIcon sword;
 	public GraphicExperiment() {
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
+		sword = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/atk.png"));
 		for (double i = -64; i <= 800; i += 32){
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -74,6 +76,9 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}		
 		for(int i= 0; i < lischt.player().getHealth(); i++){
 			redHeart.paintIcon(this, g, i*16, 0);
+		}	
+		for(int i= 0; i < lischt.player().atk(); i++){
+			sword.paintIcon(this, g, i*16, 32);
 		}	
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
 		for (Wall x : lischt.getWalls()) {
