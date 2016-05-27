@@ -97,7 +97,7 @@ public class Credits {
 						lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
 					else if (line.charAt(0) == 'r')
 						lblTemp.setHorizontalAlignment(SwingConstants.RIGHT);
-					lblTemp.setForeground(Color.WHITE);
+					lblTemp.setForeground(Color.cyan);
 					lblTemp.setBounds(0, val, frame.getWidth(), h);
 					val += h;
 					frame.getContentPane().add(lblTemp);

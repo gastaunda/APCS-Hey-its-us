@@ -3,8 +3,6 @@ package aa;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JFrame;
-
 public class Input implements KeyListener {
 	private int kup;
 	private int kdown;
@@ -19,7 +17,7 @@ public class Input implements KeyListener {
 	private boolean shootL;
 	private boolean shootR;
 
-	Input(int up, int down, int left, int right, int shootL, int shootR) {
+	public Input(int up, int down, int left, int right, int shootL, int shootR) {
 		kup = up;
 		kdown = down;
 		kleft = left;
