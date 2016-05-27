@@ -15,7 +15,7 @@ public class Tester {
 	public static void main(String args[]) {
 		startmusic();
 		JFrame f = new JFrame();
-		GraphicExperiment s = new GraphicExperiment();
+		GraphicExperiment s = new GraphicExperiment(1);
 		f.add(s);
 
 		f.setVisible(true);
