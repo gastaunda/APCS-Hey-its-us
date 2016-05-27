@@ -7,6 +7,7 @@ public class Music {
 	private OggClip loop;
 	private OggClip start;
 	private Thread player;
+	private boolean play;
 
 	public Music(String start, String loop) {
 		try {
@@ -26,12 +27,14 @@ public class Music {
 	}
 
 	public void play() {
+		play = true;
 		player = new Thread() {
 			public void run() {
 				if (start != null) {
 					start.play();
 					while (!start.stopped())
-						;
+						if(!play)
+							return;
 				}
 				loop.play();
 			}
@@ -40,12 +43,14 @@ public class Music {
 	}
 
 	public void loop() {
+		play = true;
 		player = new Thread() {
 			public void run() {
 				if (start != null) {
 					start.play();
 					while (!start.stopped())
-						;
+						if(!play)
+							return;
 					try {
 						Thread.sleep(418);
 					} catch (InterruptedException e) {
@@ -59,6 +64,7 @@ public class Music {
 	}
 	
 	public void stop() {
+		play = false;
 		if (start != null)
 			start.stop();
 		loop.stop();
