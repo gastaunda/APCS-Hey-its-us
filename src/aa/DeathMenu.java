@@ -17,6 +17,8 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
 import javax.swing.Action;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class DeathMenu {
 
@@ -30,6 +32,10 @@ public class DeathMenu {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				if (Game.m != null)
+					Game.m.close();
+				Game.m = new Music("assets/audio/music/Sometimes I make video game music.ogg");
+				Game.m.loop();
 				try {
 					DeathMenu window = new DeathMenu();
 					window.frame.setVisible(true);
@@ -55,18 +61,37 @@ public class DeathMenu {
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JButton btnBackToLevel = new JButton("Back to Level Select");
+		frame.getContentPane().setLayout(null);
+
+		JButton btnBackToLevel = new JButton("Back to Level Selection");
 		btnBackToLevel.setAction(action);
 		btnBackToLevel.setBackground(new Color(0, 255, 255));
-		frame.getContentPane().add(btnBackToLevel, BorderLayout.SOUTH);
-		
+
+		frame.getContentPane().add(btnBackToLevel);
+
 		JLabel lblYouDedTry = new JLabel("YOU DEAD: TRY AGAIN");
+		lblYouDedTry.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYouDedTry.setFont(new Font("Stencil", Font.PLAIN, 40));
-		frame.getContentPane().add(lblYouDedTry, BorderLayout.CENTER);
+		frame.getContentPane().add(lblYouDedTry);
+
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 3622, 3877);
+		frame.getContentPane().add(label);
+		label.setIcon(new ImageIcon(DeathMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setLabelFor(frame);
+
+		new Thread() {
+			public void run() {
+				while (running) {
+					lblYouDedTry.setBounds(0, 0, frame.getWidth(), btnBackToLevel.getY());
+					btnBackToLevel.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
+							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+				}
+			}
+		}.start();
 	}
 
-private void close() {
+	private void close() {
 		running = false;
 		Game.winState = frame.getExtendedState();
 		frame.setExtendedState(JFrame.NORMAL);
@@ -79,9 +104,10 @@ private void close() {
 
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
-			putValue(NAME, "SwingAction");
+			putValue(NAME, "YOU DEAD: TRY AGAIN");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Levels.main(null);
 			close();

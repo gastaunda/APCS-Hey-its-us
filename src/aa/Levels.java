@@ -100,7 +100,7 @@ public class Levels {
 		JLabel label = new JLabel("");
 		label.setBounds(0, 0, 3622, 3877);
 		frame.getContentPane().add(label);
-		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setIcon(new ImageIcon(Levels.class.getResource("/assets/images/LH_95.jpg")));
 		label.setLabelFor(frame);
 
 		new Thread() {
