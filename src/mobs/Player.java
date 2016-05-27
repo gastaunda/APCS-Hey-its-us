@@ -34,4 +34,15 @@ public class Player extends Mob {
 	public int atk(){
 		return super.atk;
 	}
+<<<<<<< HEAD
+	
+	public boolean alive(){
+		if(super.health <= 0)
+			return false;
+		else
+			return true;
+	}
+
+=======
+>>>>>>> origin/master
 }

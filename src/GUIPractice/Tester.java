@@ -2,6 +2,8 @@ package GUIPractice;
 
 import javax.swing.JFrame;
 
+import mobs.Player;
+import aa.DeathMenu;
 import aa.Game;
 import items.EntityList;
 
@@ -11,6 +13,8 @@ import items.EntityList;
  * @author (your name)
  * @version (a version number or a date)
  */
+
+
 public class Tester {
 	public static void main(String args[]) {
 		startmusic();
@@ -30,6 +34,12 @@ public class Tester {
 			Game.m.close();
 		Game.m = new aa.Music("assets/audio/music/If you don't know what to do.ogg",
 				"assets/audio/music/just steal the amen break.ogg");
-		Game.m.loop();
+			Game.m.loop();
+		
+	}
+
+	public static void close(JFrame f){
+		DeathMenu.main(null);
+		f.dispose();
 	}
 }
