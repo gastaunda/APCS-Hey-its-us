@@ -25,5 +25,8 @@ public class Player extends Mob {
 	public boolean canFire(){
 		return currentCd <= 0;
 	}
+	public int maxHealth(){
+		return maxHp;
+	}
 
 }

@@ -32,9 +32,11 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	Timer t = new Timer(5, this);
 	ImageIcon background;
 	ImageIcon heart;
+	ImageIcon redHeart;
 	public GraphicExperiment() {
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
+		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
 		for (double i = -64; i <= 800; i += 32){
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -55,7 +57,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50){
-			lischt.add(new Mob(100, 100, 2, new GameObject[2], (double) i, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(100, 100, 1, new GameObject[2], (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		lischt.add(new Door(16, 1400, 468));
 		t.start();
@@ -68,9 +70,12 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		background.paintIcon(this, g, 0, 0);
-		for(int i= 0; i < lischt.player().getHealth(); i++){
+		for(int i= 0; i < lischt.player().maxHealth(); i++){
 			heart.paintIcon(this, g, i*16, 0);
 		}		
+		for(int i= 0; i < lischt.player().getHealth(); i++){
+			redHeart.paintIcon(this, g, i*16, 0);
+		}	
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
 		for (Wall x : lischt.getWalls()) {
 			x.imageIcon().paintIcon(this, g, (int) x.getPosX(), (int) x.getPosY());
