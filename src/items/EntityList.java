@@ -77,11 +77,11 @@ public class EntityList {
 		}
 		for (int a = 0; a < projectiles.size(); a++) {
 			for (int x = 0; x < mobs.size(); x++) {
-				if (projectiles.get(a).HitBox().collisionCheck(mobs.get(x).HitBox())){
+				if (mobs.get(x).HitBox().collisionCheck(projectiles.get(a).HitBox())){
 					projectiles.get(a).collide(mobs.get(x));
 				}
 			}
-			if (projectiles.get(a).HitBox().collisionCheck(player.HitBox()))
+			if (player.HitBox().collisionCheck(projectiles.get(a).HitBox()))
 				projectiles.get(a).collide(player);
 			projectiles.get(a).move();
 			if (projectiles.get(a).remainingLife() <= 0) {
