@@ -11,7 +11,14 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Scanner;
+
 import javax.swing.Action;
+import javax.swing.ImageIcon;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
@@ -46,41 +53,70 @@ public class HowToPlay {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * 
+	 * @throws IOException
 	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle(Game.name);
-		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		frame.setExtendedState(Game.winState);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setForeground(Color.RED);
+		frame.getContentPane().setBackground(Color.BLACK);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblSorryWeDont = DefaultComponentFactory.getInstance()
-				.createLabel("Sorry, We don't have anything here at the moment");
-		lblSorryWeDont.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSorryWeDont.setFont(new Font("Papyrus", Font.PLAIN, 50));
-		lblSorryWeDont.setForeground(Color.RED);
-		lblSorryWeDont.setBackground(Color.BLACK);
-		frame.getContentPane().add(lblSorryWeDont);
-
-		JButton btnBackToMain = new JButton("Back to Main Menu");
+		JButton btnBackToMain = new JButton("Back To Game Options");
 		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
 
+		LinkedList<JLabel> text = new LinkedList<JLabel>();
+		try {
+			int val = 0;
+			final int h = 14;
+			Scanner scanner = new Scanner(
+					new File(getClass().getClassLoader().getResource("assets/text/howToPlay.txt").getFile()));
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				if (line.charAt(0) != '#') {
+					JLabel lblTemp = new JLabel(line.substring(1));
+					if (line.charAt(0) == 'c')
+						lblTemp.setHorizontalAlignment(SwingConstants.CENTER);
+					else if (line.charAt(0) == 'r')
+						lblTemp.setHorizontalAlignment(SwingConstants.RIGHT);
+					lblTemp.setForeground(Color.YELLOW);
+					lblTemp.setBounds(0, val, frame.getWidth(), h);
+					val += h;
+					frame.getContentPane().add(lblTemp);
+					text.add(lblTemp);
+				}
+			}
+			scanner.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 3622, 3877);
+		frame.getContentPane().add(label);
+		label.setIcon(new ImageIcon(GameMenu.class.getResource("/assets/images/LH_95.jpg")));
+		label.setLabelFor(frame);
+		
 		new Thread() {
 			public void run() {
 				while (running) {
 					btnBackToMain.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
 							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
-					lblSorryWeDont.setBounds(0, 290, frame.getWidth(), 80);
+					for (JLabel lblTemp : text)
+						lblTemp.setBounds(lblTemp.getX(), lblTemp.getY(), frame.getWidth(), lblTemp.getHeight());
 				}
 			};
 		}.start();
+
 	}
 
 	private void close() {
-		running  = false;
+		running = false;
 		Game.winState = frame.getExtendedState();
 		frame.setExtendedState(JFrame.NORMAL);
 		Game.winWidth = frame.getWidth();
