@@ -1,0 +1,5 @@
+cHow To Play
+cReach the Door
+cGreen Things kill you Very Fast
+cUse arrow keys to move
+cZ to shoot left, X to shoot right

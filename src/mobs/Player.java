@@ -9,6 +9,7 @@ public class Player extends Mob {
 	public Player(int maxHealth, int health, int[] inventory, double posX, double posY, double height, double width) {
 		super(maxHealth, health, 0, inventory, posX, posY, height, width);
 		super.myImage = new ImageIcon(EntityList.class.getResource("/assets/images/image.png"));
+		super.inv[0] = 1;
 	}
 	
 	public int[] invAccess(){
