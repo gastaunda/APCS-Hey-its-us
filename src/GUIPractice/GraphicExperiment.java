@@ -32,16 +32,17 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class GraphicExperiment extends JPanel implements ActionListener, KeyListener {
-	private EntityList lischt;
+	private EntityList lischt = new EntityList();
 	Timer t = new Timer(5, this);
 	ImageIcon background;
 	ImageIcon heart;
 	ImageIcon redHeart;
-	public GraphicExperiment(EntityList list) {
-		lischt = list;
+	ImageIcon sword;
+	public GraphicExperiment() {
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
+		sword = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/atk.png"));
 		for (double i = -64; i <= 800; i += 32){
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -62,7 +63,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50){
-			lischt.add(new Mob(100, 100, 1, new int[2], (double) i, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(100, 100, 1, (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		lischt.add(new Door(16, 1400, 468));
 		t.start();
@@ -80,6 +81,9 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}		
 		for(int i= 0; i < lischt.player().getHealth(); i++){
 			redHeart.paintIcon(this, g, i*16, 0);
+		}	
+		for(int i= 0; i < lischt.player().atk(); i++){
+			sword.paintIcon(this, g, i*16, 32);
 		}	
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
 		for (Wall x : lischt.getWalls()) {
@@ -132,10 +136,16 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.player().setVelX(-3);
 		}
 		if (code == KeyEvent.VK_Z)
-			lischt.add(new Projectile(-3, 100, 1, lischt.player().getPosX() - 45, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(-3,0, 100, 1, lischt.player().getPosX() - 45, lischt.player().getPosY() + 15));
+
+		if (code == KeyEvent.VK_C)
+			lischt.add(new Projectile(3,0, 100, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
+		if (code == KeyEvent.VK_S)
+			lischt.add(new Projectile(0,3, 100, 1, lischt.player().getPosX() + 15, lischt.player().getPosY() + 45));
 
 		if (code == KeyEvent.VK_X)
-			lischt.add(new Projectile(3, 100, 1, lischt.player().getPosX() + 45, lischt.player().getPosY() + 15));
+			lischt.add(new Projectile(0,-3, 100, 1, lischt.player().getPosX() - 15, lischt.player().getPosY() - 15));
+		
 	}
 	
 	public void keyReleased(KeyEvent e) {

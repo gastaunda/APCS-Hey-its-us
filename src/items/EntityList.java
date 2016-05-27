@@ -23,7 +23,7 @@ public class EntityList {
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<Pickup>();
-		player = new Player(10, 10, new int[4], (double) 0, (double) 0, (double) 16, (double) 16); // feel free to change these
+		player = new Player(10, 10, (double) 0, (double) 0, (double) 16, (double) 16); // feel free to change these
 		
 		player.setAccY(.075);
 	}
@@ -77,8 +77,10 @@ public class EntityList {
 		}
 		for (int a = 0; a < projectiles.size(); a++) {
 			for (int x = 0; x < mobs.size(); x++) {
-				if (projectiles.get(a).HitBox().collisionCheck(mobs.get(x).HitBox()))
-					projectiles.get(a).collide(mobs.get(x));
+				if (projectiles.get(a).HitBox().collisionCheck(mobs.get(x).HitBox())){
+					projectiles.remove(a).collide(mobs.get(x));					
+					a--;
+				}
 			}
 			if (projectiles.get(a).HitBox().collisionCheck(player.HitBox()))
 				projectiles.get(a).collide(player);
@@ -96,6 +98,12 @@ public class EntityList {
 			if (mobs.get(x).getHealth() <= 0) {
 				mobs.remove(x);
 				x--;
+			}
+		}
+		for(int n = 0; n < floorDrops.size(); n++){
+			if(floorDrops.get(n).HitBox().collisionCheck(player.HitBox())){
+				floorDrops.remove(n).collide(player);
+				n--;
 			}
 		}
 		player.move();

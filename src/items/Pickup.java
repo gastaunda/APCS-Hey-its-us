@@ -6,14 +6,15 @@ import mobs.Player;
 
 public class Pickup extends Wall {
 	private int slot;
-	private int value;
 	public Pickup(double length, double xLoc, double yLoc, int s, int v) {
 		super(length, xLoc, yLoc);
-		super.myImage = new ImageIcon(Wall.class.getResource("/assets/images/Brick.png"));
+		super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/Brick.png"));
 		slot = s;
-		value = v;
 	}
 	public void collide(Player other){
-		other.invAccess()[slot] = value;
+		if(slot == 0)
+			other.healthPickup();
+		if(slot == 1)
+			other.atkPickup();
 	}
 }

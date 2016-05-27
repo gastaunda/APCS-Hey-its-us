@@ -10,14 +10,14 @@ public class Projectile extends GameEntity
 	//private int speed;
 	private int durration;
 	private int damage;
-	public Projectile(double spd, int life,int fite, double posX, double posY)
+	public Projectile(double xspd, double yspd, int life,int fite, double posX, double posY)
 	{
 		durration = life;
 		damage = fite;
 		setPosX(posX);
 		setPosY(posY);
-		setVelX(spd);
-		setVelY(0);
+		setVelX(xspd);
+		setVelY(yspd);
 		setHitBox(posX, posY, 10,10);
 		super.myImage = new ImageIcon(Projectile.class.getResource("/assets/images/Boolet.png"));
 		setMaxVel(10);

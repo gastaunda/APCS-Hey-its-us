@@ -7,22 +7,20 @@ import items.GameEntity;
 
 public class Mob extends GameEntity {
 	protected int hp;
-	protected int maxHp;
-	protected int[] inv;// shouldn't this be a 2D array for multiple
+	protected int maxHp;// shouldn't this be a 2D array for multiple
 								// rows?
 	protected int held;			// no.
 	protected int atk;
 	protected double myHeight;
 	protected double myWidth;
 	
-	public Mob(int maxHealth, int health, int attack, int[] inventory, double posX, double posY, double height, double width) 
+	public Mob(int maxHealth, int health, int attack, double posX, double posY, double height, double width) 
 	{
 		myHeight = height;
 		myWidth = width;
 		myImage = new ImageIcon(EntityList.class.getResource("/assets/images/mob.png"));
 		maxHp = maxHealth;
 		hp = health;
-		inv = inventory;
 		atk = attack;
 		setPosX(posX);
 		setPosY(posY);
@@ -67,10 +65,6 @@ public class Mob extends GameEntity {
 	{
 		return myWidth;
 	}
-
-	public void setDropInv(int[] inventory) {
-		inv = inventory;
-	}
 	
 	public void MoveLeft()
 	{
@@ -94,5 +88,4 @@ public class Mob extends GameEntity {
 		setVelY(-1);
 		move();
 	}
-	
 }

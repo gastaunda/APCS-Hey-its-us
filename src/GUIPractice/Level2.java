@@ -36,7 +36,7 @@ public class Level2 extends JPanel implements ActionListener, KeyListener {
 			lischt.add(new Floor(5,i,500));
 			if (i % 2 == 0)
 			{
-				lischt.add(new Mob(100,100,2,new int[2], (double) i, (double) 200, (double) 16, (double) 16 ));
+				lischt.add(new Mob(100,100,2, (double) i, (double) 200, (double) 16, (double) 16 ));
 			}
 		}
 		
