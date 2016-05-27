@@ -27,13 +27,12 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class GraphicExperiment extends JPanel implements ActionListener, KeyListener {
-	private EntityList lischt;
+	private EntityList lischt = new EntityList();
 	Timer t = new Timer(5, this);
 	ImageIcon background;
 	ImageIcon heart;
 	ImageIcon redHeart;
-	public GraphicExperiment(EntityList list) {
-		lischt = list;
+	public GraphicExperiment() {
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
