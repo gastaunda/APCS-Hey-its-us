@@ -9,13 +9,14 @@ public class Pickup extends Wall {
 	public Pickup(double length, double xLoc, double yLoc, int s) {
 		super(length, xLoc, yLoc);
 		slot = s;
-		if(slot == 0)
+		if(slot == 0) // this one increases max health
 			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/hPickup.png"));
-		else if(slot == 1)
+		else if(slot == 1) // this one increases attack
 			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/aPickup.png"));
-		else if(slot == 2)
+		else if(slot == 2) // this one restores health
 			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/healthPickup.png"));
 		else if(slot == 3){ // this one will reduce fire cd
+			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/cdPickup.png"));
 		}
 		
 	}
@@ -29,5 +30,7 @@ public class Pickup extends Wall {
 			other.atkPickup();
 		if(slot == 2)
 			other.healPickup();
+		if(slot == 3)
+			other.cdPickup();
 	}
 }

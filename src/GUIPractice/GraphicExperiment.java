@@ -19,6 +19,7 @@ import items.Door;
 import items.EntityList;
 import items.Floor;
 import items.KillBlock;
+import items.Pickup;
 import items.Projectile;
 import items.Wall;
 import mobs.Mob;
@@ -38,12 +39,14 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	ImageIcon heart;
 	ImageIcon redHeart;
 	ImageIcon sword;
+	ImageIcon cd;
 
 	public GraphicExperiment(int k) {
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
 		sword = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/atk.png"));
+		cd = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Clock.png"));
 		LevelBuild.buildLevel(1, lischt);
 		t.start();
 		addKeyListener(this);
@@ -56,15 +59,21 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		super.paintComponent(g);
 		background.paintIcon(this, g, 0, 0);
 		for (int i = 0; i < lischt.player().maxHealth(); i++) {
-			heart.paintIcon(this, g, i * 16, 0);
+			heart.paintIcon(this, g, i * 32, 0);
 		}
 		for (int i = 0; i < lischt.player().getHealth(); i++) {
-			redHeart.paintIcon(this, g, i * 16, 0);
+			redHeart.paintIcon(this, g, i * 32, 0);
 		}
 		for (int i = 0; i < lischt.player().atk(); i++) {
-			sword.paintIcon(this, g, i * 16, 32);
+			sword.paintIcon(this, g, i * 32, 32);
+		}
+		for (int i = 0; i < lischt.player().fireSpeed(); i++){
+			cd.paintIcon(this, g, i * 32, 64);
 		}
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
+		for(Pickup a: lischt.getFloor()){
+			a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
+		}
 		for (Wall x : lischt.getWalls()) {
 			x.imageIcon().paintIcon(this, g, (int) x.getPosX(), (int) x.getPosY());
 		}
@@ -85,6 +94,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}
 		lischt.frameAdvance();
 		repaint();
+		System.out.println(lischt.player().getHealth());
 	}
 
 	public boolean canMove(double x, double y) {

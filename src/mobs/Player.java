@@ -7,7 +7,7 @@ public class Player extends Mob {
 	private int atkCd = 50;
 	private int currentCd = 0;
 	public Player(int maxHealth, int health, double posX, double posY, double height, double width) {
-		super(maxHealth, health, 10, posX, posY, height, width);
+		super(maxHealth, health, 1, posX, posY, height, width);
 		super.myImage = new ImageIcon(EntityList.class.getResource("/assets/images/image.png"));
 	}
 	
@@ -25,14 +25,18 @@ public class Player extends Mob {
 		return super.maxHp;
 	}
 	public void healthPickup(){
-		super.health++;
+		
 		super.maxHp++;
+		super.heal(1);
 	}
 	public void atkPickup(){
 		atk++;
 	}
 	public void healPickup(){
 		super.heal(2);
+	}
+	public void cdPickup(){
+		atkCd -=5;
 	}
 	public int atk(){
 		return super.atk;
@@ -43,5 +47,8 @@ public class Player extends Mob {
 			return false;
 		else
 			return true;
+	}
+	public int fireSpeed(){
+		return (55 - atkCd) / 5;
 	}
 }

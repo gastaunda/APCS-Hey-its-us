@@ -4,6 +4,7 @@ import items.Door;
 import items.EntityList;
 import items.Floor;
 import items.KillBlock;
+import items.Pickup;
 import items.Wall;
 import mobs.Mob;
 
@@ -11,6 +12,8 @@ public class LevelBuild {
 	public static void buildLevel(int k, EntityList lischt){
 		if(k == 1)
 			level1(lischt);
+		if(k == 2)
+			level2(lischt);
 	}
 	private static void level1(EntityList lischt){
 		for (double i = -64; i <= 800; i += 32){
@@ -35,6 +38,13 @@ public class LevelBuild {
 		for (double i = 400; i <= 800; i += 50){
 			lischt.add(new Mob(100, 100, 1, (double) i, (double) 200, (double) 16, (double) 16));
 		}
+		lischt.add(new Pickup(16,1000,350, 0));
+		lischt.add(new Pickup(16,900, 350, 1));
+		lischt.add(new Pickup(16,800, 350, 2));
+		lischt.add(new Pickup(16,1100,350, 3));
 		lischt.add(new Door(16, 1400, 468));
+	}
+	private static void level2(EntityList lischt){
+		
 	}
 }
