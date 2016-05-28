@@ -156,5 +156,14 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void keyTyped(KeyEvent e) {
 
 	}
+	
+	public void death(JFrame f){
+		while(true){
+			if(lischt.player().getHealth() <= 0){
+				DeathMenu.main(null);
+				f.dispose();
+			}
+		}
+	}
 
 }
