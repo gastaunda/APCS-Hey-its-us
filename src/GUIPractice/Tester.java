@@ -38,8 +38,7 @@ public class Tester {
 		
 	}
 
-	public static void close(JFrame f){
-		DeathMenu.main(null);
-		f.dispose();
+	public void death(JFrame f, GraphicExperiment s){
+		s.death(f);
 	}
 }
