@@ -4,15 +4,27 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
+
 import javax.swing.JLabel;
+
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+
 import java.awt.Font;
+
+import javax.swing.AbstractAction;
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.Action;
 
 public class Win {
 
 	private JFrame frame;
+	private final Action action = new SwingAction();
+	private boolean running = true;
 
 	/**
 	 * Launch the application.
@@ -47,6 +59,7 @@ public class Win {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnBackToLevel = new JButton("Back to Level Select");
+		btnBackToLevel.setAction(action);
 		frame.getContentPane().add(btnBackToLevel, BorderLayout.SOUTH);
 		
 		JLabel lblYouWin = DefaultComponentFactory.getInstance().createLabel("You Win :)");
@@ -55,4 +68,28 @@ public class Win {
 		frame.getContentPane().add(lblYouWin, BorderLayout.CENTER);
 	}
 
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "Back to Level Select");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Game.m.close();
+			Game.m = new Music();
+			Game.m.loop();
+			Levels.main(null);
+			close();
+		}
+	}
+	
+	private void close() {
+		running = false;
+		Game.winState = frame.getExtendedState();
+		frame.setExtendedState(JFrame.NORMAL);
+		Game.winWidth = frame.getWidth();
+		Game.winHeight = frame.getHeight();
+		Game.winX = frame.getX();
+		Game.winY = frame.getY();
+		frame.dispose();
+	}
 }
