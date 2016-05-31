@@ -130,7 +130,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}
 
 		if (code == KeyEvent.VK_C && lischt.player().canFire()) {
-			lischt.add(new Projectile(3, 0, 100, lischt.player().atk(), lischt.player().getPosX() + 32,
+			lischt.add(new Projectile(3, 0, 100, lischt.player().atk(), lischt.player().getPosX() + 33,
 					lischt.player().getPosY() + 8));
 			lischt.player().fire();
 		}
