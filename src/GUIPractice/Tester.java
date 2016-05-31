@@ -15,10 +15,10 @@ import items.EntityList;
  */
 
 public class Tester {
-	public static void main(String args[]) {
+	public static void main(String args[], int i) {
 		startmusic();
 		JFrame f = new JFrame();
-		GraphicExperiment s = new GraphicExperiment(1);
+		GraphicExperiment s = new GraphicExperiment(i);
 		f.add(s);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

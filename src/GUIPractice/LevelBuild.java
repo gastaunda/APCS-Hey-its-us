@@ -10,10 +10,17 @@ import mobs.Mob;
 
 public class LevelBuild {
 	public static void buildLevel(int k, EntityList lischt){
-		if(k == 1)
+		switch(k){
+		case 1:
 			level1(lischt);
-		if(k == 2)
+			break;
+		case 2:
 			level2(lischt);
+			break;
+		case 3:
+			level3(lischt);
+			break;
+		}
 	}
 	private static void level1(EntityList lischt){
 		for (double i = -64; i <= 800; i += 32){
@@ -45,6 +52,9 @@ public class LevelBuild {
 		lischt.add(new Door(16, 1400, 468));
 	}
 	private static void level2(EntityList lischt){
+		
+	}
+	private static void level3(EntityList lischt){
 		
 	}
 }

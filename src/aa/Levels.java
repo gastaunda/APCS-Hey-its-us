@@ -144,7 +144,7 @@ public class Levels {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Tester.main(null);
+			Tester.main(null, 1);
 			close();
 		}
 	}
