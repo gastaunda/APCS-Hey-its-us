@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import mobs.Player;
 import aa.DeathMenu;
 import aa.Game;
+import aa.Win;
 import items.EntityList;
 
 /**
@@ -38,7 +39,7 @@ public class Tester {
 						f.dispose();
 						break;
 					} else if (s.victory()) {
-						DeathMenu.main(null);
+						Win.main(null);
 						f.dispose();
 						break;
 					}
