@@ -1,8 +1,6 @@
-package aa;
+package oggVorbis;
 
 import java.io.IOException;
-
-import oggVorbis.OggClip;
 
 public class Music {
 	private OggClip clip;
