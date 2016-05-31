@@ -16,7 +16,7 @@ import items.EntityList;
  */
 
 public class Tester {
-	public static void main(String args[], int i) {
+	public static void init(int i) {
 		startmusic();
 		JFrame f = new JFrame();
 		GraphicExperiment s = new GraphicExperiment(i);
@@ -39,7 +39,7 @@ public class Tester {
 						f.dispose();
 						break;
 					} else if (s.victory()) {
-						Win.main(null);
+						Win.winMenu();
 						f.dispose();
 						break;
 					}

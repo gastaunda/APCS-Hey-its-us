@@ -84,7 +84,7 @@ public class LevelPacks {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			GameMenu.main(null);
+			GameMenu.gaMenu();
 			frame.dispose();
 		}
 	}
