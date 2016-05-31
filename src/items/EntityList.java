@@ -114,9 +114,6 @@ public class EntityList {
 	}
 
 	public boolean kill() { // ends game if troo(player is dead)
-		if( player.getHealth() <= 0)
-			return true;
-		else 
-			return false;
+		return player.getHealth() <= 0;
 	}
 }

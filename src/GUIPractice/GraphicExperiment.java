@@ -47,7 +47,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
 		sword = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/atk.png"));
 		cd = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Clock.png"));
-		LevelBuild.buildLevel(1, lischt);
+		LevelBuild.buildLevel(k, lischt);
 		t.start();
 		addKeyListener(this);
 		setFocusable(true);
@@ -86,21 +86,20 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (lischt.kill()) { // get this to end game(game over)
-
-		}
-		if (lischt.player().victorious()) { // wins level (move to next)
-
-		}
 		lischt.frameAdvance();
 		repaint();
-		System.out.println(lischt.player().getHealth());
 	}
 
 	public boolean canMove(double x, double y) {
 		return true;
 	}
-
+	
+	public boolean kill(){
+		return lischt.kill();
+	}
+	public boolean victory(){
+		return lischt.player().victorious();
+	}
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		if (code == KeyEvent.VK_UP && lischt.player().getGround()) {

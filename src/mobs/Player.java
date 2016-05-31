@@ -43,10 +43,7 @@ public class Player extends Mob {
 	}
 	
 	public boolean alive(){
-		if(super.health <= 0)
-			return false;
-		else
-			return true;
+		return super.health > 0;
 	}
 	public int fireSpeed(){
 		return (55 - atkCd) / 5;
