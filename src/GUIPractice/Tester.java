@@ -25,22 +25,26 @@ public class Tester {
 		f.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		f.setExtendedState(Game.winState);
 		f.setTitle(Game.name);
-		while (true){
-			try {	// allows stuff to werk
-				Thread.sleep(150);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		new Thread() {
+			public void run() {
+				while (true) {
+					try { // allows stuff to werk
+						Thread.sleep(150);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					if (s.kill()) {
+						DeathMenu.main(null);
+						f.dispose();
+						break;
+					} else if (s.victory()) {
+						DeathMenu.main(null);
+						f.dispose();
+						break;
+					}
+				}
 			}
-			if (s.kill()) {
-				DeathMenu.main(null);
-				f.dispose();
-				break;
-			}else if(s.victory()){
-				DeathMenu.main(null);
-				f.dispose();
-				break;
-			}
-		}
+		}.start();
 	}
 
 	private static void startmusic() {
