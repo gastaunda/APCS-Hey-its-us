@@ -27,17 +27,17 @@ public class Tester {
 		f.setTitle(Game.name);
 		while (true){
 			try {	// allows stuff to werk
-				Thread.sleep(5);
+				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			if (s.kill()) {
+				DeathMenu.main(null);
 				f.dispose();
-				Game.m.close();
 				break;
 			}else if(s.victory()){
+				DeathMenu.main(null);
 				f.dispose();
-				Game.m.close();
 				break;
 			}
 		}
