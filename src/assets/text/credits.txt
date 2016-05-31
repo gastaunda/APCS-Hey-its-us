@@ -15,7 +15,6 @@ lKevin MacLeod (incompetech.com)
 lLicensed under Creative Commons: By Attribution 3.0 License
 lhttp://creativecommons.org/licenses/by/3.0/
 l    Local Forecast - Elevator
-l     Link goes here
 l
 lC418
 lLicensed under Creative Commons: By Attribution-NonCommercial-NoDerivs 3.0 License

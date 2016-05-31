@@ -56,6 +56,7 @@ public class GameMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.requestFocus();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle(Game.name);
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);

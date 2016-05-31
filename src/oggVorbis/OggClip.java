@@ -293,6 +293,12 @@ public class OggClip {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
+
+					try {
+						Thread.sleep(419);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 
 				try {
@@ -307,6 +313,12 @@ public class OggClip {
 					e.printStackTrace();
 				}
 
+				try {
+					Thread.sleep(419);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+
 				if (end != null) {
 					try {
 						end.playStream(Thread.currentThread());
@@ -318,6 +330,12 @@ public class OggClip {
 						end.bitStream.reset();
 					} catch (IOException e) {
 						e.printStackTrace();
+					}
+
+					try {
+						Thread.sleep(419);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
 					}
 				}
 			};
@@ -344,7 +362,10 @@ public class OggClip {
 
 		player = new Thread() {
 			public void run() {
+				if (end != null)
+					end.player = player;
 				if (start != null) {
+					start.player = player;
 					try {
 						start.playStream(Thread.currentThread());
 					} catch (InternalException e) {
@@ -355,6 +376,12 @@ public class OggClip {
 						start.bitStream.reset();
 					} catch (IOException e) {
 						e.printStackTrace();
+					}
+
+					try {
+						Thread.sleep(419);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
 					}
 				}
 
@@ -370,6 +397,12 @@ public class OggClip {
 						bitStream.reset();
 					} catch (IOException e) {
 					}
+
+					try {
+						Thread.sleep(419);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 
 				if (end != null) {
@@ -384,10 +417,17 @@ public class OggClip {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
+
+					try {
+						Thread.sleep(419);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
 				}
 			};
 		};
 		player.setDaemon(true);
+		playing = true;
 		player.start();
 	}
 
@@ -414,13 +454,15 @@ public class OggClip {
 	 * Close the stream being played from
 	 */
 	public void close() {
-		start.close();
-		end.close();
+		if (start != null)
+			start.close();
 		try {
 			if (bitStream != null)
 				bitStream.close();
 		} catch (IOException e) {
 		}
+		if (end != null)
+			end.close();
 	}
 
 	/*
