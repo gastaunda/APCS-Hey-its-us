@@ -1,6 +1,8 @@
 package aa;
 import javax.swing.JFrame;
 
+import oggVorbis.Music;
+
 public class Game {
 
 	public static Music m;

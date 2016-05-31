@@ -2,41 +2,25 @@ package aa;
 
 import java.io.IOException;
 
-import org.newdawn.easyogg.OggClip;
+import oggVorbis.OggClip;
 
 public class Music {
-	private OggClip start;
-	private OggClip loop;
-	private OggClip ending;
-	private Thread player;
-	private boolean play;
-	private boolean finish;
+	private OggClip clip;
 
 	public Music(String start, String loop, String ending) {
 		try {
-			this.start = new OggClip(start);
-			this.loop = new OggClip(loop);
-			this.ending = new OggClip(ending);
+			clip = new OggClip(start, loop, ending);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public Music(String start, String loop) {
-		try {
-			this.start = new OggClip(start);
-			this.loop = new OggClip(loop);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		this(start, loop, null);
 	}
 
 	public Music(String loop) {
-		try {
-			this.loop = new OggClip(loop);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		this(null, loop);
 	}
 
 	public Music() {
@@ -44,108 +28,39 @@ public class Music {
 	}
 
 	public void play() {
-		play = true;
-		player = new Thread() {
-			public void run() {
-				if (start != null) {
-					start.play();
-					while (!start.stopped())
-						if (!play)
-							return;
-					try {
-						Thread.sleep(418);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				loop.play();
-				while (!loop.stopped())
-					if (!play)
-						return;
-				if (ending != null) {
-					try {
-						Thread.sleep(418);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					ending.play();
-				}
-			}
-		};
-		player.start();
+		clip.play();
 	}
 
 	public void loop() {
-		finish = false;
-		play = true;
-		player = new Thread() {
-			public void run() {
-				if (start != null) {
-					start.play();
-					while (!start.stopped())
-						if (!play)
-							return;
-					try {
-						Thread.sleep(418);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				loop.loop();
-				while (!loop.stopped() && finish)
-					if (!play)
-						return;
-				if (ending != null) {
-					try {
-						Thread.sleep(418);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					ending.play();
-				}
-			}
-		};
-		player.start();
+		clip.loop();
 	}
+
 	public void end() {
-		finish = true;
+		clip.end();
 	}
 
 	public void stop() {
-		play = false;
-		if (start != null)
-			start.stop();
-		loop.stop();
-		if (ending != null)
-			ending.stop();
+		clip.stop();
 	}
 
 	public void close() {
 		stop();
-		if (start != null)
-			start.close();
-		loop.close();
+		clip.close();
 	}
 
 	public void pause() {
-		if (start != null && !start.stopped())
-			start.pause();
-		else
-			loop.pause();
+		clip.pause();
 	}
 
 	public void unpause() {
-		if (start != null && !start.stopped())
-			start.resume();
-		else
-			loop.resume();
+		clip.resume();
 	}
 
 	public boolean isPaused() {
-		return loop.isPaused() || (start != null && start.isPaused());
+		return clip.isPaused();
 	}
 
 	public boolean stopped() {
-		return loop.stopped() && (start == null || start.stopped());
+		return clip.stopped();
 	}
 }
