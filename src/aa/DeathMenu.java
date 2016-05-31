@@ -20,6 +20,8 @@ import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
+import oggVorbis.Music;
+
 public class DeathMenu {
 
 	private JFrame frame;
