@@ -54,7 +54,20 @@ public class LevelBuild {
 	private static void level2(EntityList lischt){
 		
 	}
-	private static void level3(EntityList lischt){
+	private static void level3(EntityList lischt)
+	{
 		
+		for (int i = -random(11); i <= 800; i+= random(11))
+		{
+			lischt.add(new KillBlock(16, -64, i));
+		}
+		for(double i = -64; i <= 1800; i += 32){
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		
+	}
+	public static int random(int x)
+	{
+		return (int)(Math.random()*x);
 	}
 }
