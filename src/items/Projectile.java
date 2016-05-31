@@ -21,6 +21,7 @@ public class Projectile extends GameEntity
 		setHitBox(posX, posY, 8,8);
 		super.myImage = new ImageIcon(Projectile.class.getResource("/assets/images/Boolet.png"));
 		setMaxVel(10);
+		
 	}
 
 	public void collide(GameEntity other) {

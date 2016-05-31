@@ -124,23 +124,23 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 			lischt.player().setVelX(-3);
 		}
 		if (code == KeyEvent.VK_Z && lischt.player().canFire()) {
-			lischt.add(new Projectile(-3, 0, 100, lischt.player().atk(), lischt.player().getPosX() - 17,
+			lischt.add(new Projectile(-5, 0, 100, lischt.player().atk(), lischt.player().getPosX() - 17,
 					lischt.player().getPosY() + 8));
 			lischt.player().fire();
 		}
 
 		if (code == KeyEvent.VK_C && lischt.player().canFire()) {
-			lischt.add(new Projectile(3, 0, 100, lischt.player().atk(), lischt.player().getPosX() + 33,
+			lischt.add(new Projectile(5, 0, 100, lischt.player().atk(), lischt.player().getPosX() + 33,
 					lischt.player().getPosY() + 8));
 			lischt.player().fire();
 		}
 		if (code == KeyEvent.VK_S && lischt.player().canFire()) {
-			lischt.add(new Projectile(0,-3, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
+			lischt.add(new Projectile(0,-5, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
 					lischt.player().getPosY() - 17));
 			lischt.player().fire();
 		}
 		if (code == KeyEvent.VK_X && lischt.player().canFire()) {
-			lischt.add(new Projectile(0, 3, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
+			lischt.add(new Projectile(0, 5, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
 					lischt.player().getPosY() + 33));
 			lischt.player().fire();
 		}
