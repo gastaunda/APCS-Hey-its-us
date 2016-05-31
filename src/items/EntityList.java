@@ -9,25 +9,27 @@ import GUIPractice.Tester;
 import mobs.Mob;
 import mobs.Player;
 
-// this class may not be needed
+// this is basically the game's engine
 public class EntityList {
-	LinkedList<Projectile> projectiles;
-	ArrayList<Wall> walls;
-	ArrayList<Mob> mobs;
-	LinkedList<Pickup> floorDrops;
-	Player player;
-	Mob mob;
-
+	private LinkedList<Projectile> projectiles;
+	private ArrayList<Wall> walls;
+	private ArrayList<Mob> mobs;
+	private LinkedList<Pickup> floorDrops;
+	private Player player;
+	private int score;
+	
 	public EntityList() {
 		projectiles = new LinkedList<Projectile>();
 		walls = new ArrayList<Wall>();
 		mobs = new ArrayList<Mob>();
 		floorDrops = new LinkedList<Pickup>();
 		player = new Player(10, 10, (double) 0, (double) 0, (double) 16, (double) 16); // feel free to change these
-		
+		score = 0;
 		player.setAccY(.075);
 	}
-
+	public int score(){
+		return score;
+	}
 	public void add(Projectile projfoj) {
 		projectiles.add(projfoj);
 	}
@@ -79,6 +81,7 @@ public class EntityList {
 			for (int x = 0; x < mobs.size(); x++) {
 				if (mobs.get(x).HitBox().collisionCheck(projectiles.get(a).HitBox())){
 					projectiles.get(a).collide(mobs.get(x));
+					score++;
 				}
 			}
 			if (player.HitBox().collisionCheck(projectiles.get(a).HitBox()))
@@ -97,12 +100,14 @@ public class EntityList {
 			if (mobs.get(x).getHealth() <= 0) {
 				mobs.remove(x);
 				x--;
+				score += 5;
 			}
 		}
 		for(int n = 0; n < floorDrops.size(); n++){
 			if(floorDrops.get(n).HitBox().collisionCheck(player.HitBox())){
 				floorDrops.remove(n).collide(player);
 				n--;
+				score += 10;
 			}
 		}
 		player.move();
