@@ -191,9 +191,17 @@ public class OggClip {
 	 * Pause the play back
 	 */
 	public void pause() {
+		if (start != null) {
+			start.paused = true;
+			start.setGain(0);
+		}
 		paused = true;
 		oldGain = gain;
 		setGain(0);
+		if (end != null) {
+			end.paused = true;
+			end.setGain(0);
+		}
 	}
 
 	/**
@@ -213,8 +221,11 @@ public class OggClip {
 			play();
 			return;
 		}
-
+		if (start != null)
+			start.paused = false;
 		paused = false;
+		if (end != null)
+			end.paused = false;
 
 		synchronized (player) {
 			if (player != null) {
@@ -267,7 +278,10 @@ public class OggClip {
 
 		player = new Thread() {
 			public void run() {
+				if (end != null)
+					end.player = player;
 				if (start != null) {
+					start.player = player;
 					try {
 						start.playStream(Thread.currentThread());
 					} catch (InternalException e) {
@@ -343,6 +357,7 @@ public class OggClip {
 						e.printStackTrace();
 					}
 				}
+
 				while (player == Thread.currentThread() && playing) {
 					try {
 						playStream(Thread.currentThread());
@@ -356,6 +371,7 @@ public class OggClip {
 					} catch (IOException e) {
 					}
 				}
+
 				if (end != null) {
 					try {
 						end.playStream(Thread.currentThread());
@@ -389,7 +405,7 @@ public class OggClip {
 		player = null;
 		outputLine.drain();
 	}
-	
+
 	public void end() {
 		playing = false;
 	}
