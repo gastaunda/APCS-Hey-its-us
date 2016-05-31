@@ -132,7 +132,7 @@ public class Levels {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			GameMenu.main(null);
+			GameMenu.gaMenu();
 			close();
 		}
 	}
@@ -144,7 +144,7 @@ public class Levels {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Tester.main(null, 1);
+			Tester.init(1);
 			close();
 		}
 	}

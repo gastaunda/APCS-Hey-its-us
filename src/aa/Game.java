@@ -14,6 +14,6 @@ public class Game {
 	public static void main(String[] args) {
 		m = new Music();
 		m.loop();
-		GameMenu.main(null);
+		GameMenu.gaMenu();
 	}
 }

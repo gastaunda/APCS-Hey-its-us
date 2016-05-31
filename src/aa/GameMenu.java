@@ -31,7 +31,7 @@ public class GameMenu {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void gaMenu() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
