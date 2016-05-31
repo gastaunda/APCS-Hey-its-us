@@ -39,7 +39,7 @@ public class Levels {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void wMenu() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

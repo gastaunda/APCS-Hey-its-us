@@ -77,7 +77,7 @@ public class Win {
 			Game.m.close();
 			Game.m = new Music();
 			Game.m.loop();
-			Levels.main(null);
+			Levels.wMenu();
 			close();
 		}
 	}

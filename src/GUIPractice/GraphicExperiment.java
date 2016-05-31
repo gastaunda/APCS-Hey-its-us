@@ -159,7 +159,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	public void death(JFrame f){
 		while(true){
 			if(lischt.player().getHealth() <= 0){
-				DeathMenu.main(null);
+				DeathMenu.dMenu();
 				f.dispose();
 			}
 		}

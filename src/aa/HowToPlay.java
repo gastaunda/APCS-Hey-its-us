@@ -133,7 +133,7 @@ public class HowToPlay {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			GameOptions.main(null);
+			GameOptions.gOpt();
 			close();
 		}
 	}

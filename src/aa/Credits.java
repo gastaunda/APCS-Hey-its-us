@@ -44,7 +44,7 @@ public class Credits {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void cred(){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -146,7 +146,7 @@ public class Credits {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			GameOptions.main(null);
+			GameOptions.gOpt();
 			close();
 		}
 	}

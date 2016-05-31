@@ -35,7 +35,7 @@ public class Tester {
 						e.printStackTrace();
 					}
 					if (s.kill()) {
-						DeathMenu.main(null);
+						DeathMenu.dMenu();
 						f.dispose();
 						break;
 					} else if (s.victory()) {

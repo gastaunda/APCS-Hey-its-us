@@ -131,7 +131,7 @@ public class GameMenu {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			GameOptions.main(null);
+			GameOptions.gOpt();
 			close();
 		}
 	}
@@ -143,7 +143,7 @@ public class GameMenu {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Levels.main(null);
+			Levels.wMenu();
 			close();
 		}
 	}

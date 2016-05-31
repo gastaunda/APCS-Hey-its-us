@@ -29,7 +29,7 @@ public class DeathMenu {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void dMenu() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				if (Game.m != null)
@@ -113,7 +113,7 @@ public class DeathMenu {
 			Game.m.close();
 			Game.m = new Music();
 			Game.m.loop();
-			Levels.main(null);
+			Levels.wMenu();
 			close();
 		}
 	}

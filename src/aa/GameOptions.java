@@ -29,7 +29,7 @@ public class GameOptions {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void gOpt() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -113,7 +113,7 @@ public class GameOptions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			GameMenu.main(null);
+			GameMenu.gaMenu();
 			frame.dispose();
 		}
 	}
@@ -137,7 +137,7 @@ public class GameOptions {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Credits.main(null);
+			Credits.cred();
 			frame.dispose();
 		}
 	}
