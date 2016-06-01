@@ -24,7 +24,9 @@ public class Projectile extends GameEntity
 		setAccY(.025);
 		
 	}
-
+	public void remove(){
+		durration = 0;
+	}
 	public void collide(GameEntity other) {
 		other.takedamage(damage);
 		
