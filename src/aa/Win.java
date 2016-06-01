@@ -33,6 +33,10 @@ public class Win {
 	public static void winMenu() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				if (Game.m != null)
+					Game.m.close();
+				Game.m = new Music("assets/audio/music/Sometimes I make video game music.ogg");
+				Game.m.loop();
 				try {
 					Win window = new Win();
 					window.frame.setVisible(true);
@@ -57,16 +61,20 @@ public class Win {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
 		JButton btnBackToLevel = new JButton("Back to Level Select");
+		btnBackToLevel.setBounds(0, 658, 1264, 23);
 		btnBackToLevel.setAction(action);
-		frame.getContentPane().add(btnBackToLevel, BorderLayout.SOUTH);
+		frame.getContentPane().add(btnBackToLevel);
 		
 		JLabel lblYouWin = DefaultComponentFactory.getInstance().createLabel("You Win :)");
+		lblYouWin.setBounds(0, 0, 1264, 658);
 		lblYouWin.setFont(new Font("Stencil", Font.PLAIN, 72));
 		lblYouWin.setForeground(Color.RED);
-		frame.getContentPane().add(lblYouWin, BorderLayout.CENTER);
+		frame.getContentPane().add(lblYouWin);
 	}
 
 	private class SwingAction extends AbstractAction {
