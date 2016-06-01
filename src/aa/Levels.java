@@ -30,11 +30,12 @@ import javax.swing.SwingConstants;
 public class Levels {
 
 	private JFrame frame;
-	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
 	private boolean running = true;
 
 	private static final byte btnSize = 48;
+	private final Action action = new SwingAction_2();
+	private final Action action_2 = new SwingAction_3();
 
 	/**
 	 * Launch the application.
@@ -67,7 +68,7 @@ public class Levels {
 		frame.setTitle(Game.name);
 		frame.getContentPane().setForeground(new Color(255, 0, 51));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
-		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
+		frame.setBounds(Game.winX, Game.winY, 565, 456);
 		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -86,15 +87,16 @@ public class Levels {
 		frame.getContentPane().add(button);
 
 		JButton button_1 = new JButton("2");
+		button_1.setAction(action);
 		button_1.setBounds(button.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_1);
 
 		JButton button_2 = new JButton("3");
+		button_2.setAction(action_2);
 		button_2.setBounds(button_1.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_2);
 
 		JButton btnBackToMain = new JButton("Back to Main Menu");
-		btnBackToMain.setAction(action);
 		frame.getContentPane().add(btnBackToMain);
 
 		JLabel label = new JLabel("");
@@ -145,6 +147,26 @@ public class Levels {
 
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(1);
+			close();
+		}
+	}
+	private class SwingAction_2 extends AbstractAction {
+		public SwingAction_2() {
+			putValue(NAME, "2");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(2);
+			close();
+		}
+	}
+	private class SwingAction_3 extends AbstractAction {
+		public SwingAction_3() {
+			putValue(NAME, "3");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(3);
 			close();
 		}
 	}
