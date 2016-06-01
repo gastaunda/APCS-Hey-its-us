@@ -56,7 +56,7 @@ public class Win {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton btnBackToLevel = new JButton("Back to Level Select");
