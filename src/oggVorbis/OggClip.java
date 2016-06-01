@@ -440,22 +440,15 @@ public class OggClip {
 		if (stopped()) {
 			return;
 		}
-		try {
-			if (start != null)
-				start.stop();
-		} catch (NullPointerException e) {
-		}
-		try {
-			if (end != null)
-				end.stop();
-		} catch (NullPointerException e) {
-		}
+		if (start != null)
+			start.stop();
 		player = null;
 		try {
-			if (end != null)
-				outputLine.drain();
+			outputLine.drain();
 		} catch (NullPointerException e) {
 		}
+		if (end != null)
+			end.stop();
 	}
 
 	public void end() {
