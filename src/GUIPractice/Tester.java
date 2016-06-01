@@ -51,8 +51,9 @@ public class Tester {
 	private static void startmusic() {
 		if (Game.m != null)
 			Game.m.close();
-		Game.m = new oggVorbis.Music("assets/audio/music/If you don't know what to do.ogg",
-				"assets/audio/music/just steal the amen break.ogg");
+		Game.m = new oggVorbis.Music("assets/audio/music/If you don't know what to do just steal the amen break 1.ogg",
+				"assets/audio/music/If you don't know what to do just steal the amen break 2.ogg",
+				"assets/audio/music/If you don't know what to do just steal the amen break 3.ogg");
 		Game.m.loop();
 
 	}
