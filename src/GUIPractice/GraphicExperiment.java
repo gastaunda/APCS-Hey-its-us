@@ -85,8 +85,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		}
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		System.out.println(lischt.score());	// move this to ingame display l8er?
+	public void actionPerformed(ActionEvent e) {	// move this to ingame display l8er?
 		lischt.frameAdvance();
 		repaint();
 	}
