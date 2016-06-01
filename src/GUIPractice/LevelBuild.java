@@ -64,6 +64,7 @@ public class LevelBuild {
 		for (double i = -64; i <= 1700; i += 32){
 			lischt.add(new Floor(16, i, 100));
 			lischt.add(new Floor(16, i, 500));
+			lischt.add(new Floor(16, i, 700));
 		}
 		for (double i = 64; i <= 1800; i += 32){
 			lischt.add(new Floor(16, i, 400));
@@ -72,6 +73,8 @@ public class LevelBuild {
 			lischt.add(new KillBlock(16, i, 368));
 			lischt.add(new Mob(100, 100, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
 		}
+		lischt.add(new Pickup(16, 50, 50, 1));
+		lischt.add(new Door(16, 1750, 750));
 		
 	}
 	private static void level3(EntityList lischt)
