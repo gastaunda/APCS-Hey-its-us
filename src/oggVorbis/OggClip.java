@@ -53,6 +53,8 @@ public class OggClip {
 	private boolean paused;
 	private float oldGain;
 	private boolean playing;
+	private boolean startplaying;
+	private boolean endplaying;
 
 	public OggClip(String start, String loop, String end) throws IOException {
 		this(loop);
@@ -435,15 +437,25 @@ public class OggClip {
 	 * Stop the clip playing
 	 */
 	public void stop() {
-		if (start != null)
-			start.stop();
-		if (end != null)
-			end.stop();
 		if (stopped()) {
 			return;
 		}
+		try {
+			if (start != null)
+				start.stop();
+		} catch (NullPointerException e) {
+		}
+		try {
+			if (end != null)
+				end.stop();
+		} catch (NullPointerException e) {
+		}
 		player = null;
-		outputLine.drain();
+		try {
+			if (end != null)
+				outputLine.drain();
+		} catch (NullPointerException e) {
+		}
 	}
 
 	public void end() {
