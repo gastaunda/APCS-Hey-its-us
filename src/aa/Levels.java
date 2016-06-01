@@ -148,7 +148,7 @@ public class Levels {
 	private class SwingAction_1 extends AbstractAction {
 		public SwingAction_1() {
 			putValue(NAME, "1");
-			putValue(SHORT_DESCRIPTION, "Some short description");
+			putValue(SHORT_DESCRIPTION, "Easy level");
 		}
 
 		public void actionPerformed(ActionEvent e) {
@@ -179,7 +179,7 @@ public class Levels {
 	private class SwingAction_4 extends AbstractAction {
 		public SwingAction_4() {
 			putValue(NAME, "4");
-			putValue(SHORT_DESCRIPTION, "Some short description");
+			putValue(SHORT_DESCRIPTION, "Randomly generated level");
 		}
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(4);
