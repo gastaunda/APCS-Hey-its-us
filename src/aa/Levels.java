@@ -36,6 +36,7 @@ public class Levels {
 	private static final byte btnSize = 48;
 	private final Action action = new SwingAction_2();
 	private final Action action_2 = new SwingAction_3();
+	private final Action action_3 = new SwingAction_4();
 
 	/**
 	 * Launch the application.
@@ -96,6 +97,11 @@ public class Levels {
 		button_2.setBounds(button_1.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_2);
 
+		JButton button_3 = new JButton("4");
+		button_3.setAction(action_3);
+		button_3.setBounds(button_2.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
+		frame.getContentPane().add(button_3);
+		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
 		frame.getContentPane().add(btnBackToMain);
 
@@ -167,6 +173,16 @@ public class Levels {
 		}
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(3);
+			close();
+		}
+	}
+	private class SwingAction_4 extends AbstractAction {
+		public SwingAction_4() {
+			putValue(NAME, "4");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(4);
 			close();
 		}
 	}
