@@ -54,3 +54,7 @@ Temporary Items
 
 #Testing
 *Hey its us.jar
+
+#Audacity
+*.aup
+*_data/
