@@ -68,7 +68,7 @@ public class Levels {
 		frame.setTitle(Game.name);
 		frame.getContentPane().setForeground(new Color(255, 0, 51));
 		frame.getContentPane().setBackground(new Color(0, 0, 0));
-		frame.setBounds(Game.winX, Game.winY, 565, 456);
+		frame.setBounds(Game.winX, Game.winY, Game.winWidth, Game.winHeight);
 		frame.setExtendedState(Game.winState);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
