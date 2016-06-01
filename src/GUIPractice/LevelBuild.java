@@ -24,7 +24,7 @@ public class LevelBuild {
 	}
 	private static void level1(EntityList lischt){
 		for (double i = -64; i <= 800; i += 32){
-			lischt.add(new KillBlock(16, -64, i));
+			lischt.add(new Wall(16, -64, i));
 		}
 		for(double i = -64; i <= 1800; i += 32){
 			lischt.add(new KillBlock(16, i, 800));
@@ -52,6 +52,15 @@ public class LevelBuild {
 		lischt.add(new Door(16, 1400, 468));
 	}
 	private static void level2(EntityList lischt){
+		for (double i = -64; i <= 800; i += 32){
+			lischt.add(new Wall(16, -64, i));
+		}
+		for(double i = -64; i <= 1800; i += 32){
+			lischt.add(new Floor(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32){
+			lischt.add(new Wall(16, 1800, i));
+		}
 		
 	}
 	private static void level3(EntityList lischt)
