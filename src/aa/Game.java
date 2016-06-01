@@ -13,7 +13,7 @@ public class Game {
 	public static int winState = JFrame.MAXIMIZED_BOTH;
 	public static final String name = "BounceMan";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // sometimes Ogg throws an error
 		m = new Music();
 		m.loop();
 		GameMenu.gaMenu();
