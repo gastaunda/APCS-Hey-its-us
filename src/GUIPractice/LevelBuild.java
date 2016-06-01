@@ -65,6 +65,23 @@ public class LevelBuild {
 			lischt.add(new KillBlock(16, i, 800));
 		}
 		
+		
+		
+		for (int i = 0; i <= 200; i += 32)
+		{
+			lischt.add(new Floor(16,i,200));
+		}
+		lischt.add(new Floor(12, 350, 245));
+		for (double i = 350; i <= 1500; i += 64){
+			lischt.add(new KillBlock(16, i, 500));
+		}
+		
+		for (double i1 = 350; i1 <= 1500; i1 += 32)
+		{
+			lischt.add(new Floor(16, i1, 300));
+		}
+		
+		
 	}
 	public static int random(int x)
 	{
