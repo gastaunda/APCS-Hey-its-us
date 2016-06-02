@@ -37,6 +37,11 @@ public class Levels {
 	private final Action action = new SwingAction_2();
 	private final Action action_2 = new SwingAction_3();
 	private final Action action_3 = new SwingAction_4();
+	private final Action action_4 = new SwingAction_5();
+	private final Action action_5 = new SwingAction_6();
+	private final Action action_6 = new SwingAction_7();
+	private final Action action_7 = new SwingAction_8();
+	private final Action action_8 = new SwingAction_9();
 
 	/**
 	 * Launch the application.
@@ -97,19 +102,44 @@ public class Levels {
 		button_2.setBounds(button_1.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_2);
 
-		JButton button_3 = new JButton("4");
-		button_3.setAction(action_3);
-		button_3.setBounds(button_2.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
-		frame.getContentPane().add(button_3);
+		JButton btnRandom = new JButton("Random");
+		btnRandom.setAction(action_3);
+		btnRandom.setBounds(513, 304, 245, 48);
+		frame.getContentPane().add(btnRandom);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
 		frame.getContentPane().add(btnBackToMain);
+		
+		JButton button_3 = new JButton("4");
+		button_3.setAction(action_4);
+		button_3.setBounds(444, 180, 48, 48);
+		frame.getContentPane().add(button_3);
+		
+		JButton button_4 = new JButton("5");
+		button_4.setAction(action_5);
+		button_4.setBounds(580, 180, 48, 48);
+		frame.getContentPane().add(button_4);
+		
+		JButton button_5 = new JButton("6");
+		button_5.setAction(action_6);
+		button_5.setBounds(727, 180, 48, 48);
+		frame.getContentPane().add(button_5);
+		
+		JButton button_6 = new JButton("7");
+		button_6.setAction(action_7);
+		button_6.setBounds(909, 180, 48, 48);
+		frame.getContentPane().add(button_6);
+		
+		JButton button_7 = new JButton("8");
+		button_7.setAction(action_8);
+		button_7.setBounds(1142, 180, 48, 48);
+		frame.getContentPane().add(button_7);
 
-		JLabel label = new JLabel("");
-		label.setBounds(0, 0, 3622, 3877);
-		frame.getContentPane().add(label);
-		label.setIcon(new ImageIcon(Levels.class.getResource("/assets/images/LH_95.jpg")));
-		label.setLabelFor(frame);
+		JLabel lblRandom = new JLabel("");
+		lblRandom.setBounds(0, 0, 3622, 3877);
+		frame.getContentPane().add(lblRandom);
+		lblRandom.setIcon(new ImageIcon(Levels.class.getResource("/assets/images/LH_95.jpg")));
+		lblRandom.setLabelFor(frame);
 
 		new Thread() {
 			public void run() {
@@ -178,11 +208,61 @@ public class Levels {
 	}
 	private class SwingAction_4 extends AbstractAction {
 		public SwingAction_4() {
-			putValue(NAME, "4");
+			putValue(NAME, "Random");
 			putValue(SHORT_DESCRIPTION, "Randomly generated level");
 		}
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(4);
+			close();
+		}
+	}
+	private class SwingAction_5 extends AbstractAction {
+		public SwingAction_5() {
+			putValue(NAME, "4");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(5);
+			close();
+		}
+	}
+	private class SwingAction_6 extends AbstractAction {
+		public SwingAction_6() {
+			putValue(NAME, "5");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(6);
+			close();
+		}
+	}
+	private class SwingAction_7 extends AbstractAction {
+		public SwingAction_7() {
+			putValue(NAME, "6");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(7);
+			close();
+		}
+	}
+	private class SwingAction_8 extends AbstractAction {
+		public SwingAction_8() {
+			putValue(NAME, "7");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(8);
+			close();
+		}
+	}
+	private class SwingAction_9 extends AbstractAction {
+		public SwingAction_9() {
+			putValue(NAME, "8");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+			Tester.init(9);
 			close();
 		}
 	}
