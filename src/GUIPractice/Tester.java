@@ -30,7 +30,7 @@ public class Tester {
 			public void run() {
 				while (true) {
 					try { // allows stuff to werk
-						Thread.sleep(150);
+						Thread.sleep(50);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
