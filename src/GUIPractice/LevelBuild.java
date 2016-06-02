@@ -69,16 +69,23 @@ public class LevelBuild {
 		for (double i = -64; i <= 1700; i += 32) {
 			lischt.add(new Floor(16, i, 100));
 			lischt.add(new Floor(16, i, 500));
-			lischt.add(new Floor(16, i, 700));
+			
 		}
 		for (double i = 192; i <= 1800; i += 32) {
 			lischt.add(new Floor(16, i, 400));
+			lischt.add(new Floor(16, i, 700));
 		}
 		for (double i = 192; i <= 1700; i += 128) {
 			lischt.add(new KillBlock(16, i, 368));
 			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 50, 50, 1));
+		lischt.add(new Pickup(16, 100, 50, 1));
+		lischt.add(new Pickup(16, 150, 50, 0));
+		lischt.add(new Pickup(16, 200, 50, 3));
+		lischt.add(new Pickup(16, 250, 50, 3));
+		lischt.add(new Pickup(16, 350, 450, 0));
+		lischt.add(new Pickup(16, 400, 450, 2));
 		lischt.add(new Door(16, 1750, 750));
 	}
 
