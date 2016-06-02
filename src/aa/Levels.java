@@ -34,6 +34,7 @@ public class Levels {
 	private boolean running = true;
 
 	private static final byte btnSize = 48;
+	private final Action bk = new SwingAction();
 	private final Action action = new SwingAction_2();
 	private final Action action_2 = new SwingAction_3();
 	private final Action action_3 = new SwingAction_4();
@@ -103,6 +104,7 @@ public class Levels {
 		frame.getContentPane().add(button_3);
 		
 		JButton btnBackToMain = new JButton("Back to Main Menu");
+		btnBackToMain.setAction(bk);
 		frame.getContentPane().add(btnBackToMain);
 
 		JLabel label = new JLabel("");
