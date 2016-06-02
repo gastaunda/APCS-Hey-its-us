@@ -24,7 +24,7 @@ public class LevelBuild {
 			level4(lischt);
 			break;
 		case 5:
-			level5(lischt);
+			//level5(lischt);
 		case 6: 
 			level6(lischt);
 		}
@@ -131,6 +131,10 @@ public class LevelBuild {
 		for (double i1 = 1500; i1 <= 3000; i1 += 64) {
 			lischt.add(new Floor(16, i1, 900));
 		}
+		lischt.add(new Pickup(16, 1000, 350, 0));
+		lischt.add(new Pickup(16, 900, 350, 1));
+		lischt.add(new Pickup(16, 800, 350, 2));
+		lischt.add(new Pickup(16, 1100, 350, 3));
 		lischt.add(new Door(16, 1825, 858));
 
 	}
@@ -188,7 +192,7 @@ public class LevelBuild {
 				}
 			}
 		}
-		
+		lischt.add(new Door(16, 1700, 700));
 	}
 	
 
