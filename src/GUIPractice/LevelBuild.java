@@ -5,6 +5,7 @@ import items.EntityList;
 import items.Floor;
 import items.KillBlock;
 import items.Pickup;
+import items.UpFloor;
 import items.Wall;
 import mobs.Mob;
 
@@ -139,7 +140,28 @@ public class LevelBuild {
 		}
 		lischt.add(new Door(16, 1700, 700));
 	}
-
+	private static void level5(EntityList lischt){
+		for (double i = -64; i <= 1000; i += 64) {
+			lischt.add(new KillBlock(16, -64, i));
+		}
+		for (double i = -64; i <= 1900; i += 32) {
+			lischt.add(new Floor(16, i, 1000));
+		}
+		for (double i = -64; i <= 1000; i += 64) {
+			lischt.add(new KillBlock(16, 1900, i));
+		}
+		for(double i = 32; i <= 800; i += 64){
+			lischt.add(new Wall(16, 128, i));			
+		}
+		lischt.add(new UpFloor(16, 128, 800));
+		for(double i = 128; i <= 1000; i += 64){
+			lischt.add(new Wall(16, 256, i));			
+		}
+		lischt.add(new Floor(16, 256, 128));
+		for (double i = 256; i <= 1900; i += 32) {
+			lischt.add(new UpFloor(16, i, 128));
+		}
+	}
 	public static int random(int x) {
 		return (int) (Math.random() * x);
 	}
