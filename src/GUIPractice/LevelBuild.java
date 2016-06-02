@@ -23,7 +23,23 @@ public class LevelBuild {
 		case 4:
 			level4(lischt);
 			break;
+		case 5:
+			level5(lischt);
+			break;
+		case 6:
+			level6(lischt);
+			break;
+		case 7:
+			level7(lischt);
+			break;
+		case 8:
+			level8(lischt);
+			break;
+		case 9:
+			level9(lischt);
+			break;
 		}
+			
 	}
 
 	private static void level1(EntityList lischt) {
@@ -151,5 +167,25 @@ public class LevelBuild {
 
 	public static int random(int x) {
 		return (int) (Math.random() * x);
+	}
+	
+	private static void level5(EntityList lischt){
+		//button "4"
+	}
+	
+	private static void level6(EntityList lischt){
+		//button "5"
+	}
+
+	private static void level7(EntityList lischt){
+		//button "6"
+	}
+
+	private static void level8(EntityList lischt){
+		//button "7"
+	}
+	
+	private static void level9(EntityList lischt){
+		//button "8"
 	}
 }
