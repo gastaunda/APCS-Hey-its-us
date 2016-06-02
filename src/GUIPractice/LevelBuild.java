@@ -48,7 +48,7 @@ public class LevelBuild {
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50) {
-			lischt.add(new Mob(5, 5, 1, (double) i, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 1000, 350, 0));
 		lischt.add(new Pickup(16, 900, 350, 1));
@@ -77,7 +77,7 @@ public class LevelBuild {
 		}
 		for (double i = 192; i <= 1700; i += 128) {
 			lischt.add(new KillBlock(16, i, 368));
-			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 50, 50, 1));
 		lischt.add(new Door(16, 1750, 750));
@@ -106,8 +106,8 @@ public class LevelBuild {
 		}
 
 		for (double i2 = 350; i2 <= 1500; i2 += 32) {
-			lischt.add(new Mob(5, 5, 1, (double) i2, (double) 200, (double) 16, (double) 16));
-			lischt.add(new Mob(5, 5, 1, (double) i2, (double) 400, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i2, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i2, (double) 400, (double) 16, (double) 16));
 		}
 
 		for (double i1 = 1500; i1 <= 3000; i1 += 64) {
@@ -131,10 +131,14 @@ public class LevelBuild {
 		for (double x = 128; x <= 1700; x += 64){
 			for(double y = 128; y <= 800; y += 64){
 				ran = Math.random();
-				if(ran <= .1){
+				if(ran <= .05){
 					lischt.add(new Wall(16, x, y));
 					lischt.add(new Floor(16, x, y));
-				}else if(ran <= .2)
+				}else if(ran <= .1){
+					lischt.add(new Wall(16,x,y));
+					lischt.add(new UpFloor(16,x,y));
+				}
+				else if(ran <= .2)
 					lischt.add(new KillBlock(16, x,y));
 			}
 		}
