@@ -10,4 +10,7 @@ cGreen Things kill you Very Fast
 c
 cUse arrow keys to move
 c
-cZ to shoot left, X to shoot right
+cZ to shoot left, C to shoot right, S to shoot up, and X to shoot down(can potentially kill you)
+c
+cGet the Bright Red Power-up to heal you, the Blue one to increase attack damage
+cThe Pink one to increase attack speed, and the Brick-red one to increase max health(+1 health)
