@@ -222,7 +222,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tester.init(4);
+			Tester.init(5);
 			close();
 		}
 	}
@@ -232,7 +232,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tester.init(5);
+			Tester.init(6);
 			close();
 		}
 	}
@@ -242,7 +242,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tester.init(6);
+			Tester.init(7);
 			close();
 		}
 	}
@@ -252,7 +252,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tester.init(7);
+			Tester.init(8);
 			close();
 		}
 	}
@@ -262,7 +262,7 @@ public class Levels {
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
 		public void actionPerformed(ActionEvent e) {
-			Tester.init(8);
+			Tester.init(9);
 			close();
 		}
 	}
