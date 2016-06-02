@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.Action;
 import oggVorbis.Music;
+import javax.swing.SwingConstants;
 
 public class Win {
 
@@ -66,15 +67,24 @@ public class Win {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnBackToLevel = new JButton("Back to Level Select");
-		btnBackToLevel.setBounds(0, 658, 1264, 23);
 		btnBackToLevel.setAction(action);
 		frame.getContentPane().add(btnBackToLevel);
 		
-		JLabel lblYouWin = DefaultComponentFactory.getInstance().createLabel("You Win :)");
-		lblYouWin.setBounds(0, 0, 1264, 658);
+		JLabel lblYouWin = new JLabel("You Win :)");
+		lblYouWin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYouWin.setFont(new Font("Stencil", Font.PLAIN, 72));
 		lblYouWin.setForeground(Color.RED);
 		frame.getContentPane().add(lblYouWin);
+
+		new Thread() {
+			public void run() {
+				while (running) {
+					lblYouWin.setBounds(0, 0, frame.getWidth(), btnBackToLevel.getY());
+					btnBackToLevel.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
+							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+				}
+			}
+		}.start();
 	}
 
 	private class SwingAction extends AbstractAction {
