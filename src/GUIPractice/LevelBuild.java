@@ -84,7 +84,9 @@ public class LevelBuild {
 			lischt.add(new KillBlock(16, 1800, i));
 		}
 		for (double i = -64; i <= 1700; i += 32) {
+			lischt.add(new UpFloor(16, i, 105));
 			lischt.add(new Floor(16, i, 100));
+			lischt.add(new UpFloor(16, i, 505)); 
 			lischt.add(new Floor(16, i, 500));
 			
 		}
@@ -186,24 +188,17 @@ public class LevelBuild {
 			lischt.add(new Wall(16, 256, i));
 		}
 		lischt.add(new Floor(16, 256, 128));
-		for (double i = 256; i <= 1900; i += 32) {
+		for (double i = 256; i <= 1600; i += 32) {
 			lischt.add(new UpFloor(16, i, 128));
 		}
-		lischt.add(new Door(16, 1900, 96));
+		for (double i = 1600; i <= 1900; i +=32){
+			lischt.add(new Floor(16,i, 128));
+		}
+		lischt.add(new Door(16, 1800, 96));
 	}
 
 	public static int random(int x) {
 		return (int) (Math.random() * x);
-	}
-	
-	private static void level5(EntityList lischt){
-		//button "4"
-		for (double i = -64; i <= 1800; i += 32) {
-			lischt.add(new KillBlock(16, i, 800));
-		}
-		for (double i = -64; i <= 800; i += 32) {
-			lischt.add(new KillBlock(16, 1800, i));
-		}
 	}
 	
 	private static void level6(EntityList lischt){

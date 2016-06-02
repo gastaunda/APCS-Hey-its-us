@@ -112,27 +112,27 @@ public class Levels {
 		
 		JButton button_3 = new JButton("4");
 		button_3.setAction(action_4);
-		button_3.setBounds(444, 180, 48, 48);
+		button_3.setBounds(button_2.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_3);
 		
 		JButton button_4 = new JButton("5");
 		button_4.setAction(action_5);
-		button_4.setBounds(580, 180, 48, 48);
+		button_4.setBounds(button_3.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_4);
 		
 		JButton button_5 = new JButton("6");
 		button_5.setAction(action_6);
-		button_5.setBounds(727, 180, 48, 48);
+		button_5.setBounds(button_4.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_5);
 		
 		JButton button_6 = new JButton("7");
 		button_6.setAction(action_7);
-		button_6.setBounds(909, 180, 48, 48);
+		button_6.setBounds(button_5.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_6);
 		
 		JButton button_7 = new JButton("8");
 		button_7.setAction(action_8);
-		button_7.setBounds(1142, 180, 48, 48);
+		button_7.setBounds(button_6.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_7);
 
 		JLabel lblRandom = new JLabel("");
