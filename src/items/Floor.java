@@ -8,7 +8,7 @@ public class Floor extends Wall {
 		super.myImage = new ImageIcon(Floor.class.getResource("/assets/images/Floor.png"));
 	}
 	public void collide(GameEntity other){
-		double x = Math.random() * -4;
+		double x = -((Math.random() * 2) + 2);
 		other.setVelY(x);
 		other.setAccY(0.05);
 		other.setGround(true);

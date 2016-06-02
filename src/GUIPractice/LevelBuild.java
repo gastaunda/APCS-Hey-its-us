@@ -131,11 +131,11 @@ public class LevelBuild {
 		for (double x = 128; x <= 1700; x += 64) {
 			for (double y = 128; y <= 800; y += 64) {
 				ran = Math.random();
-				if (ran <= .1) {
+				if (ran <= .075) {
 					lischt.add(new Wall(16, x, y));
 					lischt.add(new Floor(16, x, y));
 					lischt.add(new Mob(2, 2, 1, x, y-32, 16, 16));
-				} else if (ran <= .2)
+				} else if (ran <= .15)
 					lischt.add(new KillBlock(16, x, y));
 				
 			}
