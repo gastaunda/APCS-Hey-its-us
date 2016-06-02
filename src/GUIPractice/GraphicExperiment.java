@@ -41,14 +41,6 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	ImageIcon redHeart;
 	ImageIcon sword;
 	ImageIcon cd;
-	private boolean up;
-	private boolean down;
-	private boolean left;
-	private boolean right;
-	private boolean sUp;
-	private boolean sDown;
-	private boolean sLeft;
-	private boolean sRight;
 
 	public GraphicExperiment(int k, JFrame f) {
 		frame = f;
@@ -77,12 +69,12 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (int i = 0; i < lischt.player().atk(); i++) {
 			sword.paintIcon(this, g, i * 32, 32);
 		}
-		for (int i = 0; i < lischt.player().fireSpeed(); i++) {
+		for (int i = 0; i < lischt.player().fireSpeed(); i++){
 			cd.paintIcon(this, g, i * 32, 64);
 		}
 		lischt.player().getImage().paintIcon(this, g, (int) lischt.player().getPosX(), (int) lischt.player().getPosY());
-		for (Pickup a : lischt.getFloor()) {
-			a.imageIcon().paintIcon(this, g, (int) a.getPosX(), (int) a.getPosY());
+		for(Pickup a: lischt.getFloor()){
+			a.imageIcon().paintIcon(this, g, (int)a.getPosX(), (int)a.getPosY());
 		}
 		for (Wall x : lischt.getWalls()) {
 			x.imageIcon().paintIcon(this, g, (int) x.getPosX(), (int) x.getPosY());
@@ -96,137 +88,80 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	
 	}
 
-	public void actionPerformed(ActionEvent e) { // move this to ingame display
-													// l8er?
+	public void actionPerformed(ActionEvent e) {	// move this to ingame display l8er?
 		lischt.frameAdvance();
-		processIn();
 		repaint();
 	}
 
 	public boolean canMove(double x, double y) {
 		return true;
 	}
-
-	public boolean kill() {
+	
+	public boolean kill(){
 		return lischt.kill();
 	}
-
-	public boolean victory() {
+	public boolean victory(){
 		return lischt.player().victorious();
 	}
-
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
-		if (code == KeyEvent.VK_UP)
-			up = true;
-
-		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do
-										// this, but ok
-			down = true;
-
-		if (code == KeyEvent.VK_RIGHT)
-			right = true;
-
-		if (code == KeyEvent.VK_LEFT)
-			left = true;
-
-		if (code == KeyEvent.VK_Z)
-			sLeft = true;
-
-		if (code == KeyEvent.VK_C)
-			sRight = true;
-
-		if (code == KeyEvent.VK_S)
-			sUp = true;
-
-		if (code == KeyEvent.VK_X)
-			sDown = true;
-	}
-
-	public void keyReleased(KeyEvent e) {
-		int code = e.getKeyCode();
-		if (code == KeyEvent.VK_UP)
-			up = false;
-
-		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do
-										// this, but ok
-			down = false;
-
-		if (code == KeyEvent.VK_RIGHT)
-			right = false;
-
-		if (code == KeyEvent.VK_LEFT)
-			left = false;
-
-		if (code == KeyEvent.VK_Z)
-			sLeft = false;
-
-		if (code == KeyEvent.VK_C)
-			sRight = false;
-
-		if (code == KeyEvent.VK_S)
-			sUp = false;
-
-		if (code == KeyEvent.VK_X)
-			sDown = false;
-	}
-
-	public void keyTyped(KeyEvent e) {
-
-	}
-
-	private void processIn() {
-		if (up && lischt.player().getGround()) {
+		if (code == KeyEvent.VK_UP && lischt.player().getGround()) {
 			lischt.player().setGround(false);
 			lischt.player().setVelY(-10);
 			lischt.player().move();
-		}
 
-		if (down)
+		}
+		if (code == KeyEvent.VK_DOWN) // not really sure why you'd wanna do
+										// this, but ok
+		{
 			lischt.player().setVelY(5);
-
-		if (left == right)
-			lischt.player().setVelX(0);
-		else {
-			if (right) {
-				lischt.player().setAccX(0);
-				lischt.player().setVelX(3);
-			}
-
-			if (left) {
-				lischt.player().setAccX(0);
-				lischt.player().setVelX(-3);
-			}
 		}
 
-		if (sLeft && lischt.player().canFire()) {
+		if (code == KeyEvent.VK_RIGHT) {
+			lischt.player().setAccX(0);
+			lischt.player().setVelX(3);
+		}
+
+		if (code == KeyEvent.VK_LEFT) {
+			lischt.player().setAccX(0);
+			lischt.player().setVelX(-3);
+		}
+		if (code == KeyEvent.VK_Z && lischt.player().canFire()) {
 			lischt.add(new Projectile(-5, 0, 100, lischt.player().atk(), lischt.player().getPosX() - 17,
 					lischt.player().getPosY() + 8));
 			lischt.player().fire();
 		}
 
-		if (sRight && lischt.player().canFire()) {
+		if (code == KeyEvent.VK_C && lischt.player().canFire()) {
 			lischt.add(new Projectile(5, 0, 100, lischt.player().atk(), lischt.player().getPosX() + 33,
 					lischt.player().getPosY() + 8));
 			lischt.player().fire();
 		}
-
-		if (sUp && lischt.player().canFire()) {
-			lischt.add(new Projectile(0, -5, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
+		if (code == KeyEvent.VK_S && lischt.player().canFire()) {
+			lischt.add(new Projectile(0,-5, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
 					lischt.player().getPosY() - 17));
 			lischt.player().fire();
 		}
-
-		if (sDown && lischt.player().canFire()) {
+		if (code == KeyEvent.VK_X && lischt.player().canFire()) {
 			lischt.add(new Projectile(0, 5, 100, lischt.player().atk(), lischt.player().getPosX() + 8,
 					lischt.player().getPosY() + 33));
 			lischt.player().fire();
 		}
 	}
 
-	public void death(JFrame f) {
-		while (true) {
-			if (lischt.player().getHealth() <= 0) {
+	public void keyReleased(KeyEvent e) {
+		int code = e.getKeyCode();
+		if (code == KeyEvent.VK_LEFT || code == KeyEvent.VK_RIGHT)
+			lischt.player().setVelX(0);
+	}
+
+	public void keyTyped(KeyEvent e) {
+
+	}
+	
+	public void death(JFrame f){
+		while(true){
+			if(lischt.player().getHealth() <= 0){
 				DeathMenu.dMenu();
 				f.dispose();
 			}
