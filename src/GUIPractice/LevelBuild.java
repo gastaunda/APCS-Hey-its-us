@@ -128,23 +128,22 @@ public class LevelBuild {
 		for (double i = -64; i <= 800; i += 64) {
 			lischt.add(new KillBlock(16, 1800, i));
 		}
-		for (double x = 128; x <= 1700; x += 64){
-			for(double y = 128; y <= 800; y += 64){
+		for (double x = 128; x <= 1700; x += 64) {
+			for (double y = 128; y <= 800; y += 64) {
 				ran = Math.random();
-				if(ran <= .05){
+				if (ran <= .1) {
 					lischt.add(new Wall(16, x, y));
 					lischt.add(new Floor(16, x, y));
-				}else if(ran <= .1){
-					lischt.add(new Wall(16,x,y));
-					lischt.add(new UpFloor(16,x,y));
-				}
-				else if(ran <= .2)
-					lischt.add(new KillBlock(16, x,y));
+					lischt.add(new Mob(2, 2, 1, x, y-32, 16, 16));
+				} else if (ran <= .2)
+					lischt.add(new KillBlock(16, x, y));
+				
 			}
 		}
 		lischt.add(new Door(16, 1700, 700));
 	}
-	private static void level5(EntityList lischt){
+
+	private static void level5(EntityList lischt) {
 		for (double i = -64; i <= 1000; i += 64) {
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -154,18 +153,20 @@ public class LevelBuild {
 		for (double i = -64; i <= 1000; i += 64) {
 			lischt.add(new KillBlock(16, 1900, i));
 		}
-		for(double i = 32; i <= 800; i += 64){
-			lischt.add(new Wall(16, 128, i));			
+		for (double i = 32; i <= 800; i += 64) {
+			lischt.add(new Wall(16, 128, i));
 		}
 		lischt.add(new UpFloor(16, 128, 800));
-		for(double i = 128; i <= 1000; i += 64){
-			lischt.add(new Wall(16, 256, i));			
+		for (double i = 128; i <= 1000; i += 64) {
+			lischt.add(new Wall(16, 256, i));
 		}
 		lischt.add(new Floor(16, 256, 128));
 		for (double i = 256; i <= 1900; i += 32) {
 			lischt.add(new UpFloor(16, i, 128));
 		}
+		lischt.add(new Door(16, 1900, 96));
 	}
+
 	public static int random(int x) {
 		return (int) (Math.random() * x);
 	}
