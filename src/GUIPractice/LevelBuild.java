@@ -77,7 +77,9 @@ public class LevelBuild {
 		}
 		for (double i = 192; i <= 1700; i += 128) {
 			lischt.add(new KillBlock(16, i, 368));
+			lischt.add(new KillBlock(16, i, 532));
 			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 668, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 50, 50, 1));
 		lischt.add(new Pickup(16, 100, 50, 1));
