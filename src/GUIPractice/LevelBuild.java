@@ -171,21 +171,51 @@ public class LevelBuild {
 	
 	private static void level5(EntityList lischt){
 		//button "4"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 	
 	private static void level6(EntityList lischt){
 		//button "5"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 
 	private static void level7(EntityList lischt){
 		//button "6"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 
 	private static void level8(EntityList lischt){
 		//button "7"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 	
 	private static void level9(EntityList lischt){
 		//button "8"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 }
