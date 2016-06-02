@@ -5,6 +5,7 @@ import items.EntityList;
 import items.Floor;
 import items.KillBlock;
 import items.Pickup;
+import items.UpFloor;
 import items.Wall;
 import mobs.Mob;
 
@@ -23,7 +24,23 @@ public class LevelBuild {
 		case 4:
 			level4(lischt);
 			break;
+		case 5:
+			level5(lischt);
+			break;
+		case 6:
+			level6(lischt);
+			break;
+		case 7:
+			level7(lischt);
+			break;
+		case 8:
+			level8(lischt);
+			break;
+		case 9:
+			level9(lischt);
+			break;
 		}
+			
 	}
 
 	private static void level1(EntityList lischt) {
@@ -47,7 +64,7 @@ public class LevelBuild {
 			lischt.add(new Wall(16, 350, i));
 		}
 		for (double i = 400; i <= 800; i += 50) {
-			lischt.add(new Mob(5, 5, 1, (double) i, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i, (double) 200, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 1000, 350, 0));
 		lischt.add(new Pickup(16, 900, 350, 1));
@@ -57,7 +74,7 @@ public class LevelBuild {
 	}
 
 	private static void level2(EntityList lischt) {
-		for (double i = -64; i <= 800; i += 64) {
+		for (double i = -256; i <= 800; i += 64) {
 			lischt.add(new KillBlock(16, -64, i));
 		}
 		for (double i = -64; i <= 1800; i += 32) {
@@ -77,7 +94,9 @@ public class LevelBuild {
 		}
 		for (double i = 192; i <= 1700; i += 128) {
 			lischt.add(new KillBlock(16, i, 368));
+			lischt.add(new KillBlock(16, i, 532));
 			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 368, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 5, 1, (double) i + 64, (double) 668, (double) 16, (double) 16));
 		}
 		lischt.add(new Pickup(16, 50, 50, 1));
 		lischt.add(new Pickup(16, 100, 50, 1));
@@ -112,8 +131,8 @@ public class LevelBuild {
 		}
 
 		for (double i2 = 350; i2 <= 1500; i2 += 32) {
-			lischt.add(new Mob(5, 5, 1, (double) i2, (double) 200, (double) 16, (double) 16));
-			lischt.add(new Mob(5, 5, 1, (double) i2, (double) 400, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i2, (double) 200, (double) 16, (double) 16));
+			lischt.add(new Mob(5, 2, 1, (double) i2, (double) 400, (double) 16, (double) 16));
 		}
 
 		for (double i1 = 1500; i1 <= 3000; i1 += 64) {
@@ -134,20 +153,96 @@ public class LevelBuild {
 		for (double i = -64; i <= 800; i += 64) {
 			lischt.add(new KillBlock(16, 1800, i));
 		}
-		for (double x = 128; x <= 1700; x += 64){
-			for(double y = 128; y <= 800; y += 64){
+		for (double x = 128; x <= 1700; x += 64) {
+			for (double y = 128; y <= 800; y += 64) {
 				ran = Math.random();
-				if(ran <= .1){
+				if (ran <= .075) {
 					lischt.add(new Wall(16, x, y));
 					lischt.add(new Floor(16, x, y));
-				}else if(ran <= .2)
-					lischt.add(new KillBlock(16, x,y));
+					lischt.add(new Mob(2, 2, 1, x, y-32, 16, 16));
+				} else if (ran <= .15)
+					lischt.add(new KillBlock(16, x, y));
+				
 			}
 		}
 		lischt.add(new Door(16, 1700, 700));
 	}
 
+	private static void level5(EntityList lischt) {
+		for (double i = -64; i <= 1000; i += 64) {
+			lischt.add(new KillBlock(16, -64, i));
+		}
+		for (double i = -64; i <= 1900; i += 32) {
+			lischt.add(new Floor(16, i, 1000));
+		}
+		for (double i = -64; i <= 1000; i += 64) {
+			lischt.add(new KillBlock(16, 1900, i));
+		}
+		for (double i = 32; i <= 800; i += 64) {
+			lischt.add(new Wall(16, 128, i));
+		}
+		lischt.add(new UpFloor(16, 128, 800));
+		for (double i = 128; i <= 1000; i += 64) {
+			lischt.add(new Wall(16, 256, i));
+		}
+		lischt.add(new Floor(16, 256, 128));
+		for (double i = 256; i <= 1900; i += 32) {
+			lischt.add(new UpFloor(16, i, 128));
+		}
+		lischt.add(new Door(16, 1900, 96));
+	}
+
 	public static int random(int x) {
 		return (int) (Math.random() * x);
+	}
+	
+	private static void level5(EntityList lischt){
+		//button "4"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
+	}
+	
+	private static void level6(EntityList lischt){
+		//button "5"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
+	}
+
+	private static void level7(EntityList lischt){
+		//button "6"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
+	}
+
+	private static void level8(EntityList lischt){
+		//button "7"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
+	}
+	
+	private static void level9(EntityList lischt){
+		//button "8"
+		for (double i = -64; i <= 1800; i += 32) {
+			lischt.add(new KillBlock(16, i, 800));
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
 	}
 }
