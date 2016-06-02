@@ -23,6 +23,10 @@ public class LevelBuild {
 		case 4:
 			level4(lischt);
 			break;
+		case 5:
+			level5(lischt);
+		case 6: 
+			level6(lischt);
 		}
 	}
 
@@ -84,6 +88,21 @@ public class LevelBuild {
 
 	private static void level3(EntityList lischt) {
 
+		for (double i = -64; i <= 1800; i += 32) {      //surrounding kill blocks
+			lischt.add(new KillBlock(16, i, 1032));		//horizontal
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1932, i));  //vertical right
+		}
+		
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, -64, i));  //vertical left
+		}
+		
+		for (double i = -64; i <= 800; i += 64) {
+			lischt.add(new KillBlock(16, 1800, i));
+		}
+		
 		for (int i = 0; i <= 200; i += 32) {
 			lischt.add(new Floor(16, i, 200));
 		}
@@ -139,6 +158,39 @@ public class LevelBuild {
 		}
 		lischt.add(new Door(16, 1700, 700));
 	}
+	
+	public static void level6(EntityList lischt)
+	{
+		int counter = 0;
+		for (double i = -64; i <= 1800; i += 32) {      //surrounding kill blocks
+			lischt.add(new KillBlock(16, i, 1032));		//horizontal
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1932, i));  //vertical right
+		}
+		
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, -64, i));  //vertical left
+		}
+		
+		for (double i = -64; i <= 1700; i += 32) {
+			lischt.add(new Floor(16, i, 700));
+		}
+		
+		for (double i = -64; i <= 1700; i += 32) {
+			lischt.add(new Floor(16, i, 700));
+			if (counter % 4 == 0)
+			{
+				lischt.add(new KillBlock(16,i, 700 + random(50)));
+				for (double j = 700; j <= 500; j = j-16)
+				{
+					lischt.add(new Floor(16, i, j));
+				}
+			}
+		}
+		
+	}
+	
 
 	public static int random(int x) {
 		return (int) (Math.random() * x);
