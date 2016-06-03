@@ -177,6 +177,9 @@ public class LevelBuild {
 		for (double i = -64; i <= 1900; i += 32) {
 			lischt.add(new Floor(16, i, 1000));
 		}
+		for (double i = 288; i <= 1900; i += 64) {
+			lischt.add(new Mob(2, 2, 1, i, 900, 16, 16));
+		}
 		for (double i = -64; i <= 1000; i += 64) {
 			lischt.add(new KillBlock(16, 1900, i));
 		}
@@ -187,10 +190,11 @@ public class LevelBuild {
 		for (double i = 128; i <= 1000; i += 64) {
 			lischt.add(new Wall(16, 256, i));
 		}
-		lischt.add(new Floor(16, 256, 128));
-		for (double i = 256; i <= 1600; i += 32) {
+		
+		for (double i = 288; i <= 1600; i += 32) {
 			lischt.add(new UpFloor(16, i, 128));
 		}
+		lischt.add(new Floor(16, 256, 128));
 		for (double i = 1600; i <= 1900; i +=32){
 			lischt.add(new Floor(16,i, 128));
 		}
