@@ -5,15 +5,13 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
+
 
 import java.awt.*; // access to Container
 import java.awt.event.*; // access to WindowAdapter, WindowEvent
 
 import javax.swing.*; // access to JFrame and JComponents
 import javax.swing.event.*; // access 
-
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 import aa.DeathMenu;
 import aa.GameMenu;
@@ -95,12 +93,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		for (Mob i : lischt.getMobs()) {
 			i.imageIcon().paintIcon(this, g, (int) i.getPosX(), (int) i.getPosY());
 		}
-		JLabel lblscore = DefaultComponentFactory.getInstance().createTitle("Score: " + Integer.toString(lischt.score()));
-		lblscore.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblscore.setBounds(0, GameMenu.btnSpace, frame.getWidth(), 20);
-		lblscore.setForeground(new Color(255, 0, 51));
-		lblscore.setBackground(new Color(0, 0, 0));
-		frame.getContentPane().add(lblscore);
+	
 	}
 
 	public void actionPerformed(ActionEvent e) { // move this to ingame display
