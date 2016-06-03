@@ -43,7 +43,7 @@ public class LevelBuild {
 			
 	}
 
-	private static void level1(EntityList lischt) {
+	private static void level1(EntityList lischt) {//Initial/Tester level
 		for (double i = -64; i <= 800; i += 64) {
 			lischt.add(new Wall(16, -64, i));
 		}
@@ -73,7 +73,7 @@ public class LevelBuild {
 		lischt.add(new Door(16, 1400, 468));
 	}
 
-	private static void level2(EntityList lischt) {
+	private static void level2(EntityList lischt) {//Anubhav's Level
 		for (double i = -256; i <= 800; i += 64) {
 			lischt.add(new KillBlock(16, -64, i));
 		}
@@ -110,7 +110,7 @@ public class LevelBuild {
 		lischt.add(new Door(16, 1750, 750));
 	}
 
-	private static void level3(EntityList lischt) {
+	private static void level3(EntityList lischt) {//Josh's Level
 
 		for (int i = 0; i <= 200; i += 32) {
 			lischt.add(new Floor(16, i, 200));
@@ -144,7 +144,7 @@ public class LevelBuild {
 
 	}
 
-	private static void level4(EntityList lischt) {
+	private static void level4(EntityList lischt) {//random level
 		double ran = 0;
 		for (double i = -64; i <= 800; i += 64) {
 			lischt.add(new KillBlock(16, -64, i));
@@ -205,7 +205,7 @@ public class LevelBuild {
 		return (int) (Math.random() * x);
 	}
 	
-	private static void level6(EntityList lischt){
+	private static void level6(EntityList lischt){//NEEDS TO BE MADE
 		//button "5"
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new KillBlock(16, i, 800));
@@ -215,7 +215,7 @@ public class LevelBuild {
 		}
 	}
 
-	private static void level7(EntityList lischt){
+	private static void level7(EntityList lischt){//NEEDS TO BE MADE
 		//button "6"
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new KillBlock(16, i, 800));
@@ -225,7 +225,7 @@ public class LevelBuild {
 		}
 	}
 
-	private static void level8(EntityList lischt){
+	private static void level8(EntityList lischt){//NEEDS TO BE MADE
 		//button "7"
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new KillBlock(16, i, 800));
@@ -235,14 +235,14 @@ public class LevelBuild {
 		}
 	}
 	
-	private static void level9(EntityList lischt){
+	private static void level9(EntityList lischt){//NEEDS TO BE TESTED(BY ANUBHAV)
 		//button "8"
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new Floor(16, i, 800));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
-			lischt.add(new KillBlock(16, -32, i));
+			lischt.add(new KillBlock(16, -64, i));
 		}
 		for(double i = -64; i <= 256; i += 32){
 			lischt.add(new Floor(16, i, 64));
