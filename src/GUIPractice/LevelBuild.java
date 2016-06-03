@@ -234,10 +234,26 @@ public class LevelBuild {
 	private static void level9(EntityList lischt){
 		//button "8"
 		for (double i = -64; i <= 1800; i += 32) {
-			lischt.add(new KillBlock(16, i, 800));
+			lischt.add(new Floor(16, i, 800));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
+			lischt.add(new KillBlock(16, -32, i));
+		}
+		for(double i = -64; i <= 256; i += 32){
+			lischt.add(new Floor(16, i, 64));
+		}
+		for (double i = 300; i <= 500; i += 32){
+			lischt.add(new Floor(16, i, 256));
+			lischt.add(new Mob(5, 2, 1, (double) i, (double) 256, (double) 16, (double) 16));
+		}
+		for (double i = 0; i <= 112; i ++)
+		{
+			lischt.add(new Mob(5, 2, 1, (double) i * 16, (double) 750, (double) 16, (double) 16));
+		}
+		lischt.add(new Door(16, 64, 750));
+		for (double i = 0; i <= 1800; i += 128){
+			lischt.add(new KillBlock(16, i, 350));
 		}
 	}
 }
