@@ -208,31 +208,37 @@ public class LevelBuild {
 	private static void level6(EntityList lischt){//NEEDS TO BE MADE
 		//button "5"
 		for (double i = -64; i <= 1800; i += 32) {
-			lischt.add(new KillBlock(16, i, 800));
+			lischt.add(new Floor(16, i, 800));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
+			lischt.add(new KillBlock(16, -64, i));
 		}
+		lischt.add(new Door(16, 1750, 750));
 	}
 
 	private static void level7(EntityList lischt){//NEEDS TO BE MADE
 		//button "6"
 		for (double i = -64; i <= 1800; i += 32) {
-			lischt.add(new KillBlock(16, i, 800));
+			lischt.add(new Floor(16, i, 800));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
+			lischt.add(new KillBlock(16, -64, i));
 		}
+		lischt.add(new Door(16, 1750, 750));
 	}
 
 	private static void level8(EntityList lischt){//NEEDS TO BE MADE
 		//button "7"
 		for (double i = -64; i <= 1800; i += 32) {
-			lischt.add(new KillBlock(16, i, 800));
+			lischt.add(new Floor(16, i, 800));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
+			lischt.add(new KillBlock(16, -64, i));
 		}
+		lischt.add(new Door(16, 1750, 750));
 	}
 	
 	private static void level9(EntityList lischt){//NEEDS TO BE TESTED(BY ANUBHAV)
