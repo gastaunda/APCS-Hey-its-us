@@ -19,7 +19,7 @@ public class Tester {
 	public static void init(int i) {
 		startmusic();
 		JFrame f = new JFrame();
-		GraphicExperiment s = new GraphicExperiment(i);
+		GraphicExperiment s = new GraphicExperiment(i, f);
 		f.add(s);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

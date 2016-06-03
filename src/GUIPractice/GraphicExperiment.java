@@ -37,6 +37,7 @@ import java.util.ArrayList;
 public class GraphicExperiment extends JPanel implements ActionListener, KeyListener {
 	private EntityList lischt = new EntityList();
 	Timer t = new Timer(5, this);
+	JFrame frame;
 	ImageIcon background;
 	ImageIcon heart;
 	ImageIcon redHeart;
@@ -51,7 +52,8 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 	private boolean sLeft;
 	private boolean sRight;
 
-	public GraphicExperiment(int k) {
+	public GraphicExperiment(int k, JFrame f) {
+		frame = f;
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
 		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));

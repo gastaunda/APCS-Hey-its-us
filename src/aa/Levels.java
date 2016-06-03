@@ -87,6 +87,14 @@ public class Levels {
 		lblLevelSelect.setBackground(new Color(0, 0, 0));
 		frame.getContentPane().add(lblLevelSelect);
 
+		JButton btnBackToMain = new JButton("Back to Main Menu");
+		btnBackToMain.setAction(bk);
+		frame.getContentPane().add(btnBackToMain);
+
+		JButton btnRandom = new JButton("Random");
+		btnRandom.setAction(action_3);
+		frame.getContentPane().add(btnRandom);
+
 		JButton button = new JButton("1");
 		button.setBounds(GameMenu.btnSpace, lblLevelSelect.getY() + lblLevelSelect.getHeight() + GameMenu.btnSpace,
 				btnSize, btnSize);
@@ -103,35 +111,26 @@ public class Levels {
 		button_2.setBounds(button_1.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_2);
 
-		JButton btnRandom = new JButton("Random");
-		btnRandom.setAction(action_3);
-		btnRandom.setBounds(513, 304, 245, 48);
-		frame.getContentPane().add(btnRandom);
-		
-		JButton btnBackToMain = new JButton("Back to Main Menu");
-		btnBackToMain.setAction(bk);
-		frame.getContentPane().add(btnBackToMain);
-		
 		JButton button_3 = new JButton("4");
 		button_3.setAction(action_4);
 		button_3.setBounds(button_2.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_3);
-		
+
 		JButton button_4 = new JButton("5");
 		button_4.setAction(action_5);
 		button_4.setBounds(button_3.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_4);
-		
+
 		JButton button_5 = new JButton("6");
 		button_5.setAction(action_6);
 		button_5.setBounds(button_4.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_5);
-		
+
 		JButton button_6 = new JButton("7");
 		button_6.setAction(action_7);
 		button_6.setBounds(button_5.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
 		frame.getContentPane().add(button_6);
-		
+
 		JButton button_7 = new JButton("8");
 		button_7.setAction(action_8);
 		button_7.setBounds(button_6.getX() + GameMenu.btnSpace + btnSize, button.getY(), btnSize, btnSize);
@@ -149,6 +148,7 @@ public class Levels {
 					lblLevelSelect.setBounds(0, GameMenu.btnSpace, frame.getWidth(), 20);
 					btnBackToMain.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
 							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
+					btnRandom.setBounds(btnBackToMain.getX(), btnBackToMain.getY() - GameMenu.btnSpace - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnSpace);
 				}
 			}
 		}.start();
@@ -188,81 +188,97 @@ public class Levels {
 			close();
 		}
 	}
+
 	private class SwingAction_2 extends AbstractAction {
 		public SwingAction_2() {
 			putValue(NAME, "2");
 			putValue(SHORT_DESCRIPTION, "Very difficult level");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(2);
 			close();
 		}
 	}
+
 	private class SwingAction_3 extends AbstractAction {
 		public SwingAction_3() {
 			putValue(NAME, "3");
 			putValue(SHORT_DESCRIPTION, "Patience level");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(3);
 			close();
 		}
 	}
+
 	private class SwingAction_4 extends AbstractAction {
 		public SwingAction_4() {
 			putValue(NAME, "Random");
 			putValue(SHORT_DESCRIPTION, "Randomly generated level");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(4);
 			close();
 		}
 	}
+
 	private class SwingAction_5 extends AbstractAction {
 		public SwingAction_5() {
 			putValue(NAME, "4");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(5);
 			close();
 		}
 	}
+
 	private class SwingAction_6 extends AbstractAction {
 		public SwingAction_6() {
 			putValue(NAME, "5");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(6);
 			close();
 		}
 	}
+
 	private class SwingAction_7 extends AbstractAction {
 		public SwingAction_7() {
 			putValue(NAME, "6");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(7);
 			close();
 		}
 	}
+
 	private class SwingAction_8 extends AbstractAction {
 		public SwingAction_8() {
 			putValue(NAME, "7");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(8);
 			close();
 		}
 	}
+
 	private class SwingAction_9 extends AbstractAction {
 		public SwingAction_9() {
 			putValue(NAME, "8");
 			putValue(SHORT_DESCRIPTION, "Some short description");
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			Tester.init(9);
 			close();
