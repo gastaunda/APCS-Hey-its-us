@@ -74,7 +74,7 @@ public class DeathMenu {
 		JLabel lblYouDedTry = new JLabel("YOU DEAD: TRY AGAIN");
 		lblYouDedTry.setForeground(Color.RED);
 		lblYouDedTry.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYouDedTry.setFont(new Font("Stencil", Font.PLAIN, 40));
+		lblYouDedTry.setFont(new Font("Impact", Font.PLAIN, 40));
 		frame.getContentPane().add(lblYouDedTry);
 
 		JLabel label = new JLabel("");

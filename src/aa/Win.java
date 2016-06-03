@@ -72,7 +72,7 @@ public class Win {
 		
 		JLabel lblYouWin = new JLabel("You Win :)");
 		lblYouWin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYouWin.setFont(new Font("Stencil", Font.PLAIN, 72));
+		lblYouWin.setFont(new Font("Impact", Font.PLAIN, 72));
 		lblYouWin.setForeground(Color.RED);
 		frame.getContentPane().add(lblYouWin);
 
