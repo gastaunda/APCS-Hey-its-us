@@ -120,6 +120,17 @@ public class LevelBuild {
 			lischt.add(new Floor(16, i, 300));
 		}
 
+		for (double i = -64; i <= 1800; i += 32) {      //surrounding kill blocks
+			lischt.add(new KillBlock(16, i, 1032));		//horizontal
+		}
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, 1932, i));  //vertical right
+		}
+		
+		for (double i = -64; i <= 800; i += 32) {
+			lischt.add(new KillBlock(16, -64, i));  //vertical left
+		}
+		
 		for (double i = 350; i <= 1500; i += 128) {
 			lischt.add(new KillBlock(16, i, 300));
 		}
