@@ -148,7 +148,7 @@ public class Levels {
 					lblLevelSelect.setBounds(0, GameMenu.btnSpace, frame.getWidth(), 20);
 					btnBackToMain.setBounds((frame.getWidth() - GameMenu.btnWidth) / 2,
 							frame.getHeight() - 100 - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
-					btnRandom.setBounds(btnBackToMain.getX(), btnBackToMain.getY() - GameMenu.btnSpace - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnSpace);
+					btnRandom.setBounds(btnBackToMain.getX(), btnBackToMain.getY() - GameMenu.btnSpace - GameMenu.btnHeight, GameMenu.btnWidth, GameMenu.btnHeight);
 				}
 			}
 		}.start();
