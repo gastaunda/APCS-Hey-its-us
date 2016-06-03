@@ -45,7 +45,7 @@ public class Win {
 				}
 			}
 		});
-	}
+	}// comments comenting
 
 	/**
 	 * Create the application.
