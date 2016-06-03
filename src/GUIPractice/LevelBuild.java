@@ -87,13 +87,19 @@ public class LevelBuild {
 			lischt.add(new UpFloor(16, i, 105));
 			lischt.add(new Floor(16, i, 100));
 			lischt.add(new UpFloor(16, i, 505)); 
-			lischt.add(new Floor(16, i, 500));
-			
+			lischt.add(new Floor(16, i, 500));	
 		}
+		
+		
 		for (double i = 192; i <= 1800; i += 32) {
+			lischt.add(new UpFloor(16, i, 405));
+			lischt.add(new UpFloor(16, i, 705));
 			lischt.add(new Floor(16, i, 400));
 			lischt.add(new Floor(16, i, 700));
+			
 		}
+		lischt.add(new Wall(16, 192, 400));
+		lischt.add(new Wall(16,192, 700));
 		for (double i = 192; i <= 1700; i += 128) {
 			lischt.add(new KillBlock(16, i, 368));
 			lischt.add(new KillBlock(16, i, 532));
@@ -189,6 +195,9 @@ public class LevelBuild {
 		lischt.add(new UpFloor(16, 128, 800));
 		for (double i = 128; i <= 1000; i += 64) {
 			lischt.add(new Wall(16, 256, i));
+		}
+		for(double i = 416; i <= 1900; i +=128){
+			lischt.add(new KillBlock(16, i, 384));
 		}
 		
 		for (double i = 288; i <= 1600; i += 32) {
