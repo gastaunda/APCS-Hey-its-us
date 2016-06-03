@@ -10,4 +10,4 @@ cGreen Things kill you Very Fast
 c
 cUse arrow keys to move
 c
-cZ to shoot left, X to shoot right
+cZ = Left Shoot, X = Down Shoot(can kill you), C = Right shoot, S = Up Shoot
