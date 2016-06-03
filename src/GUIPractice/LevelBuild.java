@@ -43,7 +43,7 @@ public class LevelBuild {
 			
 	}
 
-	private static void level1(EntityList lischt) {//Initial/Tester level
+	private static void level1(EntityList lischt) {//Initial Tester level
 		for (double i = -64; i <= 800; i += 64) {
 			lischt.add(new Wall(16, -64, i));
 		}

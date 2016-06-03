@@ -14,7 +14,7 @@ public class Pickup extends Wall {
 		else if(slot == 1) // this one increases attack
 			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/aPickup.png"));
 		else if(slot == 2) // this one restores health
-			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/healthPickup.png"));
+			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/HealthPickup.png"));
 		else if(slot == 3){ // this one will reduce fire cd
 			super.myImage = new ImageIcon(Pickup.class.getResource("/assets/images/cdPickup.png"));
 		}
