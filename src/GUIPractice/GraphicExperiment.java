@@ -46,7 +46,7 @@ public class GraphicExperiment extends JPanel implements ActionListener, KeyList
 		frame = f;
 		background = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Background.png"));
 		heart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Heart.png"));
-		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/curHeart.png"));
+		redHeart = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/CurHeart.png"));
 		sword = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/atk.png"));
 		cd = new ImageIcon(GraphicExperiment.class.getResource("/assets/images/Clock.png"));
 		LevelBuild.buildLevel(k, lischt);
