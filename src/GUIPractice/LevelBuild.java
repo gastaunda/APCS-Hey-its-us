@@ -288,13 +288,24 @@ public class LevelBuild {
 		
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new Floor(16, i, 800));
+			int j = random(6);
+			for (int a = 0; a <= j; a ++)
+				if(a == 0){
+					lischt.add(new KillBlock(16, i, 800));
+				}
+				else{
+					lischt.add(new Floor(16, i, (800 - (a * 32))));
+				}
+				
+		}
+		for (double i = 200; i <= 1800; i += 64){
 			lischt.add(new Mob(2, 2, 1, (double) i, (double) 256, (double) 16, (double) 16));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
 			lischt.add(new KillBlock(16, -64, i));
 		}
-		lischt.add(new Door(16, 1750, 750));
+		lischt.add(new Door(16, 1750, 600));
 	}
 	
 	private static void level9(EntityList lischt){//NEEDS TO BE TESTED(BY ANUBHAV)
