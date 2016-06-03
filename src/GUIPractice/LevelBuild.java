@@ -228,7 +228,7 @@ public class LevelBuild {
 	public static void level6(EntityList lischt)
 	{
 		int counter = 0;
-		for (double i = 0; i <= 100; i += 32) {
+		for (double i = 0; i <= 100; i += 32) {   //initial ground
 			lischt.add(new Floor(16, i, 200));
 		}
 		
@@ -271,6 +271,10 @@ public class LevelBuild {
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new Floor(16, i, 800));
 		}
+		
+		for (double i = 32; i <= 800; i += 64) {
+			lischt.add(new Wall(16, 128, i));
+		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
 			lischt.add(new KillBlock(16, -64, i));
@@ -280,8 +284,14 @@ public class LevelBuild {
 
 	private static void level8(EntityList lischt){//NEEDS TO BE MADE
 		//button "7"
+		
+		for (double i = 0; i <= 100; i += 32) {   //initial ground
+			lischt.add(new Floor(16, i, 200));
+		}
+		
 		for (double i = -64; i <= 1800; i += 32) {
 			lischt.add(new Floor(16, i, 800));
+			lischt.add(new Mob(2, 2, 1, (double) i, (double) 256, (double) 16, (double) 16));
 		}
 		for (double i = -64; i <= 800; i += 32) {
 			lischt.add(new KillBlock(16, 1800, i));
